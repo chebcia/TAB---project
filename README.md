@@ -13,14 +13,3 @@ ENTITY FRAMEWORK GUIDE:
 ```
 
 * "Build failed"? Make sure your project compiles without errors before running.
-
-
-
-phys:
-	temprature
-	pressure
-
-lab:
-	tomograph
-	hemoglobin
-	wb - white blood cells
