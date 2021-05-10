@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace TAB_clinic_GUI.Database
+namespace TAB_clinic_Data.Database
 {
     public partial class User
     {
@@ -11,6 +11,7 @@ namespace TAB_clinic_GUI.Database
         public string Login { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public string Active { get; set; }
 
         public virtual Doctor Doctor { get; set; }
         public virtual LabManager LabManager { get; set; }

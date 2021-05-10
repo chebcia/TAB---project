@@ -34,13 +34,11 @@ namespace TAB_clinic_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(89, 34);
+            this.textBox1.Location = new System.Drawing.Point(209, 66);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 0;
@@ -48,7 +46,7 @@ namespace TAB_clinic_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 37);
+            this.label1.Location = new System.Drawing.Point(165, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 1;
@@ -57,7 +55,7 @@ namespace TAB_clinic_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 71);
+            this.label2.Location = new System.Drawing.Point(142, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 2;
@@ -65,14 +63,14 @@ namespace TAB_clinic_GUI
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 68);
+            this.textBox2.Location = new System.Drawing.Point(209, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(101, 106);
+            this.button1.Location = new System.Drawing.Point(221, 138);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -80,33 +78,22 @@ namespace TAB_clinic_GUI
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(256, 132);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 153);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hello there!";
-            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(536, 282);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,7 +104,6 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

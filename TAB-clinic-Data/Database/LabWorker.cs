@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace TAB_clinic_GUI.Database
+namespace TAB_clinic_Data.Database
 {
-    public partial class LabManager
+    public partial class LabWorker
     {
-        public LabManager()
+        public LabWorker()
         {
             LabExams = new HashSet<LabExam>();
         }

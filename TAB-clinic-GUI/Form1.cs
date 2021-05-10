@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Windows.Forms;
-using TAB_clinic_GUI.Database;
+using TAB_clinic_Business;
 
 namespace TAB_clinic_GUI
 {
@@ -25,18 +24,14 @@ namespace TAB_clinic_GUI
             var login = textBox1.Text;
             var password = textBox2.Text;
 
-            using (var context = new ClinicDBContext())
+            var success = LoginService.SignIn(login, password);
+            if (success)
             {
-                var matchingUser = context.Users.Where(u => u.Login == login && u.Password == password).FirstOrDefault();
-
-                if (matchingUser is null)
-                {
-                    MessageBox.Show("No such user exists.");
-                }
-                else
-                {
-                    MessageBox.Show($"You're a(n) {matchingUser.Role ?? "ADMINISTRATOR"}!");
-                }
+                MessageBox.Show("Hello there!", "Success");
+            }
+            else
+            {
+                MessageBox.Show($"Did you mean to use 'admin' and '{LoginService.AdminsPassword()}'?", "Failed");
             }
         }
     }

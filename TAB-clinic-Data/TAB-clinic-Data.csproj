@@ -1,10 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <RootNamespace>TAB_clinic_GUI</RootNamespace>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TAB_clinic_Data</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,10 +11,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TAB-clinic-Business\TAB-clinic-Business.csproj" />
   </ItemGroup>
 
 </Project>

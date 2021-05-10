@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace TAB_clinic_GUI.Database
+namespace TAB_clinic_Data.Database
 {
     public partial class Visit
     {
@@ -20,7 +20,8 @@ namespace TAB_clinic_GUI.Database
         public string Status { get; set; }
         public string Diagnosis { get; set; }
         public DateTime DtRegistered { get; set; }
-        public DateTime? DtFinalized { get; set; }
+        public DateTime? DtFinalizedCancelled { get; set; }
+        public string Description { get; set; }
 
         public virtual Doctor IdDoctorNavigation { get; set; }
         public virtual Patient IdPatientNavigation { get; set; }

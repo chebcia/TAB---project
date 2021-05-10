@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace TAB_clinic_GUI.Database
+namespace TAB_clinic_Data.Database
 {
     public partial class ClinicDBContext : DbContext
     {
@@ -73,7 +73,7 @@ namespace TAB_clinic_GUI.Database
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .HasColumnName("name");
 
                 entity.Property(e => e.Type)
@@ -100,16 +100,16 @@ namespace TAB_clinic_GUI.Database
                     .HasColumnName("code");
 
                 entity.Property(e => e.DoctorsNotes)
-                    .HasColumnType("ntext")
+                    .HasMaxLength(255)
                     .HasColumnName("doctors_notes");
 
-                entity.Property(e => e.DtApproved)
+                entity.Property(e => e.DtApprovedCancelled)
                     .HasColumnType("datetime")
-                    .HasColumnName("dt_approved");
+                    .HasColumnName("dt_approved_cancelled");
 
-                entity.Property(e => e.DtFinalized)
+                entity.Property(e => e.DtFinalizedCancelled)
                     .HasColumnType("datetime")
-                    .HasColumnName("dt_finalized");
+                    .HasColumnName("dt_finalized_cancelled");
 
                 entity.Property(e => e.DtRequest)
                     .HasColumnType("datetime")
@@ -122,18 +122,19 @@ namespace TAB_clinic_GUI.Database
                 entity.Property(e => e.IdWorker).HasColumnName("id_worker");
 
                 entity.Property(e => e.ManagersNotes)
-                    .HasColumnType("ntext")
+                    .HasMaxLength(255)
                     .HasColumnName("managers_notes");
 
                 entity.Property(e => e.Result)
-                    .HasColumnType("ntext")
+                    .HasMaxLength(255)
                     .HasColumnName("result");
 
                 entity.Property(e => e.Status)
                     .IsRequired()
                     .HasMaxLength(2)
                     .IsUnicode(false)
-                    .HasColumnName("status");
+                    .HasColumnName("status")
+                    .IsFixedLength(true);
 
                 entity.HasOne(d => d.CodeNavigation)
                     .WithMany(p => p.LabExams)
@@ -217,7 +218,8 @@ namespace TAB_clinic_GUI.Database
                     .IsRequired()
                     .HasMaxLength(11)
                     .IsUnicode(false)
-                    .HasColumnName("PESEL");
+                    .HasColumnName("PESEL")
+                    .IsFixedLength(true);
             });
 
             modelBuilder.Entity<PhysicalExam>(entity =>
@@ -238,7 +240,7 @@ namespace TAB_clinic_GUI.Database
                 entity.Property(e => e.IdVisit).HasColumnName("id_visit");
 
                 entity.Property(e => e.Result)
-                    .HasColumnType("ntext")
+                    .HasMaxLength(255)
                     .HasColumnName("result");
 
                 entity.HasOne(d => d.CodeNavigation)
@@ -279,10 +281,15 @@ namespace TAB_clinic_GUI.Database
 
                 entity.ToTable("User");
 
-                entity.HasIndex(e => e.Login, "UK_login")
-                    .IsUnique();
-
                 entity.Property(e => e.IdUser).HasColumnName("id_user");
+
+                entity.Property(e => e.Active)
+                    .IsRequired()
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .HasColumnName("active")
+                    .HasDefaultValueSql("('A')")
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.Login)
                     .IsRequired()
@@ -292,7 +299,7 @@ namespace TAB_clinic_GUI.Database
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasMaxLength(50)
+                    .HasMaxLength(256)
                     .IsUnicode(false)
                     .HasColumnName("password");
 
@@ -311,13 +318,17 @@ namespace TAB_clinic_GUI.Database
 
                 entity.Property(e => e.IdVisit).HasColumnName("id_visit");
 
+                entity.Property(e => e.Description)
+                    .HasMaxLength(255)
+                    .HasColumnName("description");
+
                 entity.Property(e => e.Diagnosis)
-                    .HasColumnType("ntext")
+                    .HasMaxLength(255)
                     .HasColumnName("diagnosis");
 
-                entity.Property(e => e.DtFinalized)
+                entity.Property(e => e.DtFinalizedCancelled)
                     .HasColumnType("datetime")
-                    .HasColumnName("dt_finalized");
+                    .HasColumnName("dt_finalized_cancelled");
 
                 entity.Property(e => e.DtRegistered)
                     .HasColumnType("datetime")
