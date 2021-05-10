@@ -16,7 +16,8 @@ namespace TAB_clinic_GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // automatically generated, probably important
+            Trace.WriteLine("Form1 loaded");
         }
 
         private void button1_Click(object sender, EventArgs e)
