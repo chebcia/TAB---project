@@ -6,6 +6,7 @@ namespace TAB_clinic_Business
 {
     public static class LoginService
     {
+        // Creates the admin user if one does not exist.
         static LoginService()
         {
             using (var context = new ClinicDBContext())
