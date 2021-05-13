@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using TAB_clinic_Data.Database;
+using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Business
 {
@@ -15,8 +17,6 @@ namespace TAB_clinic_Business
                     .Where(u => u.Login == "admin")
                     .FirstOrDefault();
 
-                Trace.WriteLine("Admin was found in the DB");
-
                 if (admin is null)
                 {
                     Trace.WriteLine("Admin was not found in the DB - adding now");
@@ -30,31 +30,39 @@ namespace TAB_clinic_Business
                     context.Users.Add(admin);
                     context.SaveChanges();
                 }
+                else
+                {
+                    Trace.WriteLine("Admin was found in the DB");
+                }
             }
         }
 
-        public static bool SignIn(string login, string password)
+        public static User SignIn(string login, string password)
         {
             using (var context = new ClinicDBContext())
             {
                 var matchingUser = context.Users
-                    .Where(u => u.Login == login && u.Password == password)
+                    .Where(u => u.Login == login)
                     .FirstOrDefault();
 
-                return (matchingUser is not null);
+                return (matchingUser != null && Verify(password, matchingUser.Password)) ? matchingUser : null;
             }
         }
 
-        public static string AdminsPassword()
+        // TODO : Change roleCode into an enum
+        public static void SignUp(string login, string password, string roleCode)
         {
-            User admin;
             using (var context = new ClinicDBContext())
             {
-                admin = context.Users
-                    .Where(u => u.Login == "admin")
-                    .FirstOrDefault();
+                if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+                {
+                    throw new ArgumentException("You need to provide a login and a password!");
+                }
+
+                var userEntry = new User { Login = login, Password = HashPassword(password), Role = roleCode };
+                context.Add(userEntry);
+                context.SaveChanges();
             }
-            return admin.Password;
         }
     }
 }
