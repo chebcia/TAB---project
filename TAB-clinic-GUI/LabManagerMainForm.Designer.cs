@@ -41,7 +41,7 @@ namespace TAB_clinic_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(190, 9);
+            this.label1.Location = new System.Drawing.Point(159, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(391, 37);
             this.label1.TabIndex = 0;
@@ -50,15 +50,15 @@ namespace TAB_clinic_GUI
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(682, 361);
+            this.dataGridView1.Size = new System.Drawing.Size(676, 318);
             this.dataGridView1.TabIndex = 1;
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(695, 295);
+            this.buttonAccept.Location = new System.Drawing.Point(595, 373);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(93, 33);
             this.buttonAccept.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(695, 334);
+            this.buttonCancel.Location = new System.Drawing.Point(496, 373);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(93, 33);
             this.buttonCancel.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonNote
             // 
-            this.buttonNote.Location = new System.Drawing.Point(695, 373);
+            this.buttonNote.Location = new System.Drawing.Point(397, 373);
             this.buttonNote.Name = "buttonNote";
             this.buttonNote.Size = new System.Drawing.Size(93, 33);
             this.buttonNote.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 412);
             this.Controls.Add(this.buttonNote);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAccept);

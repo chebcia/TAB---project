@@ -38,7 +38,7 @@ namespace TAB_clinic_GUI
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 64);
+            this.richTextBox1.Location = new System.Drawing.Point(10, 31);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(677, 374);
             this.richTextBox1.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace TAB_clinic_GUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(695, 396);
+            this.button1.Location = new System.Drawing.Point(596, 411);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace TAB_clinic_GUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(695, 357);
+            this.button2.Location = new System.Drawing.Point(497, 411);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 33);
             this.button2.TabIndex = 2;
@@ -66,10 +66,10 @@ namespace TAB_clinic_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(253, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 37);
+            this.label1.Size = new System.Drawing.Size(163, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Note to Laboratory Exam";
             // 
@@ -77,7 +77,7 @@ namespace TAB_clinic_GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(695, 64);
+            this.label2.Location = new System.Drawing.Point(614, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 19);
             this.label2.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(699, 452);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
