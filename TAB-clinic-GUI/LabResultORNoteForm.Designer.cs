@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class LabManagerNote
+    partial class LabResultORNoteForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace TAB_clinic_GUI
 {
-    public partial class LabManagerNote : Form
+    public partial class LabMainForm : Form
     {
-        public LabManagerNote()
+        public LabMainForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonNote_Click(object sender, EventArgs e)
         {
-         
+
         }
+
+
     }
 }

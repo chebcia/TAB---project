@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class LabManagerMainForm
+    partial class LabMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,17 +40,18 @@ namespace TAB_clinic_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(159, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(391, 37);
+            this.label1.Size = new System.Drawing.Size(203, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Laboratory Manager Main View";
+            
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(676, 318);
@@ -58,7 +59,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonAccept
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(595, 373);
+            this.buttonAccept.Location = new System.Drawing.Point(595, 355);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(93, 33);
             this.buttonAccept.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(496, 373);
+            this.buttonCancel.Location = new System.Drawing.Point(496, 355);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(93, 33);
             this.buttonCancel.TabIndex = 3;
@@ -76,7 +77,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonNote
             // 
-            this.buttonNote.Location = new System.Drawing.Point(397, 373);
+            this.buttonNote.Location = new System.Drawing.Point(397, 355);
             this.buttonNote.Name = "buttonNote";
             this.buttonNote.Size = new System.Drawing.Size(93, 33);
             this.buttonNote.TabIndex = 4;
@@ -84,17 +85,17 @@ namespace TAB_clinic_GUI
             this.buttonNote.UseVisualStyleBackColor = true;
             this.buttonNote.Click += new System.EventHandler(this.buttonNote_Click);
             // 
-            // LabManagerMainForm
+            // LabMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 412);
+            this.ClientSize = new System.Drawing.Size(700, 394);
             this.Controls.Add(this.buttonNote);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAccept);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "LabManagerMainForm";
+            this.Name = "LabMainForm";
             this.Text = "LabManagerMainForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
