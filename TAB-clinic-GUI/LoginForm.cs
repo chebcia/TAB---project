@@ -3,15 +3,15 @@ using System.Windows.Forms;
 using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
-{
-    public partial class Form1 : Form
+{ 
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
             // automatically generated, probably important
         }
