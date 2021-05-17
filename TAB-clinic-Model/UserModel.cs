@@ -4,7 +4,7 @@ using static TAB_clinic_Model.ClinicRoleMethods;
 
 namespace TAB_clinic_Model
 {
-    class UserModel
+    public class UserModel
     {
         public UserModel(User dbUser)
         {
