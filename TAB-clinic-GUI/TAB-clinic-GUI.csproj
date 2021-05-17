@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TAB-clinic-Business\TAB-clinic-Business.csproj" />
+    <ProjectReference Include="..\TAB-clinic-Services\TAB-clinic-Services.csproj" />
   </ItemGroup>
 
 </Project>
