@@ -7,8 +7,15 @@ namespace TAB_clinic_Services
     {
         static LoginService()
         {
-            // Create admin user if one does not exist
-           UserContext.CreateUser("admin", "admin", ClinicRole.Admin);
+            try
+            {
+                // Create admin user if one does not exist
+                UserContext.CreateUser("admin", "admin", ClinicRole.Admin);
+            }
+            catch (UserAlreadyExistsException)
+            {
+
+            }
         }
 
         public static UserModel? SignIn(string login, string password)
