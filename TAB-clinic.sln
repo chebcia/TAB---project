@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-GUI", "TAB-clinic-GUI\TAB-clinic-GUI.csproj", "{71F21D28-5EEB-4F91-86B2-695BD5CB210C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Business", "TAB-clinic-Business\TAB-clinic-Business.csproj", "{F03A258A-C6A4-4887-B515-AEC1C41A7887}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Data", "TAB-clinic-Data\TAB-clinic-Data.csproj", "{F87DE728-24A1-4593-A9A3-9A18644D69F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Model", "TAB-clinic-Model\TAB-clinic-Model.csproj", "{1CC7D1FC-90DD-481B-BC14-5DCCA77423B8}"
@@ -23,10 +21,6 @@ Global
 		{71F21D28-5EEB-4F91-86B2-695BD5CB210C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F21D28-5EEB-4F91-86B2-695BD5CB210C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71F21D28-5EEB-4F91-86B2-695BD5CB210C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F03A258A-C6A4-4887-B515-AEC1C41A7887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F03A258A-C6A4-4887-B515-AEC1C41A7887}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F03A258A-C6A4-4887-B515-AEC1C41A7887}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F03A258A-C6A4-4887-B515-AEC1C41A7887}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F87DE728-24A1-4593-A9A3-9A18644D69F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F87DE728-24A1-4593-A9A3-9A18644D69F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87DE728-24A1-4593-A9A3-9A18644D69F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
