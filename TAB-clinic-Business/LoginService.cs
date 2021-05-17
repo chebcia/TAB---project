@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using TAB_clinic_Data.Database;
@@ -20,14 +22,9 @@ namespace TAB_clinic_Business
                 if (admin is null)
                 {
                     Trace.WriteLine("Admin was not found in the DB - adding now");
-                    admin = new User
-                    {
-                        Login = "admin",
-                        Password = "admin",
-                        Role = null
-                    };
+                    var newAdmin = new User { Login = "admin", Password = "admin", Role = null };
 
-                    context.Users.Add(admin);
+                    context.Users.Add(newAdmin);
                     context.SaveChanges();
                 }
                 else
@@ -66,8 +63,8 @@ namespace TAB_clinic_Business
                     throw new ArgumentException("You need to provide a login and a password!");
                 }
 
-                var userEntry = new User { Login = login, Password = HashPassword(password), Role = roleCode };
-                context.Add(userEntry);
+                var newUser = new User { Login = login, Password = HashPassword(password), Role = roleCode };
+                var userEntry = context.Add(newUser);
                 context.SaveChanges();
             }
         }

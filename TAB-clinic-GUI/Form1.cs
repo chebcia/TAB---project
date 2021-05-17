@@ -32,7 +32,7 @@ namespace TAB_clinic_GUI
             }
             else
             {
-                MessageBox.Show("Invalid credentials!", "Failed");
+                MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
             }
         }
     }
