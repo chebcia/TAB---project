@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace TAB_clinic_Data.Database
 {
-    public partial class Registar
+    public partial class Registrar
     {
-        public Registar()
+        public Registrar()
         {
             Visits = new HashSet<Visit>();
         }

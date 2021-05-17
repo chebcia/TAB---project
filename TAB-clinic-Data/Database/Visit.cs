@@ -16,7 +16,7 @@ namespace TAB_clinic_Data.Database
         public int IdVisit { get; set; }
         public int IdDoctor { get; set; }
         public int IdPatient { get; set; }
-        public int IdRegistar { get; set; }
+        public int IdRegistrar { get; set; }
         public string Status { get; set; }
         public string Diagnosis { get; set; }
         public DateTime DtRegistered { get; set; }
@@ -25,7 +25,7 @@ namespace TAB_clinic_Data.Database
 
         public virtual Doctor IdDoctorNavigation { get; set; }
         public virtual Patient IdPatientNavigation { get; set; }
-        public virtual Registar IdRegistarNavigation { get; set; }
+        public virtual Registrar IdRegistrarNavigation { get; set; }
         public virtual ICollection<LabExam> LabExams { get; set; }
         public virtual ICollection<PhysicalExam> PhysicalExams { get; set; }
     }
