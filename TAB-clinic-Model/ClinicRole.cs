@@ -5,7 +5,7 @@ namespace TAB_clinic_Model
     public enum ClinicRole
     {
         Admin,
-        Registar,
+        Registrar,
         Doctor,
         LabWorker,
         LabManager
@@ -18,7 +18,7 @@ namespace TAB_clinic_Model
             return role switch
             {
                 ClinicRole.Admin => null,
-                ClinicRole.Registar => "reg",
+                ClinicRole.Registrar => "reg",
                 ClinicRole.Doctor => "doc",
                 ClinicRole.LabWorker => "lab_w",
                 ClinicRole.LabManager => "lab_m",
@@ -31,7 +31,7 @@ namespace TAB_clinic_Model
             return role switch
             {
                 null => ClinicRole.Admin,
-                "reg" => ClinicRole.Registar,
+                "reg" => ClinicRole.Registrar,
                 "doc" => ClinicRole.Doctor,
                 "lab_w" => ClinicRole.LabWorker,
                 "lab_m" => ClinicRole.LabManager,
