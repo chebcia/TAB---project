@@ -28,7 +28,16 @@ namespace TAB_clinic_GUI
             }
 
             // open user's main form
-            new AdminMainForm().ShowDialog();
+            // TODO: better
+            switch (user.Role)
+            {
+                case TAB_clinic_Model.ClinicRole.Admin:
+                    new AdminMainForm().ShowDialog();
+                    break;
+                default:
+                    MessageBox.Show("Work in progress");
+                    break;
+            }
         }
     }
 }
