@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using TAB_clinic_Data.Database;
 using static TAB_clinic_Model.ClinicRoleMethods;
+using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Model
 {
@@ -22,7 +23,7 @@ namespace TAB_clinic_Model
         public string Password
         {
             get => dbUser.Password;
-            set => dbUser.Password = value;
+            set => dbUser.Password = HashPassword(value);
         }
 
         public ClinicRole Role
@@ -37,16 +38,9 @@ namespace TAB_clinic_Model
             set => dbUser.Active = value ? "A" : "N";
         }
 
-        // TODO: proper validation lol
-        public bool ValidatePassword(string password)
+        public bool CheckPassword(string plaintextPassword)
         {
-            if (password == Password)
-            {
-                return true;
-            }
-
-            Trace.WriteLine("Wrong password");  // should frontend know?
-            return false;
+            return Verify(plaintextPassword, this.Password);
         }
     }
 }

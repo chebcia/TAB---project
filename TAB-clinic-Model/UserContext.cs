@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using TAB_clinic_Data.Database;
+using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Model
 {
@@ -22,12 +24,17 @@ namespace TAB_clinic_Model
             }
         }
 
-        public static void CreateUser(string login, string password, ClinicRole role)
+        public static void CreateUser(string login, string plaintextPassword, ClinicRole role)
         {
             if (FindUser(login) != null)
             {
                 Trace.WriteLine($"User with login '{login}' already exists");
                 throw new UserAlreadyExistsException(login);
+            }
+            
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(plaintextPassword))
+            {
+                throw new ArgumentException("You need to provide a login and a password!");
             }
 
             using (var context = new ClinicDBContext())
@@ -35,7 +42,7 @@ namespace TAB_clinic_Model
                 var newUser = new User
                 {
                     Login = login,
-                    Password = password,
+                    Password = HashPassword(plaintextPassword),
                     Role = role.RoleToString()
                 };
 

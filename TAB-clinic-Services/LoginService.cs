@@ -13,21 +13,22 @@ namespace TAB_clinic_Services
                 UserContext.CreateUser("admin", "admin", ClinicRole.Admin);
             }
             catch (UserAlreadyExistsException)
-            {
-
-            }
+            {}
         }
 
         public static UserModel? SignIn(string login, string password)
         {
             var user = UserContext.FindUser(login);
-            if (user is null || !user.ValidatePassword(password))
+
+            if (user is not null && user.CheckPassword(password))
+            {
+                return user;
+            }
+            else
             {
                 Trace.WriteLine("Signing in failed");
                 return null;
             }
-
-            return user;
         }
     }
 }
