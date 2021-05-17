@@ -5,6 +5,9 @@ using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Model
 {
+    /// <summary>
+    /// Represents an EXISTING user. To create a user, use UserContext.CreateUser().
+    /// </summary>
     public class UserModel
     {
         public UserModel(User dbUser)

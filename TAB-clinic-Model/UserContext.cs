@@ -7,6 +7,9 @@ using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Model
 {
+    /// <summary>
+    /// Deals with finding, creating, and fetching users.
+    /// </summary>
     public static class UserContext
     {
         public static UserModel? FindUser(string login)

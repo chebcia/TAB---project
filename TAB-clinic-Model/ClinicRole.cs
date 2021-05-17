@@ -2,6 +2,9 @@
 
 namespace TAB_clinic_Model
 {
+    /// <summary>
+    /// Describes the role of a user.
+    /// </summary>
     public enum ClinicRole
     {
         Admin,
