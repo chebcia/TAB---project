@@ -25,6 +25,7 @@ namespace TAB_clinic_GUI
             if (user is null)
             {
                 MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
+                return;
             }
 
             // open user's main form
