@@ -72,7 +72,6 @@ namespace TAB_clinic_GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 317);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -98,7 +97,6 @@ namespace TAB_clinic_GUI
             this.label1.Size = new System.Drawing.Size(97, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filter";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 

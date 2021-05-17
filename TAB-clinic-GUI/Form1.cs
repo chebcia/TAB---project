@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
-using TAB_clinic_Business;
+using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
 {
@@ -10,14 +9,11 @@ namespace TAB_clinic_GUI
         public Form1()
         {
             InitializeComponent();
-
-            Trace.WriteLine("Hello Form!");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // automatically generated, probably important
-            Trace.WriteLine("Form1 loaded");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,15 +21,14 @@ namespace TAB_clinic_GUI
             var login = textBox1.Text;
             var password = textBox2.Text;
 
-            var success = LoginService.SignIn(login, password);
-            if (success)
+            var user = LoginService.SignIn(login, password);
+            if (user is null)
             {
-                MessageBox.Show("Hello there!", "Success");
+                MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
             }
-            else
-            {
-                MessageBox.Show($"Did you mean to use 'admin' and '{LoginService.AdminsPassword()}'?", "Failed");
-            }
+
+            // open user's main form
+            new AdminMainForm().ShowDialog();
         }
     }
 }

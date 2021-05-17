@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TAB_clinic_Business;
+﻿using System.Windows.Forms;
+using TAB_clinic_Model;
+using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
 {
@@ -17,17 +10,24 @@ namespace TAB_clinic_GUI
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = AdminService.getUsers();
+            AddSampleUsers();
+
+            dataGridView1.DataSource = AdminService.UserList();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        void AddSampleUsers()
         {
+            try
+            {
+                UserContext.CreateUser("natalia", "cheba", TAB_clinic_Model.ClinicRole.Registrar);
+                UserContext.CreateUser("dr", "augustyn", TAB_clinic_Model.ClinicRole.Doctor);
+                UserContext.CreateUser("jerzy", "bodzenta", TAB_clinic_Model.ClinicRole.LabManager);
+                UserContext.CreateUser("dariusz", "mrozek", TAB_clinic_Model.ClinicRole.LabWorker);
+            }
+            catch (UserAlreadyExistsException)
+            {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
