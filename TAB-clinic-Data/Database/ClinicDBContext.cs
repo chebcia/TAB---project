@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -24,7 +22,7 @@ namespace TAB_clinic_Data.Database
         public virtual DbSet<LabWorker> LabWorkers { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<PhysicalExam> PhysicalExams { get; set; }
-        public virtual DbSet<Registar> Registars { get; set; }
+        public virtual DbSet<Registrar> Registrars { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Visit> Visits { get; set; }
 
@@ -256,20 +254,20 @@ namespace TAB_clinic_Data.Database
                     .HasConstraintName("FK_26");
             });
 
-            modelBuilder.Entity<Registar>(entity =>
+            modelBuilder.Entity<Registrar>(entity =>
             {
                 entity.HasKey(e => e.IdUser)
                     .HasName("PK_registar");
 
-                entity.ToTable("Registar");
+                entity.ToTable("Registrar");
 
                 entity.Property(e => e.IdUser)
                     .ValueGeneratedNever()
                     .HasColumnName("id_user");
 
                 entity.HasOne(d => d.IdUserNavigation)
-                    .WithOne(p => p.Registar)
-                    .HasForeignKey<Registar>(d => d.IdUser)
+                    .WithOne(p => p.Registrar)
+                    .HasForeignKey<Registrar>(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_10");
             });
@@ -280,6 +278,9 @@ namespace TAB_clinic_Data.Database
                     .HasName("PK_user");
 
                 entity.ToTable("User");
+
+                entity.HasIndex(e => e.Login, "IX_User_Login")
+                    .IsUnique();
 
                 entity.Property(e => e.IdUser).HasColumnName("id_user");
 
@@ -338,7 +339,7 @@ namespace TAB_clinic_Data.Database
 
                 entity.Property(e => e.IdPatient).HasColumnName("id_patient");
 
-                entity.Property(e => e.IdRegistar).HasColumnName("id_registar");
+                entity.Property(e => e.IdRegistrar).HasColumnName("id_registrar");
 
                 entity.Property(e => e.Status)
                     .IsRequired()
@@ -359,9 +360,9 @@ namespace TAB_clinic_Data.Database
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_70");
 
-                entity.HasOne(d => d.IdRegistarNavigation)
+                entity.HasOne(d => d.IdRegistrarNavigation)
                     .WithMany(p => p.Visits)
-                    .HasForeignKey(d => d.IdRegistar)
+                    .HasForeignKey(d => d.IdRegistrar)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_48");
             });

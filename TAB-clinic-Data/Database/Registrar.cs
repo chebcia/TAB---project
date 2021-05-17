@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 #nullable disable
 
 namespace TAB_clinic_Data.Database
 {
-    public partial class Registar
+    public partial class Registrar
     {
-        public Registar()
+        public Registrar()
         {
             Visits = new HashSet<Visit>();
         }
