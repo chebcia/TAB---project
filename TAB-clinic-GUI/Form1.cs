@@ -25,14 +25,14 @@ namespace TAB_clinic_GUI
             var login = textBox1.Text;
             var password = textBox2.Text;
 
-            var success = LoginService.SignIn(login, password);
-            if (success)
+            var user = LoginService.SignIn(login, password);
+            if (user is not null)
             {
                 MessageBox.Show("Hello there!", "Success");
             }
             else
             {
-                MessageBox.Show($"Did you mean to use 'admin' and '{LoginService.AdminsPassword()}'?", "Failed");
+                MessageBox.Show("Invalid credentials!", "Failed");
             }
         }
     }

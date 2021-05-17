@@ -45,7 +45,14 @@ namespace TAB_clinic_Business
                     .Where(u => u.Login == login)
                     .FirstOrDefault();
 
-                return (matchingUser != null && Verify(password, matchingUser.Password)) ? matchingUser : null;
+                if (matchingUser is not null && Verify(password, matchingUser.Password))
+                {
+                    return matchingUser;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
