@@ -10,7 +10,7 @@ namespace TAB_clinic_Model
     /// </summary>
     public class UserModel
     {
-        public UserModel(User dbUser)
+        internal UserModel(User dbUser)
         {
             this.dbUser = dbUser;
         }
