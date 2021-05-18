@@ -10,7 +10,7 @@ namespace TAB_clinic_GUI
         {
             InitializeComponent();
 
-            SampleDataGenerator.AddSampleUsers();
+            SampleDataGenerator.CreateSampleUsers();
 
             dataGridView1.DataSource = AdminService.UserList();
         }

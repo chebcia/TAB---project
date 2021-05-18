@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TAB_clinic_Model
+﻿namespace TAB_clinic_Model
 {
     public static class SampleDataGenerator
     {
-        public static void AddSampleUsers()
+        public static void CreateSampleUsers()
         {
             try
             {
