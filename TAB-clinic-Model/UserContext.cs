@@ -51,6 +51,27 @@ namespace TAB_clinic_Model
 
                 context.Users.Add(newUser);
                 context.SaveChanges();
+
+                switch (role)
+                {
+                    case ClinicRole.Registrar:
+                        var registrar = new Registrar() { IdUser = newUser.IdUser };
+                        context.Registrars.Add(registrar);
+                        break;
+                    case ClinicRole.Doctor:
+                        var doctor = new Doctor() { IdUser = newUser.IdUser };
+                        context.Doctors.Add(doctor);
+                        break;
+                    case ClinicRole.LabWorker:
+                        var LabWorker = new LabWorker() { IdUser = newUser.IdUser };
+                        context.LabWorkers.Add(LabWorker);
+                        break;
+                    case ClinicRole.LabManager:
+                        var LabManager = new LabManager() { IdUser = newUser.IdUser };
+                        context.LabManagers.Add(LabManager);
+                        break;
+                }
+                context.SaveChanges();
             }
         }
 
@@ -66,7 +87,21 @@ namespace TAB_clinic_Model
                 }
                 return userList;
             }
+        }
 
+        public static void DeleteAllNonAdminUsers()
+        {
+            using (var context = new ClinicDBContext())
+            {
+                context.RemoveRange(context.Registrars);
+                context.RemoveRange(context.Doctors);
+                context.RemoveRange(context.LabWorkers);
+                context.RemoveRange(context.LabManagers);
+
+                // all users but the admin
+                context.RemoveRange(context.Users.Where(u => string.IsNullOrEmpty(u.Role) == false)); 
+                context.SaveChanges();
+            }
         }
     }
 }
