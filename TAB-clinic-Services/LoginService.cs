@@ -3,22 +3,25 @@ using TAB_clinic_Model;
 
 namespace TAB_clinic_Services
 {
-    public static class LoginService
+    public class LoginService
     {
-        static LoginService()
+        public LoginService()
         {
             try
             {
                 // Create admin user if one does not exist
-                UserContext.CreateUser("admin", "admin", ClinicRole.Admin);
+                UserContext.CreateUser(db, "admin", "admin", ClinicRole.Admin);
+                db.SaveChanges();
             }
             catch (UserAlreadyExistsException)
-            {}
+            { }
         }
 
-        public static UserModel? SignIn(string login, string password)
+        private WrappedContext db = new();
+
+        public UserModel? SignIn(string login, string password)
         {
-            var user = UserContext.FindUser(login);
+            var user = UserContext.FindUser(db, login);
 
             if (user is not null && user.CheckPassword(password))
             {

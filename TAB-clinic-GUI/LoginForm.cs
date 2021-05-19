@@ -6,6 +6,8 @@ namespace TAB_clinic_GUI
 { 
     public partial class LoginForm : Form
     {
+        private readonly LoginService loginService = new();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace TAB_clinic_GUI
             var login = textBox1.Text;
             var password = textBox2.Text;
 
-            var user = LoginService.SignIn(login, password);
+            var user = loginService.SignIn(login, password);
             if (user is null)
             {
                 MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
