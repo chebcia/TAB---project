@@ -4,17 +4,28 @@ using static BCrypt.Net.BCrypt;
 
 namespace TAB_clinic_Model
 {
+    // Wraps the EF-generated "User" class, so that hand-written code (methods, setters with validation) is separate from the EF classes.
+    // This allows us to recreate them easily, without having to move that custom code manually.
+
     /// <summary>
-    /// Represents an EXISTING user. To create a user, use <c>UserContext.CreateUser()</c>.
+    /// 
     /// </summary>
     public class UserModel
     {
+        /// <summary>
+        /// Creates a new user and adds it to the context. Call SaveChanges() to generate the ID.
+        /// </summary>
+        /// <param name="db"></param>
         internal UserModel(WrappedContext db) //(User dbUser)
         {
             dbUser = new();
             db.Context.Add(dbUser);
         }
 
+        /// <summary>
+        /// Wraps an existing bare "User" object.
+        /// </summary>
+        /// <param name="dbUser"></param>
         internal UserModel(User dbUser)
         {
             this.dbUser = dbUser;

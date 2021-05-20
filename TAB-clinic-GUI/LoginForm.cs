@@ -6,6 +6,7 @@ namespace TAB_clinic_GUI
 { 
     public partial class LoginForm : Form
     {
+        // Each "Main" Form should own a service object.
         private readonly LoginService loginService = new();
 
         public LoginForm()
@@ -31,7 +32,7 @@ namespace TAB_clinic_GUI
             }
 
             // open user's main form
-            // TODO: better
+            // TODO: add other forms
             switch (user.Role)
             {
                 case TAB_clinic_Model.ClinicRole.Admin:

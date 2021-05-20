@@ -7,16 +7,16 @@ namespace TAB_clinic_Services
     {
         private readonly WrappedContext db = new();
 
-        public void DeleteOtherUsers() => UserContext.DeleteAllNonAdminUsers(db);
+        public void DeleteOtherUsers() => UserManager.DeleteAllNonAdminUsers(db);
 
         public void SpawnUsers()
         {
             try
             {
-                UserContext.CreateUser(db, "natalia", "cheba", ClinicRole.Registrar, "N", "C");
-                UserContext.CreateUser(db, "dr", "augustyn", ClinicRole.Doctor, "D", "A");
-                UserContext.CreateUser(db, "jerzy", "bodzenta", ClinicRole.LabManager, "J", "B");
-                UserContext.CreateUser(db, "dariusz", "mrozek", ClinicRole.LabWorker, "D", "M");
+                UserManager.CreateUser(db, "natalia", "cheba", ClinicRole.Registrar, "N", "C");
+                UserManager.CreateUser(db, "dr", "augustyn", ClinicRole.Doctor, "D", "A");
+                UserManager.CreateUser(db, "jerzy", "bodzenta", ClinicRole.LabManager, "J", "B");
+                UserManager.CreateUser(db, "dariusz", "mrozek", ClinicRole.LabWorker, "D", "M");
             }
             catch (UserAlreadyExistsException)
             { }
@@ -24,7 +24,7 @@ namespace TAB_clinic_Services
 
         public List<UserModel> UserList()
         {
-            return UserContext.GetUsers(db);
+            return UserManager.GetUsers(db);
         }
     }
 }
