@@ -279,9 +279,6 @@ namespace TAB_clinic_Data.Database
 
                 entity.ToTable("User");
 
-                entity.HasIndex(e => e.Login, "IX_User_Login")
-                    .IsUnique();
-
                 entity.Property(e => e.IdUser).HasColumnName("id_user");
 
                 entity.Property(e => e.Active)
@@ -292,11 +289,21 @@ namespace TAB_clinic_Data.Database
                     .HasDefaultValueSql("('A')")
                     .IsFixedLength(true);
 
+                entity.Property(e => e.Lastname)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("lastname");
+
                 entity.Property(e => e.Login)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("login");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("name");
 
                 entity.Property(e => e.Password)
                     .IsRequired()
