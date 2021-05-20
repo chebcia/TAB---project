@@ -3,6 +3,7 @@ using TAB_clinic_Model;
 
 namespace TAB_clinic_Services
 {
+    // Each service uses TAB-clinic-Model to provide functionality for the frontend.
     public class LoginService
     {
         public LoginService()
@@ -10,18 +11,19 @@ namespace TAB_clinic_Services
             try
             {
                 // Create admin user if one does not exist
-                UserContext.CreateUser(db, "admin", "admin", ClinicRole.Admin, "Administer", "Adminowicz");
+                UserManager.CreateUser(db, "admin", "admin", ClinicRole.Admin, "Administer", "Adminowicz");
                 db.SaveChanges();
             }
             catch (UserAlreadyExistsException)
             { }
         }
 
-        private WrappedContext db = new();
+        // Every service should have its own database context and pass it to lower-level objects or methods
+        private readonly WrappedContext db = new();
 
         public UserModel? SignIn(string login, string password)
         {
-            var user = UserContext.FindUser(db, login);
+            var user = UserManager.FindUser(db, login);
 
             if (user is not null && user.CheckPassword(password))
             {

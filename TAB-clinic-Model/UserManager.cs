@@ -9,12 +9,11 @@ namespace TAB_clinic_Model
     /// <summary>
     /// Deals with finding, creating, and fetching users.
     /// </summary>
-    public static class UserContext
+    public static class UserManager
     {
         public static UserModel? FindUser(WrappedContext db, string login)
         {
-            var context = db.Context;
-            var user = context.Users
+            var user = db.Context.Users
                     .Where(u => u.Login == login)
                     .FirstOrDefault();
 
@@ -39,7 +38,6 @@ namespace TAB_clinic_Model
             }
 
             var context = db.Context;
-
             var newUser = new UserModel(db)
             {
                 Login = login,
@@ -49,8 +47,10 @@ namespace TAB_clinic_Model
                 Lastname = lastname
             };
 
-            context.SaveChanges();
+            // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
+            context.SaveChanges(); 
 
+            // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
             switch (role)
             {
                 case ClinicRole.Registrar:
@@ -71,11 +71,12 @@ namespace TAB_clinic_Model
                     break;
             }
             context.SaveChanges();
-
+            // The objects above are not wrapped in "Model" classes (UserModel), so they have to be manually added to the right collection in the context.
         }
 
         public static List<UserModel> GetUsers(WrappedContext db)
         {
+            // Wrapping all User objects into UserModel objects.
             var users = db.Context.Users.ToList();
             var userList = new List<UserModel>();
             foreach (var u in users)
