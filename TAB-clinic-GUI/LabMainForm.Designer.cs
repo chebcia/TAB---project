@@ -132,7 +132,10 @@ namespace TAB_clinic_GUI
             this.PerformLayout();
 
         }
+        private void enabledParts(string formVersion)
+        {
 
+        }
         #endregion
 
         private System.Windows.Forms.Label label1;

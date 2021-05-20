@@ -3,6 +3,7 @@ namespace TAB_clinic_GUI
 {
     partial class exam
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,37 +30,38 @@ namespace TAB_clinic_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.docText = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.resultText = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.managerText = new System.Windows.Forms.RichTextBox();
+            this.idText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.statusText = new System.Windows.Forms.TextBox();
+            this.makeButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.rejectButton = new System.Windows.Forms.Button();
+            this.acceptButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+           
             // 
-            // richTextBox1
+            // docText
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 134);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(205, 155);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.docText.Location = new System.Drawing.Point(10, 71);
+            this.docText.Name = "docText";
+            this.docText.Size = new System.Drawing.Size(205, 155);
+            this.docText.TabIndex = 0;
+            this.docText.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 90);
+            this.label1.Location = new System.Drawing.Point(10, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 15);
             this.label1.TabIndex = 1;
@@ -68,187 +70,232 @@ namespace TAB_clinic_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(322, 90);
+            this.label2.Location = new System.Drawing.Point(231, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "result";
             // 
-            // richTextBox2
+            // resultText
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(288, 134);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(205, 155);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.resultText.Location = new System.Drawing.Point(231, 71);
+            this.resultText.Name = "resultText";
+            this.resultText.Size = new System.Drawing.Size(205, 155);
+            this.resultText.TabIndex = 2;
+            this.resultText.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(609, 103);
+            this.label3.Location = new System.Drawing.Point(443, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "manager notes";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // richTextBox3
+            // managerText
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(554, 134);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(205, 155);
-            this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "";
+            this.managerText.Location = new System.Drawing.Point(442, 71);
+            this.managerText.Name = "managerText";
+            this.managerText.Size = new System.Drawing.Size(205, 155);
+            this.managerText.TabIndex = 4;
+            this.managerText.Text = "";
             // 
-            // textBox1
+            // idText
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(322, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 6;
+            this.idText.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.idText.Enabled = false;
+            this.idText.Location = new System.Drawing.Point(76, 15);
+            this.idText.Name = "idText";
+            this.idText.Size = new System.Drawing.Size(100, 23);
+            this.idText.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(251, 37);
+            this.label4.Location = new System.Drawing.Point(12, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 7;
-            this.label4.Text = "ID exam";
+            this.label4.Text = "Exam\'s ID";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label5.Location = new System.Drawing.Point(251, 61);
+            this.label5.Location = new System.Drawing.Point(233, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 15);
+            this.label5.Size = new System.Drawing.Size(77, 15);
             this.label5.TabIndex = 9;
-            this.label5.Text = "exam name";
+            this.label5.Text = "Exam\'s name";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox2
+            // nameText
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(322, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 8;
+            this.nameText.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nameText.Enabled = false;
+            this.nameText.Location = new System.Drawing.Point(316, 15);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(100, 23);
+            this.nameText.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label6.Location = new System.Drawing.Point(444, 56);
+            this.label6.Location = new System.Drawing.Point(445, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.Size = new System.Drawing.Size(78, 15);
             this.label6.TabIndex = 12;
-            this.label6.Text = "exam status";
+            this.label6.Text = "Exam\'s status";
             // 
-            // textBox3
+            // statusText
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(529, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 11;
+            this.statusText.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.statusText.Enabled = false;
+            this.statusText.Location = new System.Drawing.Point(529, 15);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(100, 23);
+            this.statusText.TabIndex = 11;
             // 
-            // button1
+            // makeButton
             // 
-            this.button1.Location = new System.Drawing.Point(288, 295);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "make";
-            this.button1.UseVisualStyleBackColor = true;
+            this.makeButton.Location = new System.Drawing.Point(231, 232);
+            this.makeButton.Name = "makeButton";
+            this.makeButton.Size = new System.Drawing.Size(75, 23);
+            this.makeButton.TabIndex = 13;
+            this.makeButton.Text = "Make";
+            this.makeButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(417, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(360, 232);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 14;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // rejectButton
             // 
-            this.button3.Location = new System.Drawing.Point(684, 295);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "reject";
-            this.button3.UseVisualStyleBackColor = true;
+            this.rejectButton.Location = new System.Drawing.Point(572, 232);
+            this.rejectButton.Name = "rejectButton";
+            this.rejectButton.Size = new System.Drawing.Size(75, 23);
+            this.rejectButton.TabIndex = 16;
+            this.rejectButton.Text = "Reject";
+            this.rejectButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // acceptButton
             // 
-            this.button4.Location = new System.Drawing.Point(555, 295);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "accept";
-            this.button4.UseVisualStyleBackColor = true;
+            this.acceptButton.Location = new System.Drawing.Point(443, 232);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(75, 23);
+            this.acceptButton.TabIndex = 15;
+            this.acceptButton.Text = "Accept";
+            this.acceptButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // exitButton
             // 
-            this.button5.Location = new System.Drawing.Point(347, 392);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "exit";
-            this.button5.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(291, 273);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 17;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+
             // 
             // exam
             // 
+            
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(662, 308);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.rejectButton);
+            this.Controls.Add(this.acceptButton);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.makeButton);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.statusText);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nameText);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idText);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.managerText);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.resultText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.docText);
             this.Name = "exam";
             this.Text = "exam";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+        /*
+         * this method is used to disabled parts of from based on the variable
+         * view - only to read form
+         * doc - for doctor version of form
+         * labManager - for lab manager version of form 
+         * labWorker - for lab worker version of form
+        */
+        private void enabledParts(string formVersion)
+        {
+            if (formVersion == "view")
+            {
+                this.acceptButton.Enabled = false;
+                this.rejectButton.Enabled = false;
+                this.cancelButton.Enabled = false;
+                this.makeButton.Enabled = false;
+                this.docText.Enabled = false;
+                this.managerText.Enabled = false;
+                this.resultText.Enabled = false;
+            }
+            else if (formVersion == "doc")
+            {
+                this.acceptButton.Enabled = false;
+                this.rejectButton.Enabled = false;
+                this.cancelButton.Enabled = false;
+                this.makeButton.Enabled = false;
+                this.managerText.Enabled = false;
+                this.resultText.Enabled = false;
+            }
+            else if (formVersion == "labWorker")
+            {
+                this.acceptButton.Enabled = false;
+                this.rejectButton.Enabled = false;
+                this.docText.Enabled = false;
+                this.managerText.Enabled = false;
+            }
+            else if (formVersion == "labManager")
+            {
+                this.cancelButton.Enabled = false;
+                this.makeButton.Enabled = false;
+                this.docText.Enabled = false;
+                this.resultText.Enabled = false;
+            }
+        }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox docText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox resultText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox managerText;
+        private System.Windows.Forms.TextBox idText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nameText;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox statusText;
+        private System.Windows.Forms.Button makeButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button rejectButton;
+        private System.Windows.Forms.Button acceptButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }

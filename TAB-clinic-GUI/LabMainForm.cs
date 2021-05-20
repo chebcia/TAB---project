@@ -8,6 +8,7 @@ namespace TAB_clinic_GUI
         public LabMainForm()
         {
             InitializeComponent();
+            
         }
 
         private void buttonNote_Click(object sender, EventArgs e)
