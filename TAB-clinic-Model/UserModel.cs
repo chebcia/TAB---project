@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using TAB_clinic_Data.Database;
+﻿using TAB_clinic_Data.Database;
 using static TAB_clinic_Model.ClinicRoleMethods;
 using static BCrypt.Net.BCrypt;
 
@@ -10,12 +9,23 @@ namespace TAB_clinic_Model
     /// </summary>
     public class UserModel
     {
+        internal UserModel(WrappedContext db) //(User dbUser)
+        {
+            dbUser = new();
+            db.Context.Add(dbUser);
+        }
+
         internal UserModel(User dbUser)
         {
             this.dbUser = dbUser;
         }
 
         private readonly User dbUser;
+
+        public int IdUser
+        {
+            get => dbUser.IdUser;
+        }
 
         public string Login
         {
@@ -39,6 +49,18 @@ namespace TAB_clinic_Model
         {
             get => dbUser.Active[0] == ('A');
             set => dbUser.Active = value ? "A" : "N";
+        }
+
+        public string Name
+        {
+            get => dbUser.Name;
+            set => dbUser.Name = value;
+        }
+
+        public string Lastname
+        {
+            get => dbUser.Lastname;
+            set => dbUser.Lastname = value;
         }
 
         public bool CheckPassword(string plaintextPassword)
