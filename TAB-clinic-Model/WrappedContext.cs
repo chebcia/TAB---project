@@ -3,12 +3,16 @@ using TAB_clinic_Data.Database;
 
 namespace TAB_clinic_Model
 {
+    /// <summary>
+    /// Wraps a ClinicDBContext so that Services or Forms don't need references to the Data library.
+    /// </summary>
     public class WrappedContext : IDisposable
     {
         internal ClinicDBContext Context { get; } = new();
 
         public void SaveChanges() => Context.SaveChanges();
 
+        #region boring stuff
         private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
@@ -40,5 +44,7 @@ namespace TAB_clinic_Model
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion
     }
 }
