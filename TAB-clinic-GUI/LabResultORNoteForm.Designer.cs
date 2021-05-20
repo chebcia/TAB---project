@@ -50,7 +50,7 @@ namespace TAB_clinic_GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 33);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Return";
+            this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -83,7 +83,7 @@ namespace TAB_clinic_GUI
             this.label2.TabIndex = 4;
             this.label2.Text = "ID of exam";
             // 
-            // LabManagerNote
+            // LabResultORNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +93,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
-            this.Name = "LabManagerNote";
+            this.Name = "LabResultORNoteForm";
             this.Text = "LabManagerNote";
             this.ResumeLayout(false);
             this.PerformLayout();

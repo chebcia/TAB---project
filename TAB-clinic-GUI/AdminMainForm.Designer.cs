@@ -135,7 +135,7 @@ namespace TAB_clinic_GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "read";
+            this.button1.Text = "View";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2

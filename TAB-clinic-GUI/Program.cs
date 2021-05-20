@@ -25,7 +25,7 @@ namespace TAB_clinic_GUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LabMainForm());
 
             Trace.Unindent();
             Trace.WriteLine("Exiting Main");
