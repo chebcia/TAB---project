@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Data", "TAB-clin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Model", "TAB-clinic-Model\TAB-clinic-Model.csproj", "{1CC7D1FC-90DD-481B-BC14-5DCCA77423B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAB-clinic-Services", "TAB-clinic-Services\TAB-clinic-Services.csproj", "{46988511-B6AA-46AE-98F9-E4567EA6E95A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAB-clinic-Services", "TAB-clinic-Services\TAB-clinic-Services.csproj", "{46988511-B6AA-46AE-98F9-E4567EA6E95A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5180B70A-EF85-4343-986E-241D61A6871B}"
+	ProjectSection(SolutionItems) = preProject
+		script.sql = script.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

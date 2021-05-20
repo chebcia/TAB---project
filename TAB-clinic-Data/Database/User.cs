@@ -9,6 +9,8 @@ namespace TAB_clinic_Data.Database
         public string Password { get; set; }
         public string Role { get; set; }
         public string Active { get; set; }
+        public string Name { get; set; }
+        public string Lastname { get; set; }
 
         public virtual Doctor Doctor { get; set; }
         public virtual LabManager LabManager { get; set; }
