@@ -35,9 +35,9 @@ namespace TAB_clinic_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,6 +54,7 @@ namespace TAB_clinic_GUI
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 38);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(444, 276);
             this.dataGridView1.TabIndex = 0;
@@ -129,14 +130,14 @@ namespace TAB_clinic_GUI
             this.tableLayoutPanel3.Size = new System.Drawing.Size(74, 168);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // button1
+            // button3
             // 
-            this.button1.Location = new System.Drawing.Point(3, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(68, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "edit";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -147,14 +148,14 @@ namespace TAB_clinic_GUI
             this.button2.Text = "add";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button1
             // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "edit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(3, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "View";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 

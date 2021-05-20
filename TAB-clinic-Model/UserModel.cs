@@ -51,6 +51,18 @@ namespace TAB_clinic_Model
             set => dbUser.Active = value ? "A" : "N";
         }
 
+        public string Name
+        {
+            get => dbUser.Name;
+            set => dbUser.Name = value;
+        }
+
+        public string Lastname
+        {
+            get => dbUser.Lastname;
+            set => dbUser.Lastname = value;
+        }
+
         public bool CheckPassword(string plaintextPassword)
         {
             return Verify(plaintextPassword, this.Password);
