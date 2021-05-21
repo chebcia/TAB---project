@@ -31,7 +31,6 @@ namespace TAB_clinic_GUI
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -60,18 +59,9 @@ namespace TAB_clinic_GUI
             this.label1.TabIndex = 1;
             this.label1.Text = "Interview";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(245, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Submit interview";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 249);
+            this.textBox2.Location = new System.Drawing.Point(13, 183);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(308, 58);
@@ -80,7 +70,7 @@ namespace TAB_clinic_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 231);
+            this.label2.Location = new System.Drawing.Point(135, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 4;
@@ -88,7 +78,7 @@ namespace TAB_clinic_GUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(174, 162);
+            this.button2.Location = new System.Drawing.Point(178, 110);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 23);
             this.button2.TabIndex = 5;
@@ -97,7 +87,7 @@ namespace TAB_clinic_GUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 162);
+            this.button3.Location = new System.Drawing.Point(12, 110);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 23);
             this.button3.TabIndex = 6;
@@ -107,16 +97,16 @@ namespace TAB_clinic_GUI
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(165, 342);
+            this.button4.Location = new System.Drawing.Point(108, 258);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(64, 23);
             this.button4.TabIndex = 7;
             this.button4.Text = "cancel visit";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(68, 342);
+            this.button5.Location = new System.Drawing.Point(11, 258);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(91, 23);
             this.button5.TabIndex = 8;
@@ -125,25 +115,25 @@ namespace TAB_clinic_GUI
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(246, 342);
+            this.button6.Location = new System.Drawing.Point(259, 258);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(62, 23);
             this.button6.TabIndex = 9;
             this.button6.Text = "Exit";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(246, 313);
+            this.button7.Location = new System.Drawing.Point(178, 258);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 10;
-            this.button7.Text = "Submit";
+            this.button7.Text = "Save";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(93, 191);
+            this.button8.Location = new System.Drawing.Point(108, 139);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(132, 23);
             this.button8.TabIndex = 11;
@@ -154,7 +144,7 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 396);
+            this.ClientSize = new System.Drawing.Size(336, 296);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -164,7 +154,6 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "VisitForm";
@@ -178,7 +167,6 @@ namespace TAB_clinic_GUI
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;

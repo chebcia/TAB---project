@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class ExamsViewForm
+    partial class PhysicalExamViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@ namespace TAB_clinic_GUI
             this.label1.Text = "Result";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // ExamsViewForm
+            // PhysicalExamViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +80,9 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "ExamsViewForm";
-            this.Text = "ExamsViewForm";
+            this.Name = "PhysicalExamViewForm";
+            this.Text = "PhysicalExamViewForm";
+            this.Load += new System.EventHandler(this.PhysicalExamViewForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

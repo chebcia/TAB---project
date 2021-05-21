@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
+using TAB_clinic_Services;
+using TAB_clinic_Model;
+
 
 namespace TAB_clinic_GUI
 {
     public partial class DoctorForm : Form
     {
-        public DoctorForm()
+
+        //private readonly DoctorService Service = new();
+        private UserModel doctor;
+
+        public DoctorForm(UserModel _doctor)
         {
+            doctor = _doctor;
             InitializeComponent();
         }
 

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace TAB_clinic_GUI
 {
-    public partial class ExamsViewForm : Form
+    public partial class PhysicalExamViewForm : Form
     {
-        public ExamsViewForm()
+        public PhysicalExamViewForm()
         {
             InitializeComponent();
         }
@@ -16,6 +16,11 @@ namespace TAB_clinic_GUI
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhysicalExamViewForm_Load(object sender, EventArgs e)
         {
 
         }
