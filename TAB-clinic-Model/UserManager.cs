@@ -24,6 +24,21 @@ namespace TAB_clinic_Model
 
         }
 
+        /// <summary>
+        /// Gets the doctor together with his visit from a UserModel
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="model"></param>
+        /// <returns>The corresponding Doctor entity or null</returns>
+        public static Doctor UserToDoctor(WrappedContext db, UserModel model)
+        {
+            var doctor = db.Context.Doctors
+                .Where(u => u.IdUser == model.IdUser)
+                .FirstOrDefault();
+
+            return doctor;
+        }
+
         public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, string name, string lastname)
         {
             if (FindUser(db, login) != null)
