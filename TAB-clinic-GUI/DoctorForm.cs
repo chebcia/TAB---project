@@ -9,7 +9,6 @@ namespace TAB_clinic_GUI
 {
     public partial class DoctorForm : Form
     {
-        private readonly DoctorService Service = new();
         private UserModel doctor;
 
         public DoctorForm(UserModel _doctor)
@@ -27,13 +26,31 @@ namespace TAB_clinic_GUI
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DoctorService Service = new();
 
+                VisitModel selectedVisit;
+                int id;
+                var selectedRow = dataGridView1.SelectedRows[0];
+                
+
+                if (selectedRow != null)
+                {
+                    string cellValue = selectedRow.Cells["Id"].Value.ToString();
+                    id = int.Parse(cellValue);
+                    selectedVisit = Service.GetVisit(id);
+
+
+                    new VisitForm(selectedVisit, Service, () => refresh()).Show();
+                }
+
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// Refreshes the dataGridView
@@ -42,21 +59,7 @@ namespace TAB_clinic_GUI
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            string surnameFilter = textBox1.Text;
-            DateTime? dateTimeFilter = dateTimePicker1.Checked ? dateTimePicker1.Value : null;
-            var visits = Service.GetDoctorsVisits(doctor, surnameFilter, dateTimeFilter);
-
-            dataGridView1.DataSource = (from v in visits
-                                       where v.Status.Equals(VisitStatus.registered)
-                                       select new
-                                       {
-                                           Id = v.IdVisit,
-                                           Name = v.PatientNavigation.Name,
-                                           Surname = v.PatientNavigation.Lastname,
-                                           Registered = v.DateTimeRegistered,
-                                           description = v.Description
-                                       }).ToList();
-
+            refresh();
         }
 
         /// <summary>
@@ -67,6 +70,25 @@ namespace TAB_clinic_GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void refresh()
+        {
+            DoctorService Service = new();
+            string surnameFilter = textBox1.Text;
+            DateTime? dateTimeFilter = dateTimePicker1.Checked ? dateTimePicker1.Value : null;
+            var visits = Service.GetDoctorsVisits(doctor, surnameFilter, dateTimeFilter);
+
+            dataGridView1.DataSource = (from v in visits
+                                        where v.Status.Equals(VisitStatus.registered)
+                                        select new
+                                        {
+                                            Id = v.IdVisit,
+                                            Name = v.PatientNavigation.Name,
+                                            Surname = v.PatientNavigation.Lastname,
+                                            Registered = v.DateTimeRegistered,
+                                            description = v.Description
+                                        }).ToList();
         }
     }
 }

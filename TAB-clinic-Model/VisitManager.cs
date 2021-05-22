@@ -50,5 +50,10 @@ namespace TAB_clinic_Model
             return ret;
         }
 
+        public static VisitModel GetVisit(WrappedContext db, int id)
+        {
+            var visit = db.Context.Visits.Find(id);
+            return new VisitModel(visit);
+        }
     }
 }

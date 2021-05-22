@@ -95,7 +95,6 @@ namespace TAB_clinic_GUI
             this.label1.Size = new System.Drawing.Size(84, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Surname filter:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
