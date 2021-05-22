@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TAB_clinic_Data.Database;
 using static TAB_clinic_Model.VisitStatusMethods;
 
@@ -72,8 +73,12 @@ namespace TAB_clinic_Model
             set => dbVisit.Description = value;
         }
 
-        // the a timestamp gets set automatically when creating the object
-        public readonly DateTime DateTimeRegistered = DateTime.Now;
+
+        public DateTime DateTimeRegistered
+        {
+            get => dbVisit.DtRegistered;
+            set => dbVisit.DtRegistered = value;
+        }
 
         public DateTime? DateTimeFinalizedCancelled
         {
@@ -82,5 +87,34 @@ namespace TAB_clinic_Model
         }
 
 
+        public Doctor DoctorNavigation
+        {
+            get => dbVisit.IdDoctorNavigation;
+            set => dbVisit.IdDoctorNavigation = value;
+        }
+
+        public Registrar RegistrarNavigation
+        {
+            get => dbVisit.IdRegistrarNavigation;
+            set => dbVisit.IdRegistrarNavigation = value;
+        }
+
+        public Patient PatientNavigation
+        {
+            get => dbVisit.IdPatientNavigation;
+            set => dbVisit.IdPatientNavigation = value;
+        }
+
+        public ICollection<LabExam> LabExams
+        {
+            get => dbVisit.LabExams;
+            set => dbVisit.LabExams = value;
+        }
+
+        public ICollection<PhysicalExam> PhysicalExams
+        {
+            get => dbVisit.PhysicalExams;
+            set => dbVisit.PhysicalExams = value;
+        }
     }
 }
