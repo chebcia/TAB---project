@@ -25,12 +25,14 @@ namespace TAB_clinic_GUI
                     {
                         label2.Text = "result";
                         button2.Text = "accept";
+                        comboBox1.Items.AddRange(Service.GetPhysicalExamTypes());
                         break;
                     }
                 case ExamKind.Lab:
                     {
                         label2.Text = "notes";
                         button2.Text = "order";
+                        comboBox1.Items.AddRange(Service.GetLabExamTypes());
                         break;
                     }
             }
@@ -52,12 +54,12 @@ namespace TAB_clinic_GUI
             {
                 case ExamKind.Physical:
                     {
-                        Service.AddPhysicalExam(Visit, label1.Text, comboBox1.Text);
+                        Service.AddPhysicalExam(Visit, label1.Text, comboBox1.SelectedItem as ExamTypeModel);
                         break;
                     }
                 case ExamKind.Lab:
                     {
-                        Service.AddLabExam(Visit, label1.Text, comboBox1.Text);
+                        Service.AddLabExam(Visit, label1.Text, comboBox1.SelectedItem as ExamTypeModel);
                         break;
                     }
             }

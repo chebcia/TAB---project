@@ -41,14 +41,24 @@ namespace TAB_clinic_Services
             db.SaveChanges();
         }
 
-        public void AddPhysicalExam(VisitModel visit, string result, string code)
+        public void AddPhysicalExam(VisitModel visit, string result, ExamTypeModel type)
         {
-            ExamManager.CreatePhysicalExam(db, visit, result, code);
+            ExamManager.CreatePhysicalExam(db, visit, result, type);
         }
 
-        public void AddLabExam(VisitModel visit, string doctorsNotes, string code)
+        public void AddLabExam(VisitModel visit, string doctorsNotes, ExamTypeModel type)
         {
-            ExamManager.CreateLabExam(db, visit, doctorsNotes, code);
+            ExamManager.CreateLabExam(db, visit, doctorsNotes, type);
+        }
+
+        public ExamTypeModel[] GetPhysicalExamTypes()
+        {
+            return ExamTypeModel.GetPhysicalExamTypes(db);
+        }
+
+        public ExamTypeModel[] GetLabExamTypes()
+        {
+            return ExamTypeModel.GetLabExamTypes(db);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace TAB_clinic_Model
 
     public static class LabExamStatusMethods
     {
-        public static string? StatusToStr(this LabExamStatus status)
+        public static string StatusToStr(this LabExamStatus status)
         {
             return status switch
             {
