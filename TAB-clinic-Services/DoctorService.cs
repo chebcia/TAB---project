@@ -41,5 +41,14 @@ namespace TAB_clinic_Services
             db.SaveChanges();
         }
 
+        public void AddPhysicalExam(VisitModel visit, string result, string code)
+        {
+            ExamManager.CreatePhysicalExam(db, visit, result, code);
+        }
+
+        public void AddLabExam(VisitModel visit, string doctorsNotes, string code)
+        {
+            ExamManager.CreateLabExam(db, visit, doctorsNotes, code);
+        }
     }
 }

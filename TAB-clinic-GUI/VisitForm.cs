@@ -20,9 +20,19 @@ namespace TAB_clinic_GUI
             needsRefreshing = _needsRefreshing;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ExamCreationForm(Visit, Service, ExamKind.Lab).ShowDialog();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
+            new ExamCreationForm(Visit, Service, ExamKind.Physical).ShowDialog();
+        }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //new ExamListForm(Visit, Service).ShowDialog();
         }
 
         /// <summary>

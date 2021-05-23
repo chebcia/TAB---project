@@ -36,7 +36,7 @@ namespace TAB_clinic_Model
         public string DoctorsNotes
         {
             get => dbLabExam.DoctorsNotes;
-            set => dbLabExam.DoctorsNotes = value
+            set => dbLabExam.DoctorsNotes = value;
         }
 
         public int IdVisit
