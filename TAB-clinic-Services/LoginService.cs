@@ -11,7 +11,7 @@ namespace TAB_clinic_Services
             try
             {
                 // Create admin user if one does not exist
-                UserManager.CreateUser(db, "admin", "admin", ClinicRole.Admin, "Administer", "Adminowicz");
+                UserManager.CreateUser(db, "admin", "admin", ClinicRole.Admin, true, "Administer", "Adminowicz");
                 db.SaveChanges();
             }
             catch (UserAlreadyExistsException)

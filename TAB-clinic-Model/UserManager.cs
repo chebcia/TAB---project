@@ -24,7 +24,7 @@ namespace TAB_clinic_Model
 
         }
 
-        public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, string name, string lastname)
+        public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, bool active, string name, string lastname)
         {
             if (FindUser(db, login) != null)
             {
@@ -43,6 +43,7 @@ namespace TAB_clinic_Model
                 Login = login,
                 Password = plaintextPassword,
                 Role = role,
+                Active = active,
                 Name = name,
                 Lastname = lastname
             };

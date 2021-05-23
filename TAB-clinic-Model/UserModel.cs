@@ -7,6 +7,8 @@ namespace TAB_clinic_Model
     // Wraps the EF-generated "User" class, so that hand-written code (methods, setters with validation) is separate from the EF classes.
     // This allows us to recreate them easily, without having to move that custom code manually.
 
+    // TODO: add validation to setters
+
     /// <summary>
     /// 
     /// </summary>
