@@ -53,10 +53,11 @@ namespace TAB_clinic_GUI
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 38);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(978, 276);
             this.dataGridView1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -73,7 +74,7 @@ namespace TAB_clinic_GUI
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 317);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 317);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -119,7 +120,7 @@ namespace TAB_clinic_GUI
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.button4, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.button5, 0, 4);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(453, 146);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(987, 146);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
@@ -136,8 +137,9 @@ namespace TAB_clinic_GUI
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 23);
             this.button3.TabIndex = 2;
-            this.button3.Text = "edit";
+            this.button3.Text = "New user";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -145,8 +147,9 @@ namespace TAB_clinic_GUI
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(68, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "add";
+            this.button2.Text = "Edit user";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -154,8 +157,9 @@ namespace TAB_clinic_GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "View";
+            this.button1.Text = "View user";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -182,7 +186,7 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 317);
+            this.ClientSize = new System.Drawing.Size(1064, 317);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminMainForm";
             this.Text = "Admin Panel";

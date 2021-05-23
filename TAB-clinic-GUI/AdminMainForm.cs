@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using TAB_clinic_Model;
 using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
@@ -7,14 +10,41 @@ namespace TAB_clinic_GUI
     {
         // Each "Main" Form should own a service.
         private readonly AdminService adminService = new();
+        private List<UserModel> users;
 
         public AdminMainForm()
         {
             InitializeComponent();
             
-            dataGridView1.DataSource = adminService.UserList();
+            users = adminService.UserList();
+            dataGridView1.DataSource = users;
         }
 
+        private UserModel SelectedUser()
+        {
+            var id = (int)dataGridView1.CurrentRow.Cells["IdUser"].Value;
+            return users.Where(u => u.IdUser == id).FirstOrDefault();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e) // "View"
+        {
+            new AdminUserEditForm(SelectedUser(), false).ShowDialog();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e) // "Edit"
+        {
+            new AdminUserEditForm(SelectedUser(), true).ShowDialog();
+            adminService.SaveChanges();
+            dataGridView1.Refresh();
+        }
+
+        private void button3_Click(object sender, System.EventArgs e) // "New user"
+        {
+            new AdminUserEditForm(adminService).ShowDialog();
+            dataGridView1.DataSource = users = adminService.UserList();
+        }
+
+        #region test buttons
         private void button4_Click(object sender, System.EventArgs e) // "CLEAR"
         {
             adminService.DeleteOtherUsers();
@@ -26,5 +56,6 @@ namespace TAB_clinic_GUI
             adminService.SpawnUsers();
             dataGridView1.DataSource = adminService.UserList();
         }
+        #endregion
     }
 }
