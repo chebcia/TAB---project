@@ -160,6 +160,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VisitForm";
             this.Text = "VisitForm";
             this.ResumeLayout(false);

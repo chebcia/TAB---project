@@ -18,6 +18,8 @@ namespace TAB_clinic_GUI
             Visit = _visit;
             Service = _service;
             needsRefreshing = _needsRefreshing;
+            textBox1.Text = _visit.Description;
+            textBox2.Text = _visit.Diagnosis;
         }
 
         private void button3_Click(object sender, EventArgs e)
