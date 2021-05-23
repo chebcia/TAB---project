@@ -43,6 +43,11 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             switch (Kind)
             {
                 case ExamKind.Physical:
@@ -52,7 +57,7 @@ namespace TAB_clinic_GUI
                     }
                 case ExamKind.Lab:
                     {
-                        Service.AddLabExam(Visit, label1.Text, comboBox1.SelectedItem.ToString());
+                        Service.AddLabExam(Visit, label1.Text, comboBox1.Text);
                         break;
                     }
             }
