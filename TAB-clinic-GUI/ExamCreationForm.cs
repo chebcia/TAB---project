@@ -50,18 +50,21 @@ namespace TAB_clinic_GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            switch (Kind)
+            if (comboBox1.SelectedItem is not null)
             {
-                case ExamKind.Physical:
-                    {
-                        Service.AddPhysicalExam(Visit, label1.Text, comboBox1.SelectedItem as ExamTypeModel);
-                        break;
-                    }
-                case ExamKind.Lab:
-                    {
-                        Service.AddLabExam(Visit, label1.Text, comboBox1.SelectedItem as ExamTypeModel);
-                        break;
-                    }
+                switch (Kind)
+                {
+                    case ExamKind.Physical:
+                        {
+                            Service.AddPhysicalExam(Visit, textBox1.Text, comboBox1.SelectedItem as ExamTypeModel);
+                            break;
+                        }
+                    case ExamKind.Lab:
+                        {
+                            Service.AddLabExam(Visit, textBox1.Text, comboBox1.SelectedItem as ExamTypeModel);
+                            break;
+                        }
+                }
             }
         }
     }
