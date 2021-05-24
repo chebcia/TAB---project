@@ -78,7 +78,7 @@ namespace TAB_clinic_GUI
                         case ExamKind.Physical:
                             {
                                 var physicalExam = Service.FindPhysicalExam(IdExam);
-                                // new PhysicalExamViewForm(physicalExam).ShowDialog();
+                                new PhysicalExamViewForm(physicalExam, Service).ShowDialog();
                                 break;
                             }
                         case ExamKind.Lab:
