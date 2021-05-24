@@ -66,9 +66,9 @@ namespace TAB_clinic_Services
             return ExamTypeModel.FindExamType(db, code);
         }
 
-        public List<PhysicalExamModel> GetPhysicalExams()
+        public List<PhysicalExamModel> GetPhysicalExamsForVisit(VisitModel visit)
         {
-            return ExamManager.GetPhysicalExams(db);
+            return ExamManager.GetPhysicalExams(db).Where(pe => pe.IdVisit == visit.IdVisit).ToList();
         }
 
         public PhysicalExamModel? FindPhysicalExam(int id)
@@ -76,9 +76,9 @@ namespace TAB_clinic_Services
             return PhysicalExamModel.FindPhysicalExam(db, id);
         }
 
-        public List<LabExamModel> GetLabExams()
+        public List<LabExamModel> GetLabExamsForVisit(VisitModel visit)
         {
-            return ExamManager.GetLabExams(db);
+            return ExamManager.GetLabExams(db).Where(le => le.IdVisit == visit.IdVisit).ToList();
         }
 
         public LabExamModel? FindLabExam(int id)
