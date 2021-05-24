@@ -65,6 +65,8 @@ namespace TAB_clinic_GUI
                             break;
                         }
                 }
+
+                Close();
             }
         }
     }
