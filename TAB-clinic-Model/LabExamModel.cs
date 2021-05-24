@@ -82,8 +82,8 @@ namespace TAB_clinic_Model
 
         public LabExamStatus Status
         {
-            get => StrToStatus(dbLabExam.Status);
-            set => dbLabExam.Status = value.StatusToDBStr();
+            get => StringToStatus(dbLabExam.Status);
+            set => dbLabExam.Status = value.StatusToDBString();
         }
 
         public static LabExamModel? FindLabExam(WrappedContext db, int id)

@@ -46,7 +46,7 @@ namespace TAB_clinic_GUI
                                             Result = le.Result,
                                             Kind = ExamKind.Lab,
                                             Type = GetExamTypeName(le.Code),
-                                            Status = le.Status.StatusToDisplayStr(),
+                                            Status = le.Status.StatusToDisplayString(),
                                             RequestDate = le.DtRequest.ToString()
                                         }).ToList();
         }

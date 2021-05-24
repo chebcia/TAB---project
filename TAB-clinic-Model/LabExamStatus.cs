@@ -17,7 +17,7 @@ namespace TAB_clinic_Model
 
     public static class LabExamStatusMethods
     {
-        public static string StatusToDBStr(this LabExamStatus status)
+        public static string StatusToDBString(this LabExamStatus status)
         {
             return status switch
             {
@@ -30,7 +30,7 @@ namespace TAB_clinic_Model
             };
         }
 
-        public static string StatusToDisplayStr(this LabExamStatus status)
+        public static string StatusToDisplayString(this LabExamStatus status)
         {
             return status switch
             {
@@ -43,7 +43,7 @@ namespace TAB_clinic_Model
             };
         }
 
-        public static LabExamStatus StrToStatus(string statusStr)
+        public static LabExamStatus StringToStatus(string statusStr)
         {
             return statusStr switch
             {

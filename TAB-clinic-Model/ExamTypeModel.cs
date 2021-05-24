@@ -30,7 +30,7 @@ namespace TAB_clinic_Model
 
         public ExamKind Kind
         {
-            get => StrToKind(this.dbType.Type);
+            get => StringToKind(this.dbType.Type);
         }
 
         public override string ToString()
@@ -48,13 +48,13 @@ namespace TAB_clinic_Model
 
         public static ExamTypeModel[] GetPhysicalExamTypes(WrappedContext db)
         {
-            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Physical.KindToDBStr())
+            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Physical.KindToDBString())
                                        .Select(et => new ExamTypeModel(et)).ToArray();
         }
 
         public static ExamTypeModel[] GetLabExamTypes(WrappedContext db)
         {
-            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Lab.KindToDBStr())
+            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Lab.KindToDBString())
                                        .Select(et => new ExamTypeModel(et)).ToArray();
         }
     }
