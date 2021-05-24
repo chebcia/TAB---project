@@ -17,7 +17,7 @@ namespace TAB_clinic_Model
 
     public static class LabExamStatusMethods
     {
-        public static string StatusToStr(this LabExamStatus status)
+        public static string StatusToDBStr(this LabExamStatus status)
         {
             return status switch
             {
@@ -26,6 +26,19 @@ namespace TAB_clinic_Model
                 LabExamStatus.CancelledByManager => "cm",
                 LabExamStatus.FinalizedByWorker => "fw",
                 LabExamStatus.FinalizedByManager => "fm",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
+
+        public static string StatusToDisplayStr(this LabExamStatus status)
+        {
+            return status switch
+            {
+                LabExamStatus.Requested => "Requested",
+                LabExamStatus.CancelledByWorker => "Cancelled By Worker",
+                LabExamStatus.CancelledByManager => "Cancelled By Manager",
+                LabExamStatus.FinalizedByWorker => "Finalized By Worker",
+                LabExamStatus.FinalizedByManager => "Finalized By Manager",
                 _ => throw new ArgumentOutOfRangeException()
             };
         }

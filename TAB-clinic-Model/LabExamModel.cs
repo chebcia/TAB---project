@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TAB_clinic_Data.Database;
 using static TAB_clinic_Model.LabExamStatusMethods;
 
@@ -71,12 +72,26 @@ namespace TAB_clinic_Model
             set => dbLabExam.DtRequest = value;
         }
 
+        public string Result
+        {
+            get => dbLabExam.Result;
+            set => dbLabExam.Result = value;
+        }
+
         // TODO: result, dt_finalized_cancelled, managers_notes, dt_approved_cancelled
 
         public LabExamStatus Status
         {
             get => StrToStatus(dbLabExam.Status);
-            set => dbLabExam.Status = value.StatusToStr();
+            set => dbLabExam.Status = value.StatusToDBStr();
+        }
+
+        public static LabExamModel? FindLabExam(WrappedContext db, int id)
+        {
+            return db.Context.LabExams
+                             .Where(le => le.IdLabExam == id)
+                             .Select(le => new LabExamModel(le))
+                             .FirstOrDefault();
         }
     }
 }

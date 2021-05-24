@@ -60,5 +60,30 @@ namespace TAB_clinic_Services
         {
             return ExamTypeModel.GetLabExamTypes(db);
         }
+
+        public ExamTypeModel? FindExamType(string code)
+        {
+            return ExamTypeModel.FindExamType(db, code);
+        }
+
+        public List<PhysicalExamModel> GetPhysicalExams()
+        {
+            return ExamManager.GetPhysicalExams(db);
+        }
+
+        public PhysicalExamModel? FindPhysicalExam(int id)
+        {
+            return PhysicalExamModel.FindPhysicalExam(db, id);
+        }
+
+        public List<LabExamModel> GetLabExams()
+        {
+            return ExamManager.GetLabExams(db);
+        }
+
+        public LabExamModel? FindLabExam(int id)
+        {
+            return LabExamModel.FindLabExam(db, id);
+        }
     }
 }

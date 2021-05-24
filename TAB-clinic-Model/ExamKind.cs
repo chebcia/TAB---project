@@ -14,7 +14,7 @@ namespace TAB_clinic_Model
 
     public static class ExamKindMethods
     {
-        public static string? KindToStr(this ExamKind kind)
+        public static string? KindToDBStr(this ExamKind kind)
         {
             return kind switch
             {

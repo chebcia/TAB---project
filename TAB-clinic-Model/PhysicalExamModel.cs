@@ -53,5 +53,13 @@ namespace TAB_clinic_Model
             get => dbPhysicalExam.Code;
             set => dbPhysicalExam.Code = value;
         }
+
+        public static PhysicalExamModel? FindPhysicalExam(WrappedContext db, int id)
+        {
+            return db.Context.PhysicalExams
+                             .Where(pe => pe.IdPhysicalExam == id)
+                             .Select(pe => new PhysicalExamModel(pe))
+                             .FirstOrDefault();
+        }
     }
 }

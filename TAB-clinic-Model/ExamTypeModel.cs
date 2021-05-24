@@ -40,26 +40,21 @@ namespace TAB_clinic_Model
 
         public static ExamTypeModel? FindExamType(WrappedContext db, string code)
         {
-            var examType = db.Context.ExamTypes
+            return db.Context.ExamTypes
                              .Where(et => et.Code == code)
+                             .Select(et => new ExamTypeModel(et))
                              .FirstOrDefault();
-
-            if (examType is null)
-                return null;
-
-            return new ExamTypeModel(examType);
-
         }
 
         public static ExamTypeModel[] GetPhysicalExamTypes(WrappedContext db)
         {
-            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Physical.KindToStr())
+            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Physical.KindToDBStr())
                                        .Select(et => new ExamTypeModel(et)).ToArray();
         }
 
         public static ExamTypeModel[] GetLabExamTypes(WrappedContext db)
         {
-            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Lab.KindToStr())
+            return db.Context.ExamTypes.Where(et => et.Type == ExamKind.Lab.KindToDBStr())
                                        .Select(et => new ExamTypeModel(et)).ToArray();
         }
     }
