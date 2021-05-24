@@ -49,6 +49,7 @@ namespace TAB_clinic_GUI
             this.textBox1.Location = new System.Drawing.Point(12, 63);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(378, 143);
             this.textBox1.TabIndex = 1;
             // 
