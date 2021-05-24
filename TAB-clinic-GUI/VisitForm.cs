@@ -32,7 +32,7 @@ namespace TAB_clinic_GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //new ExamListForm(Visit, Service).ShowDialog();
+            new ExamListForm(Visit, Service).ShowDialog();
         }
 
         /// <summary>
