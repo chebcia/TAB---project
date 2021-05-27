@@ -24,7 +24,7 @@ namespace TAB_clinic_GUI
             var labExams = Service.GetLabExamsForVisit(Visit);
 
             var examTypeFilter = comboBox1.SelectedItem as ExamTypeModel;
-            Predicate<string> examCodeMatches = ex => (examTypeFilter is null) || (ex == examTypeFilter.Code);
+            Predicate<string> examCodeMatches = code => (examTypeFilter is null) || (code == examTypeFilter.Code);
 
             dataGridView1.DataSource = (from pe in physicalExams
                                         where examCodeMatches(pe.Code)
