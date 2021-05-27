@@ -22,9 +22,19 @@ namespace TAB_clinic_GUI
             textBox2.Text = _visit.Diagnosis;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ExamCreationForm(Visit, Service, ExamKind.Lab).ShowDialog();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
+            new ExamCreationForm(Visit, Service, ExamKind.Physical).ShowDialog();
+        }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new DoctorExamsForm(Visit, Service).ShowDialog();
         }
 
         /// <summary>

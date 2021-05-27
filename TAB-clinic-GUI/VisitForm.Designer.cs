@@ -84,6 +84,7 @@ namespace TAB_clinic_GUI
             this.button2.TabIndex = 5;
             this.button2.Text = "Order a lab exam";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -137,12 +138,13 @@ namespace TAB_clinic_GUI
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(108, 139);
+            this.button8.Location = new System.Drawing.Point(97, 139);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(132, 23);
             this.button8.TabIndex = 11;
             this.button8.Text = "View exams";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // VisitForm
             // 
