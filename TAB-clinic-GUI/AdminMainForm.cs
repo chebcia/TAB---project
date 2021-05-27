@@ -26,21 +26,21 @@ namespace TAB_clinic_GUI
             return users.Where(u => u.IdUser == id).FirstOrDefault();
         }
 
-        private void button1_Click(object sender, System.EventArgs e) // "View"
+        private void button1_Click(object sender, System.EventArgs e) // "Show"
         {
-            new AdminUserEditForm(SelectedUser(), false).ShowDialog();
+            // TODO: filter the list
         }
 
         private void button2_Click(object sender, System.EventArgs e) // "Edit"
         {
-            new AdminUserEditForm(SelectedUser(), true).ShowDialog();
+            new AdminUserEditForm(adminService, SelectedUser()).ShowDialog();
             adminService.SaveChanges();
             dataGridView1.Refresh();
         }
 
         private void button3_Click(object sender, System.EventArgs e) // "New user"
         {
-            new AdminUserEditForm(adminService).ShowDialog();
+            new AdminUserEditForm(adminService, null).ShowDialog();
             dataGridView1.DataSource = users = adminService.UserList();
         }
 

@@ -32,47 +32,54 @@ namespace TAB_clinic_Model
                 throw new UserAlreadyExistsException(login);
             }
 
-            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(plaintextPassword))
-            {
-                throw new ArgumentException("You need to provide a login and a password!");
-            }
-
             var context = db.Context;
-            var newUser = new UserModel(db)
+            try
             {
-                Login = login,
-                Password = plaintextPassword,
-                Role = role,
-                Active = active,
-                Name = name,
-                Lastname = lastname
-            };
+                var newUser = new UserModel(db)
+                {
+                    Login = login,
+                    Password = plaintextPassword,
+                    Role = role,
+                    Active = active,
+                    Name = name,
+                    LastName = lastname
+                };
 
-            // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
-            context.SaveChanges(); 
+                // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
+                context.SaveChanges();
 
-            // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
-            switch (role)
-            {
-                case ClinicRole.Registrar:
-                    var registrar = new Registrar() { IdUser = newUser.IdUser };
-                    context.Registrars.Add(registrar);
-                    break;
-                case ClinicRole.Doctor:
-                    var doctor = new Doctor() { IdUser = newUser.IdUser };
-                    context.Doctors.Add(doctor);
-                    break;
-                case ClinicRole.LabWorker:
-                    var LabWorker = new LabWorker() { IdUser = newUser.IdUser };
-                    context.LabWorkers.Add(LabWorker);
-                    break;
-                case ClinicRole.LabManager:
-                    var LabManager = new LabManager() { IdUser = newUser.IdUser };
-                    context.LabManagers.Add(LabManager);
-                    break;
+                // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
+                switch (role)
+                {
+                    case ClinicRole.Registrar:
+                        var registrar = new Registrar() { IdUser = newUser.IdUser };
+                        context.Registrars.Add(registrar);
+                        break;
+                    case ClinicRole.Doctor:
+                        var doctor = new Doctor() { IdUser = newUser.IdUser };
+                        context.Doctors.Add(doctor);
+                        break;
+                    case ClinicRole.LabWorker:
+                        var LabWorker = new LabWorker() { IdUser = newUser.IdUser };
+                        context.LabWorkers.Add(LabWorker);
+                        break;
+                    case ClinicRole.LabManager:
+                        var LabManager = new LabManager() { IdUser = newUser.IdUser };
+                        context.LabManagers.Add(LabManager);
+                        break;
+                }
+                context.SaveChanges();
+                // The objects above are not wrapped in "Model" classes (UserModel), so they have to be manually added to the right collection in the context.
             }
-            context.SaveChanges();
-            // The objects above are not wrapped in "Model" classes (UserModel), so they have to be manually added to the right collection in the context.
+            catch (InvalidUserDataException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                // TODO: delete invalid users
+
+            }
         }
 
         public static List<UserModel> GetUsers(WrappedContext db)

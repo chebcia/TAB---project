@@ -78,6 +78,7 @@ namespace TAB_clinic_GUI
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(155, 23);
             this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "******";
             // 
             // label3
             // 
