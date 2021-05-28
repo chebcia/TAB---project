@@ -39,7 +39,6 @@ namespace TAB_clinic_Model
             return doctor;
         }
 
-        //public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, string name, string lastname)
         public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, bool active, string name, string lastname)
         {
             if (FindUser(db, login) != null)
