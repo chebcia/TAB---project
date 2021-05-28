@@ -34,7 +34,6 @@ namespace TAB_clinic_GUI
         private void button2_Click(object sender, System.EventArgs e) // "Edit"
         {
             new AdminUserEditForm(adminService, SelectedUser()).ShowDialog();
-            adminService.SaveChanges();
             dataGridView1.Refresh();
         }
 
@@ -43,19 +42,5 @@ namespace TAB_clinic_GUI
             new AdminUserEditForm(adminService, null).ShowDialog();
             dataGridView1.DataSource = users = adminService.UserList();
         }
-
-        #region test buttons
-        private void button4_Click(object sender, System.EventArgs e) // "CLEAR"
-        {
-            adminService.DeleteOtherUsers();
-            dataGridView1.DataSource = adminService.UserList();
-        }
-
-        private void button5_Click(object sender, System.EventArgs e) // "FILL"
-        {
-            adminService.SpawnUsers();
-            dataGridView1.DataSource = adminService.UserList();
-        }
-        #endregion
     }
 }

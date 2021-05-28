@@ -6,7 +6,7 @@ namespace TAB_clinic_Services
 {
     public class AdminService
     {
-        private readonly WrappedContext db = new();
+        private WrappedContext db = new();
 
         public void DeleteOtherUsers() => UserManager.DeleteAllNonAdminUsers(db);
 
@@ -28,6 +28,12 @@ namespace TAB_clinic_Services
             return UserManager.GetUsers(db);
         }
 
+        private void AbandonChanges()
+        {
+            db.Dispose();
+            db = new();
+        }
+
         public void SaveChanges()
         {
             db.SaveChanges();
@@ -35,7 +41,15 @@ namespace TAB_clinic_Services
 
         public void CreateUser(string login, string password, ClinicRole role, bool active, string name, string lastname)
         {
-            UserManager.CreateUser(db, login, password, role, active, name, lastname);
+            try
+            {
+                UserManager.CreateUser(db, login, password, role, active, name, lastname);
+            }
+            catch (InvalidUserDataException)
+            {
+                AbandonChanges();
+                throw;
+            }
         }
     }
 }

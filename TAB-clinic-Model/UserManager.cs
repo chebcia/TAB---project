@@ -33,53 +33,42 @@ namespace TAB_clinic_Model
             }
 
             var context = db.Context;
-            try
-            {
-                var newUser = new UserModel(db)
-                {
-                    Login = login,
-                    Password = plaintextPassword,
-                    Role = role,
-                    Active = active,
-                    Name = name,
-                    LastName = lastname
-                };
 
-                // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
-                context.SaveChanges();
-
-                // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
-                switch (role)
-                {
-                    case ClinicRole.Registrar:
-                        var registrar = new Registrar() { IdUser = newUser.IdUser };
-                        context.Registrars.Add(registrar);
-                        break;
-                    case ClinicRole.Doctor:
-                        var doctor = new Doctor() { IdUser = newUser.IdUser };
-                        context.Doctors.Add(doctor);
-                        break;
-                    case ClinicRole.LabWorker:
-                        var LabWorker = new LabWorker() { IdUser = newUser.IdUser };
-                        context.LabWorkers.Add(LabWorker);
-                        break;
-                    case ClinicRole.LabManager:
-                        var LabManager = new LabManager() { IdUser = newUser.IdUser };
-                        context.LabManagers.Add(LabManager);
-                        break;
-                }
-                context.SaveChanges();
-                // The objects above are not wrapped in "Model" classes (UserModel), so they have to be manually added to the right collection in the context.
-            }
-            catch (InvalidUserDataException)
+            var newUser = new UserModel(db)
             {
-                throw;
-            }
-            catch (Exception)
-            {
-                // TODO: delete invalid users
+                Login = login,
+                Password = plaintextPassword,
+                Role = role,
+                Active = active,
+                Name = name,
+                LastName = lastname
+            };
 
+            // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
+            context.SaveChanges();
+
+            // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
+            switch (role)
+            {
+                case ClinicRole.Registrar:
+                    var registrar = new Registrar() { IdUser = newUser.IdUser };
+                    context.Registrars.Add(registrar);
+                    break;
+                case ClinicRole.Doctor:
+                    var doctor = new Doctor() { IdUser = newUser.IdUser };
+                    context.Doctors.Add(doctor);
+                    break;
+                case ClinicRole.LabWorker:
+                    var LabWorker = new LabWorker() { IdUser = newUser.IdUser };
+                    context.LabWorkers.Add(LabWorker);
+                    break;
+                case ClinicRole.LabManager:
+                    var LabManager = new LabManager() { IdUser = newUser.IdUser };
+                    context.LabManagers.Add(LabManager);
+                    break;
             }
+            context.SaveChanges();
+            // The objects above are not wrapped in "Model" classes (UserModel), so they have to be manually added to the right collection in the context.
         }
 
         public static List<UserModel> GetUsers(WrappedContext db)

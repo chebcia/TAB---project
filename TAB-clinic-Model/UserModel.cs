@@ -8,15 +8,13 @@ namespace TAB_clinic_Model
     // Wraps the EF-generated "User" class, so that hand-written code (methods, setters with validation) is separate from the EF classes.
     // This allows us to recreate them easily, without having to move that custom code manually.
 
-    // TODO: add validation to setters
-
     /// <summary>
-    /// 
+    /// Represents an existing user. Call <c>AdminService.CreateUser()</c> to create one with proper relationships.
     /// </summary>
     public class UserModel
     {
         /// <summary>
-        /// Creates a new user and adds it to the context. Call SaveChanges() to generate the ID.
+        /// Creates a new user and adds it to the context. Call <c>db.SaveChanges()</c> to generate the ID.
         /// </summary>
         /// <param name="db"></param>
         internal UserModel(WrappedContext db) //(User dbUser)

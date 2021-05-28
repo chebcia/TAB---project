@@ -48,6 +48,7 @@ namespace TAB_clinic_GUI
                     editedUser.Name = textBox3.Text;
                     editedUser.LastName = textBox4.Text;
                     editedUser.Active = checkBox1.Checked;
+                    adminService.SaveChanges();
                 }
                 else                        // creating a new user
                 {
