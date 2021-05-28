@@ -39,6 +39,8 @@ namespace TAB_clinic_Model
             get => dbUser.IdUser;
         }
 
+
+        // TODO: we should test that setter, I'm not sure it really works
         public string Login
         {
             get => dbUser.Login;
