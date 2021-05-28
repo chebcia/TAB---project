@@ -20,6 +20,13 @@ namespace TAB_clinic_GUI
             dataGridView1.DataSource = users;
         }
 
+        private void FilterUserList()
+        {
+            var filter = textBox1.Text;
+            var filteredUsers = users.Where(u => u.Login.Contains(filter) || u.Name.Contains(filter) || u.LastName.Contains(filter)).ToList();
+            dataGridView1.DataSource = filteredUsers;
+        }
+
         private UserModel SelectedUser()
         {
             var id = (int)dataGridView1.CurrentRow.Cells["IdUser"].Value;
@@ -28,19 +35,33 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, System.EventArgs e) // "Show"
         {
-            // TODO: filter the list
+            FilterUserList();
         }
 
         private void button2_Click(object sender, System.EventArgs e) // "Edit"
         {
             new AdminUserEditForm(adminService, SelectedUser()).ShowDialog();
-            dataGridView1.Refresh();
+            FilterUserList();
         }
 
         private void button3_Click(object sender, System.EventArgs e) // "New user"
         {
             new AdminUserEditForm(adminService, null).ShowDialog();
-            dataGridView1.DataSource = users = adminService.UserList();
+            users = adminService.UserList();
+            FilterUserList();
+        }
+
+        private void textBox1_TextChanged(object sender, System.EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                FilterUserList();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
+        {
+            button1.Enabled = !checkBox1.Checked;
         }
     }
 }

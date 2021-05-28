@@ -8,6 +8,7 @@ namespace TAB_clinic_Services
     {
         private WrappedContext db = new();
 
+        #region not needed, I suppose
         public void DeleteOtherUsers() => UserManager.DeleteAllNonAdminUsers(db);
 
         public void SpawnUsers()
@@ -22,6 +23,7 @@ namespace TAB_clinic_Services
             catch (UserAlreadyExistsException)
             { }
         }
+        #endregion
 
         public List<UserModel> UserList()
         {
