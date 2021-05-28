@@ -49,6 +49,7 @@ namespace TAB_clinic_GUI
                     editedUser.LastName = textBox4.Text;
                     editedUser.Active = checkBox1.Checked;
                     adminService.SaveChanges();
+                    MessageBox.Show("Changes saved.", "Success");
                 }
                 else                        // creating a new user
                 {
@@ -60,6 +61,7 @@ namespace TAB_clinic_GUI
                     var lastname = textBox4.Text;
 
                     adminService.CreateUser(login, password, role, active, name, lastname);
+                    MessageBox.Show("User created.", "Success");
                 }
             }
             catch (InvalidUserDataException ex)
