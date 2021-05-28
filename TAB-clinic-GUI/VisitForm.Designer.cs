@@ -84,6 +84,7 @@ namespace TAB_clinic_GUI
             this.button2.TabIndex = 5;
             this.button2.Text = "Order a lab exam";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -103,6 +104,7 @@ namespace TAB_clinic_GUI
             this.button4.TabIndex = 7;
             this.button4.Text = "cancel visit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -112,6 +114,7 @@ namespace TAB_clinic_GUI
             this.button5.TabIndex = 8;
             this.button5.Text = "Finalize visit";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -121,6 +124,7 @@ namespace TAB_clinic_GUI
             this.button6.TabIndex = 9;
             this.button6.Text = "Exit";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -130,15 +134,17 @@ namespace TAB_clinic_GUI
             this.button7.TabIndex = 10;
             this.button7.Text = "Save";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(108, 139);
+            this.button8.Location = new System.Drawing.Point(97, 139);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(132, 23);
             this.button8.TabIndex = 11;
             this.button8.Text = "View exams";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // VisitForm
             // 
@@ -156,6 +162,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VisitForm";
             this.Text = "VisitForm";
             this.ResumeLayout(false);

@@ -90,6 +90,7 @@ namespace TAB_clinic_GUI
             this.button2.TabIndex = 5;
             this.button2.Text = "accept/order";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ExamCreationForm
             // 
@@ -102,6 +103,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExamCreationForm";
             this.Text = "ExamCreationForm";
             this.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace TAB_clinic_Model
 
     public static class ClinicRoleMethods
     {
-        public static string? RoleToString(this ClinicRole role)
+        public static string? RoleToDBString(this ClinicRole role)
         {
             return role switch
             {

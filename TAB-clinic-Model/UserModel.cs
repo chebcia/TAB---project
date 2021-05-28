@@ -75,7 +75,7 @@ namespace TAB_clinic_Model
         public ClinicRole Role
         {
             get => StringToRole(dbUser.Role);
-            set => dbUser.Role = value.RoleToString();
+            set => dbUser.Role = value.RoleToDBString();
         }
 
         public bool Active

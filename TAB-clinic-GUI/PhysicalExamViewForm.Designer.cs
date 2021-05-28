@@ -37,18 +37,19 @@ namespace TAB_clinic_GUI
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(187, 23);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 63);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(378, 143);
             this.textBox1.TabIndex = 1;
             // 
@@ -60,6 +61,7 @@ namespace TAB_clinic_GUI
             this.button1.TabIndex = 2;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -69,7 +71,6 @@ namespace TAB_clinic_GUI
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Result";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PhysicalExamViewForm
             // 
@@ -80,6 +81,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PhysicalExamViewForm";
             this.Text = "PhysicalExamViewForm";
             this.Load += new System.EventHandler(this.PhysicalExamViewForm_Load);
