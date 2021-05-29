@@ -46,6 +46,11 @@ namespace TAB_clinic_Model
             get => dbUser.Login;
             set
             {
+                if (value.Length == 0)
+                {
+                    throw new InvalidUserDataException("Login cannot be empty.");
+                }
+
                 var rgx = new Regex("\\w");     // only allows aA-zZ, 0-9 and _
                 if (rgx.IsMatch(value))
                 {
