@@ -40,9 +40,10 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientModel.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientManager.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Services/PatientService.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Data/Database/Patient.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tDkEn9DfJxE9MI1e71scvdMGaJ" />
@@ -89,7 +90,7 @@
       <workItem from="1622310944363" duration="423000" />
       <workItem from="1622314379860" duration="499000" />
       <workItem from="1622314886058" duration="530000" />
-      <workItem from="1622316028836" duration="560000" />
+      <workItem from="1622316028836" duration="978000" />
     </task>
     <servers />
   </component>
