@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using TAB_clinic_Model;
 using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
@@ -7,24 +10,58 @@ namespace TAB_clinic_GUI
     {
         // Each "Main" Form should own a service.
         private readonly AdminService adminService = new();
+        private List<UserModel> users;
 
         public AdminMainForm()
         {
             InitializeComponent();
             
-            dataGridView1.DataSource = adminService.UserList();
+            users = adminService.UserList();
+            dataGridView1.DataSource = users;
         }
 
-        private void button4_Click(object sender, System.EventArgs e) // "CLEAR"
+        private void FilterUserList()
         {
-            adminService.DeleteOtherUsers();
-            dataGridView1.DataSource = adminService.UserList();
+            var filter = textBox1.Text;
+            var filteredUsers = users.Where(u => u.Login.Contains(filter) || u.Name.Contains(filter) || u.LastName.Contains(filter)).ToList();
+            dataGridView1.DataSource = filteredUsers;
         }
 
-        private void button5_Click(object sender, System.EventArgs e) // "FILL"
+        private UserModel SelectedUser()
         {
-            adminService.SpawnUsers();
-            dataGridView1.DataSource = adminService.UserList();
+            var id = (int)dataGridView1.CurrentRow.Cells["IdUser"].Value;
+            return users.Where(u => u.IdUser == id).FirstOrDefault();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e) // "Show"
+        {
+            FilterUserList();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e) // "Edit"
+        {
+            new AdminUserEditForm(adminService, SelectedUser()).ShowDialog();
+            FilterUserList();
+        }
+
+        private void button3_Click(object sender, System.EventArgs e) // "New user"
+        {
+            new AdminUserEditForm(adminService, null).ShowDialog();
+            users = adminService.UserList();
+            FilterUserList();
+        }
+
+        private void textBox1_TextChanged(object sender, System.EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                FilterUserList();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, System.EventArgs e)
+        {
+            button1.Enabled = !checkBox1.Checked;
         }
     }
 }

@@ -39,7 +39,7 @@ namespace TAB_clinic_Model
             return doctor;
         }
 
-        public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, string name, string lastname)
+        public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, bool active, string name, string lastname)
         {
             if (FindUser(db, login) != null)
             {
@@ -47,23 +47,20 @@ namespace TAB_clinic_Model
                 throw new UserAlreadyExistsException(login);
             }
 
-            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(plaintextPassword))
-            {
-                throw new ArgumentException("You need to provide a login and a password!");
-            }
-
             var context = db.Context;
+
             var newUser = new UserModel(db)
             {
                 Login = login,
                 Password = plaintextPassword,
                 Role = role,
+                Active = active,
                 Name = name,
-                Lastname = lastname
+                LastName = lastname
             };
 
             // The new user is only added to the DB after all its fields have been set, using the SaveChanges() method.
-            context.SaveChanges(); 
+            context.SaveChanges();
 
             // After calling SaveChanges(), the user now has an ID that can be used to create an entry in the correct table.
             switch (role)

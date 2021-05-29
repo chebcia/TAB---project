@@ -1,6 +1,7 @@
 ﻿using TAB_clinic_Data.Database;
 using static TAB_clinic_Model.ClinicRoleMethods;
 using static BCrypt.Net.BCrypt;
+using System.Text.RegularExpressions;
 
 namespace TAB_clinic_Model
 {
@@ -8,12 +9,12 @@ namespace TAB_clinic_Model
     // This allows us to recreate them easily, without having to move that custom code manually.
 
     /// <summary>
-    /// 
+    /// Represents an existing user. Call <c>AdminService.CreateUser()</c> to create one with proper relationships.
     /// </summary>
     public class UserModel
     {
         /// <summary>
-        /// Creates a new user and adds it to the context. Call SaveChanges() to generate the ID.
+        /// Creates a new user and adds it to the context. Call <c>db.SaveChanges()</c> to generate the ID.
         /// </summary>
         /// <param name="db"></param>
         internal UserModel(WrappedContext db) //(User dbUser)
@@ -38,16 +39,39 @@ namespace TAB_clinic_Model
             get => dbUser.IdUser;
         }
 
+
+        // TODO: we should test that setter, I'm not sure it really works
         public string Login
         {
             get => dbUser.Login;
-            set => dbUser.Login = value;
+            set
+            {
+                var rgx = new Regex("\\w");     // only allows aA-zZ, 0-9 and _
+                if (rgx.IsMatch(value))
+                {
+                    dbUser.Login = value;
+                }
+                else
+                {
+                    throw new InvalidUserDataException("Login contains invalid characters.");
+                }
+            }
         }
 
         public string Password
         {
-            get => dbUser.Password;
-            set => dbUser.Password = HashPassword(value);
+            private get => dbUser.Password;
+            set
+            {
+                if (value.Length < 4)
+                {
+                    throw new InvalidUserDataException("Password must be at least 4 characters long.");
+                }
+                else
+                {
+                    dbUser.Password = HashPassword(value);
+                }
+            }
         }
 
         public ClinicRole Role
@@ -68,7 +92,7 @@ namespace TAB_clinic_Model
             set => dbUser.Name = value;
         }
 
-        public string Lastname
+        public string LastName
         {
             get => dbUser.Lastname;
             set => dbUser.Lastname = value;
@@ -77,6 +101,11 @@ namespace TAB_clinic_Model
         public bool CheckPassword(string plaintextPassword)
         {
             return Verify(plaintextPassword, this.Password);
+        }
+
+        internal void DeleteFromContext(WrappedContext db)
+        {
+            db.Context.Users.Remove(dbUser);
         }
     }
 }

@@ -60,6 +60,7 @@ namespace TAB_clinic_Model
         }
 
         // TODO: Make this return an ExamType value?
+        // Yes, do that
         public string Code
         {
             get => dbLabExam.Code;
@@ -78,7 +79,7 @@ namespace TAB_clinic_Model
             set => dbLabExam.Result = value;
         }
 
-        // TODO: result, dt_finalized_cancelled, managers_notes, dt_approved_cancelled
+        // TODO: dt_finalized_cancelled, managers_notes, dt_approved_cancelled
 
         public LabExamStatus Status
         {
