@@ -21,18 +21,22 @@ namespace TAB_clinic_Services
         // Every service should have its own database context and pass it to lower-level objects or methods
         private readonly WrappedContext db = new();
 
-        public UserModel? SignIn(string login, string password)
+        public UserModel SignIn(string login, string password)
         {
             var user = UserManager.FindUser(db, login);
 
-            if (user is not null && user.CheckPassword(password))
+            if (user is null || !user.CheckPassword(password))
             {
-                return user;
+                throw new LoginFailedException("Invalid credentials.");
             }
-            else
+            else    // user not null, password OK
             {
-                Trace.WriteLine("Signing in failed");
-                return null;
+                if (!user.Active)
+                {
+                    throw new LoginFailedException("User is deactivated.");
+                }
+
+                return user!;
             }
         }
     }

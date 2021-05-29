@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using TAB_clinic_Model;
 using TAB_clinic_Services;
 
 namespace TAB_clinic_GUI
-{ 
+{
     public partial class LoginForm : Form
     {
         // Each "Main" Form should own a service object.
@@ -24,15 +25,26 @@ namespace TAB_clinic_GUI
             var login = textBox1.Text;
             var password = textBox2.Text;
 
-            var user = loginService.SignIn(login, password);
-            if (user is null)
+            try
             {
-                MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
-                return;
+                var user = loginService.SignIn(login, password);
+                OpenMainForm(user);
+            }
+            catch (LoginFailedException ex)
+            {
+                MessageBox.Show($"{ex.Message}\n(hint: default account has login 'admin' and password 'admin')", "Failed");
             }
 
-            // open user's main form
-            // TODO: add other forms
+            //if (user is null)
+            //{
+            //    MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
+            //    return;
+            //}
+
+        }
+
+        private static void OpenMainForm(UserModel user)
+        {
             switch (user.Role)
             {
                 case TAB_clinic_Model.ClinicRole.Admin:
@@ -44,6 +56,7 @@ namespace TAB_clinic_GUI
                 default:
                     MessageBox.Show("Work in progress");
                     break;
+                // TODO: add other forms
             }
         }
     }
