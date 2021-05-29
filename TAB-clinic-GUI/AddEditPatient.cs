@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TAB_clinic_GUI
 {
-    public partial class Form1 : Form
+    public partial class AddEditPatientForm : Form
     {
-        public Form1()
+        public AddEditPatientForm()
         {
             InitializeComponent();
         }

@@ -2,11 +2,16 @@
 
 namespace TAB_clinic_GUI
 {
-    public partial class Register : Form
+    public partial class RegisterForm : Form
     {
-        public Register()
+        public RegisterForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonAddEditPatient_Click(object sender, System.EventArgs e)
+        {
+            new AddEditPatientForm().ShowDialog();
         }
     }
 }

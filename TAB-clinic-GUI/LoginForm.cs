@@ -46,6 +46,9 @@ namespace TAB_clinic_GUI
                 case TAB_clinic_Model.ClinicRole.Doctor:
                     new DoctorForm(user).ShowDialog();
                     break;
+                case TAB_clinic_Model.ClinicRole.Registrar:
+                    new RegisterForm().ShowDialog();
+                    break;
                 default:
                     MessageBox.Show("Work in progress");
                     break;
