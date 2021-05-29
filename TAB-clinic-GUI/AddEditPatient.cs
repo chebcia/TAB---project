@@ -53,7 +53,8 @@ namespace TAB_clinic_GUI
 
                 if (editPatient)
                 {
-                    registrarService.UpdatePatient(name, lastName, pesel);
+                    var patientId = selectedPatient.IdPatient;
+                    registrarService.UpdatePatient(patientId, name, lastName, pesel);
                     MessageBox.Show("Patient updated", "Success");
                     return;
                 }

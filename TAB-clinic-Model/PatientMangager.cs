@@ -21,6 +21,20 @@ namespace TAB_clinic_Model
 
             return new PatientModel(patient);
         }
+        
+        public static PatientModel? FindPatientById(WrappedContext db, int patientId)
+        {
+            var patient = db.Context.Patients
+                .Where(p => p.IdPatient == patientId)
+                .FirstOrDefault();
+
+            if (patient is null)
+            {
+                return null;
+            }
+
+            return new PatientModel(patient);
+        }
 
         public static void CreatePatient(WrappedContext db, string name, string lastname, string pesel)
         {
@@ -43,9 +57,9 @@ namespace TAB_clinic_Model
         }
 
 
-        public static void UpdatePatient(WrappedContext db, string name, string lastname, string pesel)
+        public static void UpdatePatient(WrappedContext db, int patientId, string name, string lastname, string pesel)
         {
-            var selectedPatient = FindPatient(db, pesel);
+            var selectedPatient = FindPatientById(db, patientId);
             
             if (selectedPatient == null)
             {

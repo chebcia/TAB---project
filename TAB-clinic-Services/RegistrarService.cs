@@ -31,11 +31,11 @@ namespace TAB_clinic_Services
             }
         }
 
-        public void UpdatePatient(string name, string lastname, string pesel)
+        public void UpdatePatient(int patientId, string name, string lastname, string pesel)
         {
             try
             {
-                PatientMangager.UpdatePatient(db, name, lastname, pesel);
+                PatientMangager.UpdatePatient(db, patientId, name, lastname, pesel);
             }
             catch
             {

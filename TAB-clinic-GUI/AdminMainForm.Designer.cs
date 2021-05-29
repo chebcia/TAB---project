@@ -85,7 +85,7 @@ namespace TAB_clinic_GUI
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.1546F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.8454F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 224F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button1, 2, 0);
@@ -117,13 +117,13 @@ namespace TAB_clinic_GUI
             this.textBox1.Location = new System.Drawing.Point(110, 6);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(824, 39);
+            this.textBox1.Size = new System.Drawing.Size(822, 39);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(946, 6);
+            this.button1.Location = new System.Drawing.Point(944, 6);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 49);
