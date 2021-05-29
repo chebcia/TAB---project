@@ -34,13 +34,6 @@ namespace TAB_clinic_GUI
             {
                 MessageBox.Show($"{ex.Message}\n(hint: default account has login 'admin' and password 'admin')", "Failed");
             }
-
-            //if (user is null)
-            //{
-            //    MessageBox.Show("Invalid credentials! (hint: default account has login 'admin' and password 'admin')", "Failed");
-            //    return;
-            //}
-
         }
 
         private static void OpenMainForm(UserModel user)

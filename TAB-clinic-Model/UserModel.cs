@@ -88,7 +88,7 @@ namespace TAB_clinic_Model
         public bool Active
         {
             get => dbUser.Active[0] == ('A');
-            set => dbUser.Active = value ? "A" : "N";
+            set => dbUser.Active = value ? "A" : "N";   // perhaps it should be impossible to deactivate the main admin account?
         }
 
         public string Name
