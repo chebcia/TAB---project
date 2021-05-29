@@ -8,5 +8,10 @@ namespace TAB_clinic_GUI
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, System.EventArgs e)
+        {
+            new AddEditPatient().ShowDialog();
+        }
     }
 }

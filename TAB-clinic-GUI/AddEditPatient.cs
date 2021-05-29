@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace TAB_clinic_GUI
 {
-    public partial class Form1 : Form
+    public partial class AddEditPatient : Form
     {
-        public Form1()
+        public AddEditPatient()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            var name = inputName.Text;
+            var lastName = inputLastname.Text;
+            var pesel = inputPesel.Text;
+
+// TODO 
         }
     }
 }

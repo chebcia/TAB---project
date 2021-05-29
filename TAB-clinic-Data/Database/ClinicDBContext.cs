@@ -212,7 +212,7 @@ namespace TAB_clinic_Data.Database
                     .HasMaxLength(50)
                     .HasColumnName("name");
 
-                entity.Property(e => e.Pesel)
+                entity.Property(e => e.PESEL)
                     .IsRequired()
                     .HasMaxLength(11)
                     .IsUnicode(false)
