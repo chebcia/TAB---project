@@ -3,7 +3,7 @@ using TAB_clinic_Data.Database;
 
 namespace TAB_clinic_Model
 {
-    class PatientModel
+    public class PatientModel
     {
         private readonly Patient dbPatient;
         
@@ -70,9 +70,9 @@ namespace TAB_clinic_Model
             get => dbPatient.Pesel;
             set
             {
-                if (value.Length <= 0)
+                if (value.Length != 11)
                 {
-                    throw new InvalidUserDataException("PESEL cannot be empty.");
+                        throw new InvalidUserDataException("PESEL have to contain 11 characters");
                 }
 
                 var regexp = new Regex("\\d");

@@ -13,6 +13,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -43,6 +51,10 @@
       <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientManager.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Services/PatientService.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Data/Database/Patient.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Services/RegistarService.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Services/Registrar.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientMangager.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Services/RegistrarService.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientModel.cs" />
     </changedPaths>
   </component>
@@ -90,7 +102,7 @@
       <workItem from="1622310944363" duration="423000" />
       <workItem from="1622314379860" duration="499000" />
       <workItem from="1622314886058" duration="530000" />
-      <workItem from="1622316028836" duration="978000" />
+      <workItem from="1622316028836" duration="3291000" />
     </task>
     <servers />
   </component>

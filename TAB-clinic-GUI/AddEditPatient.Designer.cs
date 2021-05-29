@@ -34,7 +34,7 @@ namespace TAB_clinic_GUI
             this.labelLastName = new System.Windows.Forms.Label();
             this.inputLastName = new System.Windows.Forms.TextBox();
             this.labelPesel = new System.Windows.Forms.Label();
-            this.inputPESEL = new System.Windows.Forms.TextBox();
+            this.inputPesel = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,13 +79,13 @@ namespace TAB_clinic_GUI
             this.labelPesel.TabIndex = 4;
             this.labelPesel.Text = "PESEL";
             // 
-            // inputPESEL
+            // inputPesel
             // 
-            this.inputPESEL.Location = new System.Drawing.Point(211, 188);
-            this.inputPESEL.MaxLength = 11;
-            this.inputPESEL.Name = "inputPESEL";
-            this.inputPESEL.Size = new System.Drawing.Size(294, 39);
-            this.inputPESEL.TabIndex = 5;
+            this.inputPesel.Location = new System.Drawing.Point(211, 188);
+            this.inputPesel.MaxLength = 11;
+            this.inputPesel.Name = "inputPesel";
+            this.inputPesel.Size = new System.Drawing.Size(294, 39);
+            this.inputPesel.TabIndex = 5;
             // 
             // buttonSave
             // 
@@ -95,6 +95,7 @@ namespace TAB_clinic_GUI
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // AddEditPatientForm
             // 
@@ -102,7 +103,7 @@ namespace TAB_clinic_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 386);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.inputPESEL);
+            this.Controls.Add(this.inputPesel);
             this.Controls.Add(this.labelPesel);
             this.Controls.Add(this.inputLastName);
             this.Controls.Add(this.labelLastName);
@@ -122,7 +123,7 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.TextBox inputLastName;
         private System.Windows.Forms.Label labelPesel;
-        private System.Windows.Forms.TextBox inputPESEL;
+        private System.Windows.Forms.TextBox inputPesel;
         private System.Windows.Forms.Button buttonSave;
     }
 }
