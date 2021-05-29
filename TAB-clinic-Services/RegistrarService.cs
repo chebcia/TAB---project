@@ -22,7 +22,20 @@ namespace TAB_clinic_Services
         {
             try
             {
-                PatientMangager.CreatePatient(db, name,lastname, pesel);
+                PatientMangager.CreatePatient(db, name, lastname, pesel);
+            }
+            catch
+            {
+                AbandonChanges();
+                throw;
+            }
+        }
+
+        public void UpdatePatient(string name, string lastname, string pesel)
+        {
+            try
+            {
+                PatientMangager.UpdatePatient(db, name, lastname, pesel);
             }
             catch
             {

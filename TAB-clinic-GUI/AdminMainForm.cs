@@ -63,5 +63,10 @@ namespace TAB_clinic_GUI
         {
             button1.Enabled = !checkBox1.Checked;
         }
+
+        private void AdminMainForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

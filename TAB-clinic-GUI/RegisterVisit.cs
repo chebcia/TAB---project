@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace TAB_clinic_GUI
 {
-    public partial class RegisterVisit : Form
+    public partial class RegisterVisitForm : Form
     {
-        public RegisterVisit()
+        public RegisterVisitForm()
         {
             InitializeComponent();
         }

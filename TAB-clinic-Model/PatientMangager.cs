@@ -41,6 +41,26 @@ namespace TAB_clinic_Model
 
             context.SaveChanges();
         }
+
+
+        public static void UpdatePatient(WrappedContext db, string name, string lastname, string pesel)
+        {
+            var selectedPatient = FindPatient(db, pesel);
+            
+            if (selectedPatient == null)
+            {
+                Trace.WriteLine($"Patient with pesel '{pesel}' not exists");
+                throw new UserAlreadyExistsException(pesel);
+            }
+            
+            var context = db.Context;
+
+            selectedPatient.Name = name;
+            selectedPatient.Lastname = lastname;
+            selectedPatient.Pesel = pesel;
+            context.SaveChanges();
+        }
+        
         public static List<PatientModel> GetPatients(WrappedContext db)
         {
             var patients = db.Context.Patients.ToList();
