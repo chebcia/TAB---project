@@ -8,9 +8,9 @@ namespace TAB_clinic_GUI
 {
     public partial class RegisterForm : Form
     {
-
         private readonly RegistrarService registrarService = new();
         private List<PatientModel> patients;
+        private int selectedRegistar;
 
         private PatientModel SelectedPatient()
         {
@@ -33,10 +33,11 @@ namespace TAB_clinic_GUI
             new AddEditPatientForm(registrarService, SelectedPatient()).ShowDialog();
         }
 
-        public RegisterForm()
+        public RegisterForm(int selectedRegistar)
         {
             InitializeComponent();
 
+            this.selectedRegistar = selectedRegistar;
             this.LoadPatients();
         }
 
@@ -49,6 +50,11 @@ namespace TAB_clinic_GUI
         private void buttonRefresh_Click(object sender, System.EventArgs e)
         {
             this.LoadPatients();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            new RegisterVisitForm(registrarService, SelectedPatient(), this.selectedRegistar).ShowDialog();
         }
     }
 }

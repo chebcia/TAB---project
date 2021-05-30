@@ -30,9 +30,6 @@ namespace TAB_clinic_GUI
 
             this.Text = "Add user";
 
-            Debug.WriteLine(selectedPatient);
-            Debug.WriteLine(this.editPatient);
-
             if (this.editPatient)
             {
                 this.Text = "Edit user";
