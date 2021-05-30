@@ -112,5 +112,24 @@ namespace TAB_clinic_Services
 
             return mapped;
         }
+
+        public List<VisitModel> VisitList()
+        {
+            var visits = VisitManager.GetVisitsList(db);
+            return visits;
+        }
+
+        public void CancelVisit(int idVisit)
+        {
+            try
+            {
+                VisitManager.CancelVisit(db, idVisit);
+            }
+            catch
+            {
+                AbandonChanges();
+                throw;
+            }
+        }
     }
 }

@@ -80,7 +80,7 @@ namespace TAB_clinic_GUI
             // 
             // inputDate
             // 
-            this.inputDate.CustomFormat = "  MM/dd/yyyy h:mm tt";
+            this.inputDate.CustomFormat = "  MM/dd/yyyy  h:mm tt";
             this.inputDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.inputDate.Location = new System.Drawing.Point(216, 15);
             this.inputDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);

@@ -56,5 +56,15 @@ namespace TAB_clinic_GUI
         {
             new RegisterVisitForm(registrarService, SelectedPatient(), this.selectedRegistar).ShowDialog();
         }
+
+        private void buttonCancelVisit_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void buttonBrowser_Click(object sender, System.EventArgs e)
+        {
+            new VisitsForm(registrarService).ShowDialog();
+        }
     }
 }

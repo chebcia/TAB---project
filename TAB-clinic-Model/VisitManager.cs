@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,33 @@ namespace TAB_clinic_Model
             return new VisitModel(visit);
         }
 
+        public static List<VisitModel> GetVisitsList(WrappedContext db)
+        {
+            var visits = db.Context.Visits.ToList();
+            var visitsList = new List<VisitModel>();
+
+            foreach (var visit in visits)
+            {
+                visitsList.Add(new VisitModel(visit));
+            }
+            
+            return visitsList;
+        }
+
+        public static VisitModel FindVisit(WrappedContext db, int idVisit)
+        {
+            var visit = db.Context.Visits
+                .Where(v => v.IdVisit == idVisit)
+                .FirstOrDefault();
+
+            if (visit is null)
+            {
+                return null;
+            }
+
+            return new VisitModel(visit);
+        }
+
         public static void CreateVisit(
             WrappedContext db,
             int idDoctor,
@@ -81,6 +109,22 @@ namespace TAB_clinic_Model
                 DateTimeFinalizedCancelled = dtFinalizedCancelled,
                 Description = description
             };
+
+            context.SaveChanges();
+        }
+
+        public static void CancelVisit(WrappedContext db, int idVisit)
+        {
+            var selectedVisit = FindVisit(db, idVisit);
+
+            if (selectedVisit == null)
+            {
+                Trace.WriteLine($"Visit with idVisit '{idVisit.ToString()}' not exists");
+                throw new UserAlreadyExistsException(idVisit.ToString());
+            }
+
+            var context = db.Context;
+            selectedVisit.Status = VisitStatus.cancelled;
 
             context.SaveChanges();
         }
