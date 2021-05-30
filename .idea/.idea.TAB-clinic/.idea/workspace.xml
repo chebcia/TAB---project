@@ -55,12 +55,13 @@
       <option value="$PROJECT_DIR$/TAB-clinic-Services/Registrar.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientModel.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/RegistrarModel.cs" />
-      <option value="$PROJECT_DIR$/TAB-clinic-Model/RegistrarManager.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/PatientMangager.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-GUI/Register.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/VisitExtendedModel.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Model/VisitManager.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Model/RegistrarManager.cs" />
       <option value="$PROJECT_DIR$/TAB-clinic-Services/RegistrarService.cs" />
+      <option value="$PROJECT_DIR$/TAB-clinic-Model/VisitsRenderModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1tDkEn9DfJxE9MI1e71scvdMGaJ" />
@@ -110,7 +111,7 @@
       <workItem from="1622316028836" duration="7906000" />
       <workItem from="1622382651374" duration="2706000" />
       <workItem from="1622387324777" duration="247000" />
-      <workItem from="1622387914676" duration="3474000" />
+      <workItem from="1622387914676" duration="5242000" />
     </task>
     <servers />
   </component>

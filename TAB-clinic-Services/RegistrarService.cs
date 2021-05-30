@@ -118,6 +118,22 @@ namespace TAB_clinic_Services
             var visits = VisitManager.GetVisitsList(db);
             return visits;
         }
+        
+        public List<UserModel> RegistrarList()
+        {
+            var userModelData = UserManager.GetUsers(db);
+            var filtered = new List<UserModel>();
+            
+            foreach (var userModelSingle in userModelData)
+            {
+                if (userModelSingle.Role == ClinicRole.Registrar)
+                {
+                    filtered.Add(userModelSingle);
+                }
+            }
+
+            return filtered;
+        }
 
         public void CancelVisit(int idVisit)
         {

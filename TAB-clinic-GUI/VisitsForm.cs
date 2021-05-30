@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,20 +17,61 @@ namespace TAB_clinic_GUI
     {
         private readonly RegistrarService registrarService;
         private List<VisitModel> visitsList;
+        private readonly List<UserModel> doctorList;
         private readonly List<PatientModel> patientList;
+        private readonly List<UserModel> registrarList;
 
         public VisitsForm(RegistrarService registrarService)
         {
             InitializeComponent();
             this.registrarService = registrarService;
+            this.doctorList = registrarService.DoctorList();
             this.patientList = registrarService.PatientList();
-            this.LoadVisit();
+            this.registrarList = registrarService.RegistrarList();
+            this.LoadVisit(null);
         }
 
-        private void LoadVisit()
+        private void LoadVisit(List<VisitModel>? customSource)
         {
-            this.visitsList = this.registrarService.VisitList();
-            dataVisits.DataSource = this.visitsList;
+            if (customSource is null)
+            {
+                this.visitsList = this.registrarService.VisitList();
+            } 
+            else
+            {
+                this.visitsList = customSource;
+            }
+            this.RenderDataGrid();
+        }
+
+        private void RenderDataGrid()
+        {
+            var dataToRender = new List<VisitsRenderModel>();
+
+            foreach(var visit in this.visitsList) {
+                var selectedDoctor = this.doctorList.Find(d => d.IdUser == visit.IdDoctor);
+                var selectedPatient = this.patientList.Find(p => p.IdPatient == visit.IdPatient);
+                var selectedRegistrar = this.registrarList.Find(r => r.IdUser == visit.IdRegistrar);
+
+                var doctorName = selectedDoctor.Name + " " + selectedDoctor.LastName;
+                var registrarName = selectedRegistrar.Name + " " + selectedRegistrar.LastName;
+                var patientName = selectedPatient.Name + " " + selectedPatient.Lastname;
+                var patientPesel = selectedPatient.Pesel;
+
+                dataToRender.Add(new VisitsRenderModel()
+                {
+                    IdVisit = visit.IdVisit,
+                    DateTimeRegistered = visit.DateTimeRegistered,
+                    DateTimeFinalizedCancelled = visit.DateTimeFinalizedCancelled,
+                    DoctorName = doctorName,
+                    RegistrarName = registrarName,
+                    PatientName = patientName,
+                    PatientPesel = patientPesel,
+                    Status = visit.Status,
+                }); ;
+            }
+
+            dataVisits.DataSource = dataToRender.OrderBy(d => d.DateTimeRegistered).ToList();
         }
 
         private void CancelVisitsForm_Load(object sender, EventArgs e)
@@ -53,7 +95,10 @@ namespace TAB_clinic_GUI
                 foreach (var entry in results)
                 {
                     var dateFromValid = dateFrom.Date <= entry.DateTimeRegistered;
-                    var dateToValid = dateTo.Date >= entry.DateTimeRegistered;
+                    var dateToValid = dateTo.AddDays(1).Date >= entry.DateTimeRegistered;
+
+                    Debug.WriteLine(dateFromValid);
+                    Debug.WriteLine(dateToValid);
 
                     if (dateFromValid && dateToValid)
                     {
@@ -97,7 +142,7 @@ namespace TAB_clinic_GUI
             }
 
             // Display results
-            dataVisits.DataSource = results;
+            this.LoadVisit(results);
         }
 
         private VisitModel SelectedVisit()
@@ -107,8 +152,27 @@ namespace TAB_clinic_GUI
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            this.registrarService.CancelVisit(SelectedVisit().IdVisit);
-            this.LoadVisit();
+            if (SelectedVisit().Status == VisitStatus.registered)
+            {
+                this.registrarService.CancelVisit(SelectedVisit().IdVisit);
+                MessageBox.Show("Visit canceled", "Success");
+            } 
+            else
+            {
+                MessageBox.Show("This visit cannot be  canceled", "Error");
+            }
+
+            this.LoadVisit(null);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            inputDateFrom.Value = new DateTime(2020, 1, 1);
+            inputDateTo.Value = new DateTime(2029, 12, 31);
+            inputPesel.Text = "";
+            inputLastName.Text = "";
+
+            this.LoadVisit(null);
         }
     }
 }
