@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using TAB_clinic_Model;
@@ -10,6 +11,7 @@ namespace TAB_clinic_GUI
     {
         private readonly PatientModel selectedPatient;
         private readonly RegistrarService registrarService;
+        private readonly List<UserModel> doctorList;
         private readonly int selectedRegistrar;
 
         public RegisterVisitForm(RegistrarService registrarService, PatientModel selectedPatient, int selectedRegistrar)
@@ -19,16 +21,21 @@ namespace TAB_clinic_GUI
             this.registrarService = registrarService;
             this.selectedPatient = selectedPatient;
             this.selectedRegistrar = selectedRegistrar;
+
+            this.doctorList = registrarService.DoctorList();
+            inputDoctor.DataSource = registrarService.DoctorListComboBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                var diagnosis = inputDiagnosis.Text;
+                var doctorId = this.doctorList[inputDoctor.SelectedIndex].IdUser;
+                var patientId = this.selectedPatient.IdPatient;
+                var registarId = this.selectedRegistrar;
                 var dateTime = inputDate.Value;
 
-                this.registrarService.CreateNewVisit(3, this.selectedPatient.IdPatient, this.selectedRegistrar, VisitStatus.registered, diagnosis, dateTime, null, null);
+                this.registrarService.CreateNewVisit(doctorId, patientId, registarId, VisitStatus.registered, null, dateTime, null, null);
                 MessageBox.Show("Appointment saved", "Success");
             }
             catch (InvalidUserDataException ex)

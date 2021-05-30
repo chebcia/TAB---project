@@ -34,15 +34,11 @@ namespace TAB_clinic_GUI
             this.inputDoctor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.inputDate = new System.Windows.Forms.DateTimePicker();
-            this.labelDiagnosis = new System.Windows.Forms.Label();
-            this.inputDiagnosis = new System.Windows.Forms.TextBox();
-            this.inputDescription = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(566, 395);
+            this.buttonSave.Location = new System.Drawing.Point(566, 115);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(5);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(153, 46);
@@ -92,49 +88,11 @@ namespace TAB_clinic_GUI
             this.inputDate.Size = new System.Drawing.Size(503, 39);
             this.inputDate.TabIndex = 14;
             // 
-            // labelDiagnosis
-            // 
-            this.labelDiagnosis.AutoSize = true;
-            this.labelDiagnosis.Location = new System.Drawing.Point(14, 116);
-            this.labelDiagnosis.Name = "labelDiagnosis";
-            this.labelDiagnosis.Size = new System.Drawing.Size(127, 32);
-            this.labelDiagnosis.TabIndex = 15;
-            this.labelDiagnosis.Text = "Diagnosis*";
-            // 
-            // inputDiagnosis
-            // 
-            this.inputDiagnosis.Location = new System.Drawing.Point(216, 113);
-            this.inputDiagnosis.Multiline = true;
-            this.inputDiagnosis.Name = "inputDiagnosis";
-            this.inputDiagnosis.Size = new System.Drawing.Size(503, 134);
-            this.inputDiagnosis.TabIndex = 16;
-            // 
-            // inputDescription
-            // 
-            this.inputDescription.Location = new System.Drawing.Point(216, 253);
-            this.inputDescription.Multiline = true;
-            this.inputDescription.Name = "inputDescription";
-            this.inputDescription.Size = new System.Drawing.Size(503, 134);
-            this.inputDescription.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 256);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 32);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Description";
-            // 
             // RegisterVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 758);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.inputDescription);
-            this.Controls.Add(this.inputDiagnosis);
-            this.Controls.Add(this.labelDiagnosis);
+            this.ClientSize = new System.Drawing.Size(733, 174);
             this.Controls.Add(this.inputDate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.inputDoctor);
@@ -156,9 +114,5 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.ComboBox inputDoctor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker inputDate;
-        private System.Windows.Forms.Label labelDiagnosis;
-        private System.Windows.Forms.TextBox inputDiagnosis;
-        private System.Windows.Forms.TextBox inputDescription;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualBasic;
 using TAB_clinic_Model;
 
@@ -81,6 +82,35 @@ namespace TAB_clinic_Services
         public List<PatientModel> PatientList()
         {
             return PatientMangager.GetPatients(db);
+        }
+
+        public List<UserModel> DoctorList()
+        {
+            var userModelData = UserManager.GetUsers(db);
+            var filtered = new List<UserModel>();
+            
+            foreach (var userModelSingle in userModelData)
+            {
+                if (userModelSingle.Role == ClinicRole.Doctor)
+                {
+                    filtered.Add(userModelSingle);
+                }
+            }
+
+            return filtered;
+        }
+
+        public List<string> DoctorListComboBox()
+        {
+            var userModelData = this.DoctorList();
+            var mapped = new List<string>();
+
+            foreach (var userModelSingle in userModelData)
+            {
+                mapped.Add(userModelSingle.Name + " " + userModelSingle.LastName);
+            }
+
+            return mapped;
         }
     }
 }
