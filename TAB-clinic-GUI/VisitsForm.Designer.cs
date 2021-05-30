@@ -46,10 +46,15 @@ namespace TAB_clinic_GUI
             // 
             // dataVisits
             // 
+            this.dataVisits.AllowUserToAddRows = false;
+            this.dataVisits.AllowUserToDeleteRows = false;
+            this.dataVisits.AllowUserToOrderColumns = true;
             this.dataVisits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVisits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataVisits.Location = new System.Drawing.Point(14, 109);
             this.dataVisits.Margin = new System.Windows.Forms.Padding(5);
             this.dataVisits.Name = "dataVisits";
+            this.dataVisits.ReadOnly = true;
             this.dataVisits.RowHeadersWidth = 51;
             this.dataVisits.RowTemplate.Height = 29;
             this.dataVisits.Size = new System.Drawing.Size(1327, 470);

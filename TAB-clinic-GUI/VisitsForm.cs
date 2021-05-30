@@ -86,7 +86,7 @@ namespace TAB_clinic_GUI
             var pesel = inputPesel.Text;
             var lastName = inputLastName.Text;
 
-            var results = this.visitsList;
+            var results = this.registrarService.VisitList();
 
             // Date Filter
             if (true)
@@ -110,7 +110,7 @@ namespace TAB_clinic_GUI
             }
 
             // Pesel Filter
-            if (pesel.Length > 0)
+            if (pesel is not null)
             {
                 var filtered = new List<VisitModel>();
                 foreach(var entry in results)
@@ -126,7 +126,7 @@ namespace TAB_clinic_GUI
             }
 
             // Last Name Filter
-            if (lastName.Length > 0)
+            if (lastName is not null)
             {
                 var filtered = new List<VisitModel>();
                 foreach (var entry in results)
