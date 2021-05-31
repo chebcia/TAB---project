@@ -7,7 +7,8 @@ using System.Windows.Forms;
 using TAB_clinic_Model;
 using TAB_clinic_Services;
 
-
+// TODO: auto-refresh patient grid after adding a new / editing one
+// TODO: multiple visits with the same datetime can be created
 
 namespace TAB_clinic_GUI
 {
@@ -146,6 +147,7 @@ namespace TAB_clinic_GUI
         private VisitModel SelectedVisit()
         {
             var id = (int)dataVisits.CurrentRow.Cells["IdVisit"].Value;
+            // TODO: throws exceptions when nothing is selected
             return visitsList.Where(visit => visit.IdVisit == id).FirstOrDefault();
         }
         private void buttonSave_Click(object sender, EventArgs e)

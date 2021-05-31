@@ -29,7 +29,7 @@ namespace TAB_clinic_Model
         /// <param name="db"></param>
         /// <param name="model"></param>
         /// <returns>The corresponding Doctor entity or null</returns>
-        public static Doctor UserToDoctor(WrappedContext db, UserModel model)
+        public static Doctor UserToDoctor(WrappedContext db, UserModel model)   // TODO: this should belong to UserModel
         {
             var doctor = db.Context.Doctors
                 .Where(u => u.IdUser == model.IdUser)

@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using TAB_clinic_Model;
 using TAB_clinic_Services;
 
+#nullable enable
+
 namespace TAB_clinic_GUI
 {
     public partial class AdminMainForm : Form
@@ -30,7 +32,7 @@ namespace TAB_clinic_GUI
         private UserModel SelectedUser()
         {
             var id = (int)dataGridView1.CurrentRow.Cells["IdUser"].Value;
-            return users.Where(u => u.IdUser == id).FirstOrDefault();
+            return users.Where(u => u.IdUser == id).FirstOrDefault()!;
         }
 
         private void button1_Click(object sender, System.EventArgs e) // "Show"

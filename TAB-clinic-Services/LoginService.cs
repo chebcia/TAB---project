@@ -5,6 +5,10 @@ namespace TAB_clinic_Services
     // Each service uses TAB-clinic-Model to provide functionality for the frontend.
     public class LoginService
     {
+
+        // Every service should have its own database context and pass it to lower-level objects or methods
+        private WrappedContext db = new();
+
         public LoginService()
         {
             try
@@ -16,9 +20,6 @@ namespace TAB_clinic_Services
             catch (UserAlreadyExistsException)
             { }
         }
-
-        // Every service should have its own database context and pass it to lower-level objects or methods
-        private readonly WrappedContext db = new();
 
         public UserModel SignIn(string login, string password)
         {
@@ -37,6 +38,12 @@ namespace TAB_clinic_Services
 
                 return user!;
             }
+        }
+
+        public void Refresh()
+        {
+            db.Dispose();
+            db = new WrappedContext();
         }
     }
 }

@@ -65,6 +65,7 @@ namespace TAB_clinic_GUI
         private void buttonBrowser_Click(object sender, System.EventArgs e)
         {
             new VisitsForm(registrarService).ShowDialog();
+            // TODO: throws System.NullReferenceException
         }
     }
 }
