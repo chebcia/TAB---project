@@ -29,7 +29,15 @@ namespace TAB_clinic_GUI
         {
             try
             {
-                var doctorId = this.doctorList[inputDoctor.SelectedIndex].IdUser;
+                var selectedDoctor = inputDoctor.SelectedIndex;
+
+                if (selectedDoctor < 0)
+                {
+                    MessageBox.Show("You need to select doctor first.", "Error");
+                    return;
+                }
+
+                var doctorId = this.doctorList[selectedDoctor].IdUser;
                 var patientId = this.selectedPatient.IdPatient;
                 var registarId = this.selectedRegistrar;
                 var dateTime = inputDate.Value;
@@ -70,7 +78,10 @@ namespace TAB_clinic_GUI
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            if (inputDoctor.SelectedIndex < 0)
+            {
+                MessageBox.Show("No doctor detected. Please contact with your administrator to create doctor.", "Error");
+            }
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
