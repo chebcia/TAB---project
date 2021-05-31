@@ -89,5 +89,10 @@ namespace TAB_clinic_GUI
                                             description = v.Description
                                         }).ToList();
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = dataGridView1.SelectedRows.Count > 0;
+        }
     }
 }
