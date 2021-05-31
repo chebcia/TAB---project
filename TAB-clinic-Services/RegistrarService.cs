@@ -10,8 +10,7 @@ namespace TAB_clinic_Services
         
         private void AbandonChanges()
         {
-            db.Dispose();
-            db = new();
+            db.Refresh();
         }
         
         public void SaveChanges()

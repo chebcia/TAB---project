@@ -23,6 +23,7 @@ namespace TAB_clinic_Services
 
         public UserModel SignIn(string login, string password)
         {
+            db.Refresh();
             var user = UserManager.FindUser(db, login);
 
             if (user is null || !user.CheckPassword(password))
@@ -38,12 +39,6 @@ namespace TAB_clinic_Services
 
                 return user!;
             }
-        }
-
-        public void Refresh()
-        {
-            db.Dispose();
-            db = new WrappedContext();
         }
     }
 }

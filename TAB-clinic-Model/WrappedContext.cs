@@ -8,11 +8,20 @@ namespace TAB_clinic_Model
     /// </summary>
     public class WrappedContext : IDisposable
     {
-        internal ClinicDBContext Context { get; } = new();
+        internal ClinicDBContext Context { get; private set; } = new();
 
         public void SaveChanges() => Context.SaveChanges();
 
-        #region boring stuff
+        /// <summary>
+        /// Replaces the internal context with a new one (and also abandons unsaved changes).
+        /// </summary>
+        public void Refresh()
+        {
+            Context.Dispose();
+            Context = new();
+        }
+
+        #region IDisposable implementation - boring stuff, no need to call it
         private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
