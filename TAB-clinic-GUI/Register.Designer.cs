@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class Register
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,60 +30,92 @@ namespace TAB_clinic_GUI
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonRegisterVisit = new System.Windows.Forms.Button();
+            this.buttonBrowser = new System.Windows.Forms.Button();
+            this.buttonAddPatient = new System.Windows.Forms.Button();
+            this.buttonEditPatient = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 19);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(711, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(1077, 301);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // buttonRegisterVisit
             // 
-            this.button1.Location = new System.Drawing.Point(24, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Register visit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRegisterVisit.Location = new System.Drawing.Point(14, 330);
+            this.buttonRegisterVisit.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonRegisterVisit.Name = "buttonRegisterVisit";
+            this.buttonRegisterVisit.Size = new System.Drawing.Size(245, 46);
+            this.buttonRegisterVisit.TabIndex = 1;
+            this.buttonRegisterVisit.Text = "Create appointment";
+            this.buttonRegisterVisit.UseVisualStyleBackColor = true;
+            this.buttonRegisterVisit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonBrowser
             // 
-            this.button2.Location = new System.Drawing.Point(281, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Cancel visit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonBrowser.Location = new System.Drawing.Point(374, 330);
+            this.buttonBrowser.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonBrowser.Name = "buttonBrowser";
+            this.buttonBrowser.Size = new System.Drawing.Size(359, 46);
+            this.buttonBrowser.TabIndex = 3;
+            this.buttonBrowser.Text = "Browse appointments";
+            this.buttonBrowser.UseVisualStyleBackColor = true;
+            this.buttonBrowser.Click += new System.EventHandler(this.buttonBrowser_Click);
             // 
-            // button3
+            // buttonAddPatient
             // 
-            this.button3.Location = new System.Drawing.Point(529, 231);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 29);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Browser";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonAddPatient.Location = new System.Drawing.Point(839, 382);
+            this.buttonAddPatient.Name = "buttonAddPatient";
+            this.buttonAddPatient.Size = new System.Drawing.Size(254, 46);
+            this.buttonAddPatient.TabIndex = 4;
+            this.buttonAddPatient.Text = "Add new patient";
+            this.buttonAddPatient.UseVisualStyleBackColor = true;
+            this.buttonAddPatient.Click += new System.EventHandler(this.buttonAddEditPatient_Click);
             // 
-            // Form8
+            // buttonEditPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.buttonEditPatient.Location = new System.Drawing.Point(839, 330);
+            this.buttonEditPatient.Name = "buttonEditPatient";
+            this.buttonEditPatient.Size = new System.Drawing.Size(254, 46);
+            this.buttonEditPatient.TabIndex = 5;
+            this.buttonEditPatient.Text = "Edit selected patient";
+            this.buttonEditPatient.UseVisualStyleBackColor = true;
+            this.buttonEditPatient.Click += new System.EventHandler(this.buttonEditPatient_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(14, 382);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(245, 46);
+            this.buttonRefresh.TabIndex = 6;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // RegisterForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 293);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1105, 443);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.buttonEditPatient);
+            this.Controls.Add(this.buttonAddPatient);
+            this.Controls.Add(this.buttonBrowser);
+            this.Controls.Add(this.buttonRegisterVisit);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form8";
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "RegisterForm";
             this.Text = "Form8";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -92,8 +124,11 @@ namespace TAB_clinic_GUI
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonRegisterVisit;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAddPatient;
+        private System.Windows.Forms.Button buttonEditPatient;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonBrowser;
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class RegisterVisit
+    partial class RegisterVisitForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,71 +29,78 @@ namespace TAB_clinic_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.inputDoctor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.inputDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonSave
             // 
-            this.button1.Location = new System.Drawing.Point(179, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Accept";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSave.Location = new System.Drawing.Point(566, 115);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(153, 46);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 34);
+            this.label4.Location = new System.Drawing.Point(14, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(123, 32);
             this.label4.TabIndex = 7;
-            this.label4.Text = "date visit";
+            this.label4.Text = "Date visit*";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // comboBox1
+            // inputDoctor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(228, 28);
-            this.comboBox1.TabIndex = 11;
+            this.inputDoctor.FormattingEnabled = true;
+            this.inputDoctor.Location = new System.Drawing.Point(216, 65);
+            this.inputDoctor.Margin = new System.Windows.Forms.Padding(5);
+            this.inputDoctor.Name = "inputDoctor";
+            this.inputDoctor.Size = new System.Drawing.Size(503, 40);
+            this.inputDoctor.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 82);
+            this.label6.Location = new System.Drawing.Point(14, 68);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.Size = new System.Drawing.Size(164, 32);
             this.label6.TabIndex = 12;
-            this.label6.Text = "select doctor";
+            this.label6.Text = "Select doctor*";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // dateTimePicker1
+            // inputDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 34);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 27);
-            this.dateTimePicker1.TabIndex = 14;
+            this.inputDate.CustomFormat = "  MM/dd/yyyy  h:mm tt";
+            this.inputDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.inputDate.Location = new System.Drawing.Point(216, 15);
+            this.inputDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.inputDate.Name = "inputDate";
+            this.inputDate.Size = new System.Drawing.Size(503, 39);
+            this.inputDate.TabIndex = 14;
             // 
-            // RegisterVisit
+            // RegisterVisitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 225);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(733, 174);
+            this.Controls.Add(this.inputDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.inputDoctor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Name = "RegisterVisit";
-            this.Text = "status";
+            this.Controls.Add(this.buttonSave);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "RegisterVisitForm";
+            this.Text = "Make an appointment";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,10 +109,10 @@ namespace TAB_clinic_GUI
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox inputDoctor;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker inputDate;
     }
 }
