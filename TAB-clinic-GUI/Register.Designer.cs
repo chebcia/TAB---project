@@ -125,7 +125,6 @@ namespace TAB_clinic_GUI
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonRegisterVisit;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonAddPatient;
         private System.Windows.Forms.Button buttonEditPatient;
         private System.Windows.Forms.Button buttonRefresh;

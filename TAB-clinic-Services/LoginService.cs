@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using TAB_clinic_Model;
+﻿using TAB_clinic_Model;
 
 namespace TAB_clinic_Services
 {

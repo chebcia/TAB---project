@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualBasic;
 using TAB_clinic_Model;
 
 namespace TAB_clinic_Services

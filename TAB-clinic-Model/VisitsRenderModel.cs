@@ -1,5 +1,4 @@
 using System;
-using static TAB_clinic_Model.VisitStatusMethods;
 
 namespace TAB_clinic_Model
 {

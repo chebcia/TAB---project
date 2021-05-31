@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using TAB_clinic_Data.Database;
@@ -36,7 +35,7 @@ namespace TAB_clinic_Model
                 .Where(u => u.IdUser == model.IdUser)
                 .FirstOrDefault();
 
-            return doctor;
+            return doctor!;
         }
 
         public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, bool active, string name, string lastname)

@@ -1,10 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TAB_clinic_Data.Database;
 
 namespace TAB_clinic_Model
@@ -70,7 +67,7 @@ namespace TAB_clinic_Model
             return visitsList;
         }
 
-        public static VisitModel FindVisit(WrappedContext db, int idVisit)
+        public static VisitModel? FindVisit(WrappedContext db, int idVisit)
         {
             var visit = db.Context.Visits
                 .Where(v => v.IdVisit == idVisit)
