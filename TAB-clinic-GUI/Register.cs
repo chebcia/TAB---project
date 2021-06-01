@@ -14,7 +14,21 @@ namespace TAB_clinic_GUI
 
         private PatientModel SelectedPatient()
         {
-            var id = (int)dataGridView1.CurrentRow.Cells["IdPatient"].Value;
+            var currentRow = dataGridView1.CurrentRow;
+
+            if (currentRow is null)
+            {
+                return null;
+            }
+
+            var idPatient = currentRow.Cells["IdPatient"].Value;
+
+            if (idPatient is null)
+            {
+                return null;
+            }
+
+            var id = (int)idPatient;
             return patients.Where(patient => patient.IdPatient == id).FirstOrDefault();
         }
 
@@ -30,7 +44,15 @@ namespace TAB_clinic_GUI
 
         private void buttonEditPatient_Click(object sender, System.EventArgs e)
         {
-            new AddEditPatientForm(registrarService, SelectedPatient()).ShowDialog();
+            var selectedPatient = SelectedPatient();
+
+            if (selectedPatient is null)
+            {
+                MessageBox.Show("You have to select patient first.", "Error");
+                return;
+            }
+
+            new AddEditPatientForm(registrarService, selectedPatient).ShowDialog();
         }
 
         public RegisterForm(int selectedRegistar)
@@ -54,6 +76,14 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+            var selectedPatient = SelectedPatient();
+
+            if (selectedPatient is null)
+            {
+                MessageBox.Show("You have to select patient first.", "Error");
+                return;
+            }
+            
             new RegisterVisitForm(registrarService, SelectedPatient(), this.selectedRegistar).ShowDialog();
         }
 
@@ -66,6 +96,11 @@ namespace TAB_clinic_GUI
         {
             new VisitsForm(registrarService).ShowDialog();
             // TODO: throws System.NullReferenceException
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

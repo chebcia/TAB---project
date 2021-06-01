@@ -146,20 +146,40 @@ namespace TAB_clinic_GUI
 
         private VisitModel SelectedVisit()
         {
-            var id = (int)dataVisits.CurrentRow.Cells["IdVisit"].Value;
-            // TODO: throws exceptions when nothing is selected
+            var currentRow = dataVisits.CurrentRow;
+
+            if (currentRow is null)
+            {
+                return null;
+            }
+
+            var idVisit = currentRow.Cells["IdVisit"].Value;
+
+            if (idVisit is null)
+            {
+                return null;
+            }
+
+            var id = (int)idVisit;
             return visitsList.Where(visit => visit.IdVisit == id).FirstOrDefault();
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (SelectedVisit().Status == VisitStatus.registered)
+            var selectedVisit = SelectedVisit();
+            if (selectedVisit is null)
+            {
+                MessageBox.Show("You need to select appointment first.", "Error");
+                return;
+            }
+
+            if (selectedVisit.Status == VisitStatus.registered)
             {
                 this.registrarService.CancelVisit(SelectedVisit().IdVisit);
                 MessageBox.Show("Visit canceled", "Success");
             } 
             else
             {
-                MessageBox.Show("This visit cannot be  canceled", "Error");
+                MessageBox.Show("This visit cannot be canceled", "Error");
             }
 
             this.LoadVisit(null);
