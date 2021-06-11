@@ -47,11 +47,12 @@ namespace TAB_clinic_GUI
             this.rejectButton = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
-           
             // 
             // docText
             // 
+            this.docText.Enabled = false;
             this.docText.Location = new System.Drawing.Point(10, 71);
             this.docText.Name = "docText";
             this.docText.Size = new System.Drawing.Size(205, 155);
@@ -63,21 +64,22 @@ namespace TAB_clinic_GUI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.Size = new System.Drawing.Size(83, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "doctor notes";
+            this.label1.Text = "Doctor\'s notes";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(231, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 3;
-            this.label2.Text = "result";
+            this.label2.Text = "Result of exam";
             // 
             // resultText
             // 
+            this.resultText.Enabled = false;
             this.resultText.Location = new System.Drawing.Point(231, 71);
             this.resultText.Name = "resultText";
             this.resultText.Size = new System.Drawing.Size(205, 155);
@@ -89,13 +91,13 @@ namespace TAB_clinic_GUI
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(443, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 15);
+            this.label3.Size = new System.Drawing.Size(94, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "manager notes";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Text = "Manager\'s notes";
             // 
             // managerText
             // 
+            this.managerText.Enabled = false;
             this.managerText.Location = new System.Drawing.Point(442, 71);
             this.managerText.Name = "managerText";
             this.managerText.Size = new System.Drawing.Size(205, 155);
@@ -129,7 +131,6 @@ namespace TAB_clinic_GUI
             this.label5.Size = new System.Drawing.Size(77, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Exam\'s name";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // nameText
             // 
@@ -161,6 +162,7 @@ namespace TAB_clinic_GUI
             // 
             // makeButton
             // 
+            this.makeButton.Enabled = false;
             this.makeButton.Location = new System.Drawing.Point(231, 232);
             this.makeButton.Name = "makeButton";
             this.makeButton.Size = new System.Drawing.Size(75, 23);
@@ -170,6 +172,7 @@ namespace TAB_clinic_GUI
             // 
             // cancelButton
             // 
+            this.cancelButton.Enabled = false;
             this.cancelButton.Location = new System.Drawing.Point(360, 232);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -179,6 +182,7 @@ namespace TAB_clinic_GUI
             // 
             // rejectButton
             // 
+            this.rejectButton.Enabled = false;
             this.rejectButton.Location = new System.Drawing.Point(572, 232);
             this.rejectButton.Name = "rejectButton";
             this.rejectButton.Size = new System.Drawing.Size(75, 23);
@@ -188,6 +192,7 @@ namespace TAB_clinic_GUI
             // 
             // acceptButton
             // 
+            this.acceptButton.Enabled = false;
             this.acceptButton.Location = new System.Drawing.Point(443, 232);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(75, 23);
@@ -203,14 +208,23 @@ namespace TAB_clinic_GUI
             this.exitButton.TabIndex = 17;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
-
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(139, 231);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 18;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // exam
             // 
-            
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 308);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.acceptButton);
@@ -243,17 +257,9 @@ namespace TAB_clinic_GUI
         */
         private void enabledParts(string formVersion)
         {
-            if (formVersion == "view")
-            {
-                this.acceptButton.Enabled = false;
-                this.rejectButton.Enabled = false;
-                this.cancelButton.Enabled = false;
-                this.makeButton.Enabled = false;
-                this.docText.Enabled = false;
-                this.managerText.Enabled = false;
-                this.resultText.Enabled = false;
-            }
-            else if (formVersion == "doc")
+
+
+            if (formVersion == "doc")
             {
                 this.acceptButton.Enabled = false;
                 this.rejectButton.Enabled = false;
@@ -262,14 +268,14 @@ namespace TAB_clinic_GUI
                 this.managerText.Enabled = false;
                 this.resultText.Enabled = false;
             }
-            else if (formVersion == "labWorker")
+            else if (formVersion == "lab_W")
             {
                 this.acceptButton.Enabled = false;
                 this.rejectButton.Enabled = false;
                 this.docText.Enabled = false;
                 this.managerText.Enabled = false;
             }
-            else if (formVersion == "labManager")
+            else if (formVersion == "lab_M")
             {
                 this.cancelButton.Enabled = false;
                 this.makeButton.Enabled = false;
@@ -297,5 +303,6 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.Button rejectButton;
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

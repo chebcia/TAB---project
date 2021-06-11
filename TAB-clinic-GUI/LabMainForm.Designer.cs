@@ -31,9 +31,9 @@ namespace TAB_clinic_GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAccept = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonNote = new System.Windows.Forms.Button();
+            this.buttonView = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonHandle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -56,73 +56,76 @@ namespace TAB_clinic_GUI
             this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(676, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(902, 311);
             this.dataGridView1.TabIndex = 1;
             // 
-            // buttonAccept
+            // buttonView
             // 
-            this.buttonAccept.Location = new System.Drawing.Point(496, 355);
-            this.buttonAccept.Name = "buttonAccept";
-            this.buttonAccept.Size = new System.Drawing.Size(93, 33);
-            this.buttonAccept.TabIndex = 2;
-            this.buttonAccept.Text = "View";
-            this.buttonAccept.UseVisualStyleBackColor = true;
+            this.buttonView.Location = new System.Drawing.Point(722, 355);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(93, 33);
+            this.buttonView.TabIndex = 2;
+            this.buttonView.Text = "View";
+            this.buttonView.UseVisualStyleBackColor = true;
+            this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
-            // buttonCancel
+            // buttonExit
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(595, 355);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(93, 33);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Exit";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonExit.Location = new System.Drawing.Point(821, 355);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(93, 33);
+            this.buttonExit.TabIndex = 3;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonNote
+            // buttonHandle
             // 
-            this.buttonNote.Location = new System.Drawing.Point(397, 355);
-            this.buttonNote.Name = "buttonNote";
-            this.buttonNote.Size = new System.Drawing.Size(93, 33);
-            this.buttonNote.TabIndex = 4;
-            this.buttonNote.Text = "Handle";
-            this.buttonNote.UseVisualStyleBackColor = true;
-            this.buttonNote.Click += new System.EventHandler(this.buttonNote_Click);
+            this.buttonHandle.Location = new System.Drawing.Point(613, 355);
+            this.buttonHandle.Name = "buttonHandle";
+            this.buttonHandle.Size = new System.Drawing.Size(93, 33);
+            this.buttonHandle.TabIndex = 4;
+            this.buttonHandle.Text = "Handle";
+            this.buttonHandle.UseVisualStyleBackColor = true;
+            this.buttonHandle.Click += new System.EventHandler(this.buttonHandel_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(613, 8);
+            this.button1.Location = new System.Drawing.Point(839, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(397, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(587, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(228, 23);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(270, 6);
+            this.comboBox1.Location = new System.Drawing.Point(392, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.Size = new System.Drawing.Size(178, 23);
             this.comboBox1.TabIndex = 8;
             // 
             // LabMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 394);
+            this.ClientSize = new System.Drawing.Size(926, 394);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonNote);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonAccept);
+            this.Controls.Add(this.buttonHandle);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonView);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "LabMainForm";
@@ -140,11 +143,12 @@ namespace TAB_clinic_GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonAccept;
+        private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonNote;
+        private System.Windows.Forms.Button buttonHandle;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

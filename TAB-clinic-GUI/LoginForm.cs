@@ -27,13 +27,19 @@ namespace TAB_clinic_GUI
 
             try
             {
+
                 var user = loginService.SignIn(login, password);
                 OpenMainForm(user);
+                
+
             }
             catch (LoginFailedException ex)
             {
+                
+                
                 MessageBox.Show($"{ex.Message}\n(hint: default account has login 'admin' and password 'admin')", "Failed");
             }
+            
         }
 
         private static void OpenMainForm(UserModel user)
@@ -49,10 +55,16 @@ namespace TAB_clinic_GUI
                 case TAB_clinic_Model.ClinicRole.Registrar:
                     new RegisterForm(user.IdUser).ShowDialog();
                     break;
+                case TAB_clinic_Model.ClinicRole.LabManager:
+                    new LabMainForm(user).ShowDialog();
+                    break;
+                case TAB_clinic_Model.ClinicRole.LabWorker:
+                    new LabMainForm(user).ShowDialog();
+                    break;
                 default:
                     MessageBox.Show("Work in progress");
                     break;
-                // TODO: add other forms
+                
             }
         }
     }
