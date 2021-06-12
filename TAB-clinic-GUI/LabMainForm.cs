@@ -67,7 +67,7 @@ namespace TAB_clinic_GUI
             }
 
             
-            new exam(labUser,selectedExam).ShowDialog();
+            new exam(labUser,selectedExam, labService).ShowDialog();
         }
 
         private void buttonView_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace TAB_clinic_GUI
             }
 
 
-            new exam(null, selectedExam).ShowDialog();
+            new exam(null, selectedExam, labService).ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

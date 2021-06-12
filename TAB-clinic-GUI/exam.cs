@@ -9,15 +9,16 @@ namespace TAB_clinic_GUI
     public partial class exam : Form
     {
         private LabExamModel selectedExam;
-        private readonly LabService Service = new();
+        private readonly LabService Service;
         private readonly UserModel currentUser;
        // private NeedsRefreshing needsRefreshing;
         //variable fromVersion describle in exam.desinger in line 238
-        public exam(UserModel user, LabExamModel _selectedExam)
+        public exam(UserModel user, LabExamModel _selectedExam, LabService _servic)
         {
             InitializeComponent();
             currentUser = user;
             selectedExam = _selectedExam;
+            Service = _servic;
             if (currentUser != null) enabledParts(currentUser.Role.RoleToDBString());
             else enabledParts("view");
             idText.Text = selectedExam.IdExam.ToString();
