@@ -43,7 +43,7 @@ namespace TAB_clinic_GUI
             {
                 return null;
             }
-            var idExam = currentRow.Cells["IdExam"].Value;
+            var idExam = currentRow.Cells["Id"].Value;
 
             if (idExam is null)
             {
@@ -91,9 +91,10 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            Refresh();
         }
 
- 
+
+
     }
 }

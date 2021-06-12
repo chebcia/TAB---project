@@ -30,6 +30,8 @@ namespace TAB_clinic_Model
             this.dbLabExam = labExam;
         }
 
+        
+
         public int IdExam
         {
             get => dbLabExam.IdLabExam;
@@ -77,6 +79,18 @@ namespace TAB_clinic_Model
         {
             get => dbLabExam.DtRequest;
             set => dbLabExam.DtRequest = value;
+        }
+
+        public DateTime? DtFinalizedCancelled
+        {
+            get => dbLabExam.DtFinalizedCancelled;
+            set => dbLabExam.DtFinalizedCancelled = value;
+        }
+
+        public DateTime? DtApprovedCancelled
+        {
+            get => dbLabExam.DtApprovedCancelled;
+            set => dbLabExam.DtApprovedCancelled = value;
         }
 
         public string Result

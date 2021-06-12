@@ -11,6 +11,7 @@ namespace TAB_clinic_Services
     public class LabService
     {
         private readonly WrappedContext db = new();
+        
 
         public List<LabExamModel>? LabExamList()
         {
@@ -26,7 +27,7 @@ namespace TAB_clinic_Services
             return status;
 
         }
-        public void saveExam(LabExamModel visit)
+        public void saveExam()
         {
             db.SaveChanges();
         }

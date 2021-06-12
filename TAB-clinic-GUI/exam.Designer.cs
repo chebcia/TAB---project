@@ -216,6 +216,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonSave
             // 
+            this.buttonSave.Enabled = false;
             this.buttonSave.Location = new System.Drawing.Point(139, 231);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
@@ -260,34 +261,7 @@ namespace TAB_clinic_GUI
          * labManager - for lab manager version of form 
          * labWorker - for lab worker version of form
         */
-        private void enabledParts(string formVersion)
-        {
 
-
-            if (formVersion == "doc")
-            {
-                this.acceptButton.Enabled = false;
-                this.rejectButton.Enabled = false;
-                this.cancelButton.Enabled = false;
-                this.makeButton.Enabled = false;
-                this.managerText.Enabled = false;
-                this.resultText.Enabled = false;
-            }
-            else if (formVersion == "lab_W")
-            {
-                this.acceptButton.Enabled = false;
-                this.rejectButton.Enabled = false;
-                this.docText.Enabled = false;
-                this.managerText.Enabled = false;
-            }
-            else if (formVersion == "lab_M")
-            {
-                this.cancelButton.Enabled = false;
-                this.makeButton.Enabled = false;
-                this.docText.Enabled = false;
-                this.resultText.Enabled = false;
-            }
-        }
 
         #endregion
 

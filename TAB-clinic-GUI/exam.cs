@@ -9,14 +9,16 @@ namespace TAB_clinic_GUI
     public partial class exam : Form
     {
         private LabExamModel selectedExam;
-        private readonly LabService Service;
+        private readonly LabService Service = new();
         private readonly UserModel currentUser;
-        private NeedsRefreshing needsRefreshing;
+       // private NeedsRefreshing needsRefreshing;
         //variable fromVersion describle in exam.desinger in line 238
-        public exam(UserModel user, LabExamModel? selectedExam)
+        public exam(UserModel user, LabExamModel _selectedExam)
         {
             InitializeComponent();
-            if (user != null) enabledParts(user.Role.ToString());
+            currentUser = user;
+            selectedExam = _selectedExam;
+            if (currentUser != null) enabledParts(currentUser.Role.RoleToDBString());
             else enabledParts("view");
             idText.Text = selectedExam.IdExam.ToString();
             nameText.Text = selectedExam.Code;
@@ -24,7 +26,7 @@ namespace TAB_clinic_GUI
             docText.Text = selectedExam.DoctorsNotes;
             resultText.Text = selectedExam.Result;
             managerText.Text = selectedExam.ManagersNotes;
-            currentUser = user;
+            
 
         }
 
@@ -36,39 +38,71 @@ namespace TAB_clinic_GUI
         private void buttonSave_Click(object sender, EventArgs e)
         {
             selectedExam.DoctorsNotes = docText.Text;
-            Service.saveExam(selectedExam);
+            Service.saveExam();
         }
 
         private void makeButton_Click(object sender, EventArgs e)
         {
             selectedExam.Result = resultText.Text;
             selectedExam.IdWorker = currentUser.IdUser;
+            selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByWorker;
-            Service.saveExam(selectedExam);
+            
+            Service.saveExam();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             selectedExam.Result = resultText.Text;
             selectedExam.IdWorker = currentUser.IdUser;
+            selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByWorker;
-            Service.saveExam(selectedExam);
+            Service.saveExam();
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
             selectedExam.Result = resultText.Text;
             selectedExam.IdWorker = currentUser.IdUser;
+            selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByManager;
-            Service.saveExam(selectedExam);
+            Service.saveExam();
         }
 
         private void rejectButton_Click(object sender, EventArgs e)
         {
             selectedExam.Result = resultText.Text;
             selectedExam.IdWorker = currentUser.IdUser;
+            selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByManager;
-            Service.saveExam(selectedExam);
+            Service.saveExam();
+        }
+
+        private void enabledParts(string formVersion)
+        {
+
+
+            if (formVersion == "doc")
+            {
+                docText.Enabled = true;
+                buttonSave.Enabled = true;
+
+            }
+            else if (formVersion == "lab_w")
+            {
+                cancelButton.Enabled = true;
+                makeButton.Enabled = true;
+                resultText.Enabled = true;
+                
+            }
+            else if (formVersion == "lab_m")
+            {
+                acceptButton.Enabled = true;
+                rejectButton.Enabled = true;
+                managerText.Enabled = true;
+                
+
+            }
         }
     }
 }
