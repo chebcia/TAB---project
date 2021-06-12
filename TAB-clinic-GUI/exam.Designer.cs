@@ -169,6 +169,7 @@ namespace TAB_clinic_GUI
             this.makeButton.TabIndex = 13;
             this.makeButton.Text = "Make";
             this.makeButton.UseVisualStyleBackColor = true;
+            this.makeButton.Click += new System.EventHandler(this.makeButton_Click);
             // 
             // cancelButton
             // 
@@ -179,6 +180,7 @@ namespace TAB_clinic_GUI
             this.cancelButton.TabIndex = 14;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // rejectButton
             // 
@@ -189,6 +191,7 @@ namespace TAB_clinic_GUI
             this.rejectButton.TabIndex = 16;
             this.rejectButton.Text = "Reject";
             this.rejectButton.UseVisualStyleBackColor = true;
+            this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
             // 
             // acceptButton
             // 
@@ -199,6 +202,7 @@ namespace TAB_clinic_GUI
             this.acceptButton.TabIndex = 15;
             this.acceptButton.Text = "Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // exitButton
             // 
@@ -218,6 +222,7 @@ namespace TAB_clinic_GUI
             this.buttonSave.TabIndex = 18;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // exam
             // 

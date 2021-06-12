@@ -16,14 +16,21 @@ namespace TAB_clinic_GUI
 
 
         public LabMainForm(UserModel _labUser)
-        {
-
-            
-            
+        {         
             labUser = _labUser;
             InitializeComponent();
-            exams = labService.LabExamList(dateTimePicker1.Value, comboBox1.SelectedIndex);
-            dataGridView1.DataSource = exams;
+            exams = labService.LabExamList();
+            dataGridView1.DataSource = (from e in exams
+                                        where dateTimePicker1.Value.Date.Equals(e.DtRequest.Date)
+                                        select new
+                                        {
+                                            Id = e.IdExam,
+                                            Code = e.Code,
+                                            Status = e.Status.StatusToDisplayString(),
+                                            Date_Request = e.DtRequest,
+                                            Visit = e.IdVisit
+                                            
+                                        }).ToList();
             comboBox1.DataSource = labService.GetExamStatus(); 
 
         }
@@ -60,7 +67,7 @@ namespace TAB_clinic_GUI
             }
 
             
-            new exam(labUser.Role.ToString(),selectedExam).ShowDialog();
+            new exam(labUser,selectedExam).ShowDialog();
         }
 
         private void buttonView_Click(object sender, EventArgs e)
@@ -74,7 +81,7 @@ namespace TAB_clinic_GUI
             }
 
 
-            new exam("view", selectedExam).ShowDialog();
+            new exam(null, selectedExam).ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -84,7 +91,9 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Refresh();
         }
+
+ 
     }
 }

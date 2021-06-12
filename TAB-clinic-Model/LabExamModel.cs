@@ -67,6 +67,12 @@ namespace TAB_clinic_Model
             set => dbLabExam.Code = value;
         }
 
+        public string ManagersNotes
+        {
+            get => dbLabExam.ManagersNotes;
+            set => dbLabExam.ManagersNotes = value;
+        }
+
         public DateTime DtRequest
         {
             get => dbLabExam.DtRequest;

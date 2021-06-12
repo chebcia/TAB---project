@@ -12,10 +12,10 @@ namespace TAB_clinic_Services
     {
         private readonly WrappedContext db = new();
 
-        public List<LabExamModel>? LabExamList(DateTime? dateReques, int status )
+        public List<LabExamModel>? LabExamList()
         {
             
-            return ExamManager.GetLabExams(db);
+            return ExamManager.GetLabExams(db );
         }
 
         public Array GetExamStatus()
@@ -26,7 +26,10 @@ namespace TAB_clinic_Services
             return status;
 
         }
-
+        public void saveExam(LabExamModel visit)
+        {
+            db.SaveChanges();
+        }
 
 
     }

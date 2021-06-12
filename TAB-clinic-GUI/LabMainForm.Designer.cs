@@ -56,12 +56,12 @@ namespace TAB_clinic_GUI
             this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(902, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(659, 311);
             this.dataGridView1.TabIndex = 1;
             // 
             // buttonView
             // 
-            this.buttonView.Location = new System.Drawing.Point(722, 355);
+            this.buttonView.Location = new System.Drawing.Point(479, 355);
             this.buttonView.Name = "buttonView";
             this.buttonView.Size = new System.Drawing.Size(93, 33);
             this.buttonView.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(821, 355);
+            this.buttonExit.Location = new System.Drawing.Point(578, 355);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(93, 33);
             this.buttonExit.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace TAB_clinic_GUI
             // 
             // buttonHandle
             // 
-            this.buttonHandle.Location = new System.Drawing.Point(613, 355);
+            this.buttonHandle.Location = new System.Drawing.Point(380, 355);
             this.buttonHandle.Name = "buttonHandle";
             this.buttonHandle.Size = new System.Drawing.Size(93, 33);
             this.buttonHandle.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace TAB_clinic_GUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(839, 7);
+            this.button1.Location = new System.Drawing.Point(596, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -101,7 +101,7 @@ namespace TAB_clinic_GUI
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(587, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(346, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(228, 23);
@@ -110,7 +110,7 @@ namespace TAB_clinic_GUI
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(392, 5);
+            this.comboBox1.Location = new System.Drawing.Point(162, 5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(178, 23);
             this.comboBox1.TabIndex = 8;
@@ -119,7 +119,7 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 394);
+            this.ClientSize = new System.Drawing.Size(689, 394);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
