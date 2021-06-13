@@ -39,7 +39,7 @@ namespace TAB_clinic_GUI
         private void buttonSave_Click(object sender, EventArgs e)
         {
             selectedExam.DoctorsNotes = docText.Text;
-            Service.saveExam();
+            saveChange();
         }
 
         private void makeButton_Click(object sender, EventArgs e)
@@ -48,8 +48,7 @@ namespace TAB_clinic_GUI
             selectedExam.IdWorker = currentUser.IdUser;
             selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByWorker;
-            
-            Service.saveExam();
+            saveChange();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace TAB_clinic_GUI
             selectedExam.IdWorker = currentUser.IdUser;
             selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByWorker;
-            Service.saveExam();
+            saveChange();
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
@@ -67,7 +66,7 @@ namespace TAB_clinic_GUI
             selectedExam.IdWorker = currentUser.IdUser;
             selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByManager;
-            Service.saveExam();
+            saveChange();
         }
 
         private void rejectButton_Click(object sender, EventArgs e)
@@ -76,7 +75,8 @@ namespace TAB_clinic_GUI
             selectedExam.IdWorker = currentUser.IdUser;
             selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByManager;
-            Service.saveExam();
+
+            saveChange();
         }
 
         private void enabledParts(string formVersion)
@@ -104,6 +104,12 @@ namespace TAB_clinic_GUI
                 
 
             }
+        }
+
+        private void saveChange()
+        {
+            Service.saveExam();
+            statusText.Text = selectedExam.Status.ToString();
         }
     }
 }

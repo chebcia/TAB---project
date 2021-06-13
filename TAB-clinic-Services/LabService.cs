@@ -19,7 +19,7 @@ namespace TAB_clinic_Services
             return ExamManager.GetLabExams(db );
         }
 
-        public Array GetExamStatus()
+        public Array ComboBoxStatus()
         {
             Array status = Enum.GetNames(typeof(LabExamStatus));
             string[] addAll = { "All" };
@@ -27,10 +27,13 @@ namespace TAB_clinic_Services
             return status;
 
         }
+
         public void saveExam()
         {
             db.SaveChanges();
         }
+
+
 
 
     }

@@ -20,18 +20,9 @@ namespace TAB_clinic_GUI
             labUser = _labUser;
             InitializeComponent();
             exams = labService.LabExamList();
-            dataGridView1.DataSource = (from e in exams
-                                        where dateTimePicker1.Value.Date.Equals(e.DtRequest.Date)
-                                        select new
-                                        {
-                                            Id = e.IdExam,
-                                            Code = e.Code,
-                                            Status = e.Status.StatusToDisplayString(),
-                                            Date_Request = e.DtRequest,
-                                            Visit = e.IdVisit
-                                            
-                                        }).ToList();
-            comboBox1.DataSource = labService.GetExamStatus(); 
+           
+            comboBox1.DataSource = labService.ComboBoxStatus();
+            filtered();
 
         }
 
@@ -68,6 +59,7 @@ namespace TAB_clinic_GUI
 
             
             new exam(labUser,selectedExam, labService).ShowDialog();
+            filtered();
         }
 
         private void buttonView_Click(object sender, EventArgs e)
@@ -91,10 +83,76 @@ namespace TAB_clinic_GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Refresh();
+            filtered();
         }
 
+        private void filtered()
+        {
+            int status = comboBox1.SelectedIndex ;
+            if (status > 0)
+            {
 
+                if (dateTimePicker1.Checked)
+                {
+                    dataGridView1.DataSource = (from e in exams
+                                  where dateTimePicker1.Value.Date.Equals(e.DtRequest.Date) &&
+                                  ((LabExamStatus)status).Equals(e.Status)
+                                  select new
+                                  {
+                                      Id = e.IdExam,
+                                      Code = e.Code,
+                                      Status = e.Status.StatusToDisplayString(),
+                                      Date_Request = e.DtRequest,
+                                      Visit = e.IdVisit
+                                  }).ToList();
 
+                    
+                }
+                else
+                {
+                    dataGridView1.DataSource = (from e in exams
+                                  where ((LabExamStatus)status).Equals(e.Status)
+                                  select new
+                                  {
+                                      Id = e.IdExam,
+                                      Code = e.Code,
+                                      Status = e.Status.StatusToDisplayString(),
+                                      Date_Request = e.DtRequest,
+                                      Visit = e.IdVisit
+                                  }).ToList(); ;
+
+                }
+
+            }
+            else
+            {
+                if (dateTimePicker1.Checked)
+                {
+                    dataGridView1.DataSource = (from e in exams
+                                  where dateTimePicker1.Value.Date.Equals(e.DtRequest.Date)
+                                  select new
+                                  {
+                                      Id = e.IdExam,
+                                      Code = e.Code,
+                                      Status = e.Status.StatusToDisplayString(),
+                                      Date_Request = e.DtRequest,
+                                      Visit = e.IdVisit
+                                  }).ToList(); ;
+                }
+                else
+                {
+                    dataGridView1.DataSource = (from e in exams
+                                  select new
+                                  {
+                                      Id = e.IdExam,
+                                      Code = e.Code,
+                                      Status = e.Status.StatusToDisplayString(),
+                                      Date_Request = e.DtRequest,
+                                      Visit = e.IdVisit
+                                  }).ToList(); ;
+                }
+            }
+        }
     }
+                   
 }

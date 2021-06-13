@@ -25,7 +25,7 @@ namespace TAB_clinic_Model
         /// Wraps an existing bare "LabExam" object.
         /// </summary>
         /// <param name="dbUser"></param>
-        internal LabExamModel(LabExam labExam)
+        public LabExamModel(LabExam labExam)
         {
             this.dbLabExam = labExam;
         }
