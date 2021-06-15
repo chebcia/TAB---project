@@ -62,7 +62,7 @@ namespace TAB_clinic_GUI
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            selectedExam.Result = resultText.Text;
+            selectedExam.ManagersNotes = managerText.Text;
             selectedExam.IdManager = currentUser.IdUser;
             selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByManager;
@@ -71,7 +71,7 @@ namespace TAB_clinic_GUI
 
         private void rejectButton_Click(object sender, EventArgs e)
         {
-            selectedExam.Result = resultText.Text;
+            selectedExam.ManagersNotes = managerText.Text;
             selectedExam.IdManager = currentUser.IdUser;
             selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByManager;
