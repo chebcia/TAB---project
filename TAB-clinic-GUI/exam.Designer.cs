@@ -248,6 +248,7 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.resultText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.docText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "exam";
             this.Text = "exam";
             this.ResumeLayout(false);

@@ -23,7 +23,7 @@ namespace TAB_clinic_GUI
            
             comboBox1.DataSource = labService.ComboBoxStatus();
             filtered();
-
+            WindowState = FormWindowState.Maximized;
         }
 
         private LabExamModel SelectedExam()
