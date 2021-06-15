@@ -11,12 +11,13 @@ namespace TAB_clinic_GUI
         private VisitModel Visit;
         private readonly DoctorService Service;
         private NeedsRefreshing needsRefreshing; // a delegate refreshing the doctor form
-
-        public VisitForm(VisitModel _visit, DoctorService _service, NeedsRefreshing _needsRefreshing)
+        private UserModel doctor;
+        public VisitForm(VisitModel _visit, DoctorService _service, NeedsRefreshing _needsRefreshing, UserModel _doctor)
         {
             InitializeComponent();
             Visit = _visit;
             Service = _service;
+            doctor = _doctor;
             needsRefreshing = _needsRefreshing;
             textBox1.Text = _visit.Description;
             textBox2.Text = _visit.Diagnosis;
@@ -34,7 +35,7 @@ namespace TAB_clinic_GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            new DoctorExamsForm(Visit, Service).ShowDialog();
+            new DoctorExamsForm(Visit, Service, doctor).ShowDialog();
         }
 
         /// <summary>

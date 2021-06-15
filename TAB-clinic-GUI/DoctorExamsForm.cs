@@ -12,6 +12,7 @@ namespace TAB_clinic_GUI
     {
         private VisitModel Visit;
         private readonly DoctorService Service;
+        private UserModel doctor;
 
         private string GetExamTypeName(string code)
         {
@@ -52,12 +53,13 @@ namespace TAB_clinic_GUI
                                         }).ToList();
         }
 
-        public DoctorExamsForm(VisitModel _visit, DoctorService _service)
+        public DoctorExamsForm(VisitModel _visit, DoctorService _service, UserModel _doctor)
         {
             InitializeComponent();
 
             Visit = _visit;
             Service = _service;
+            doctor = _doctor;
         }
 
         private void button1_Clicked(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace TAB_clinic_GUI
                         case ExamKind.Lab:
                             {
                                 var labExam = Service.FindLabExam(IdExam);
-                                // new exam(labExam).ShowDialog();
+                                new exam(doctor, labExam, new LabService()).ShowDialog();
                                 break;
                             }
                     }

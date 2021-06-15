@@ -41,7 +41,7 @@ namespace TAB_clinic_GUI
                     selectedVisit = Service.GetVisit(id);
 
 
-                    new VisitForm(selectedVisit, Service, () => refresh()).Show();
+                    new VisitForm(selectedVisit, Service, () => refresh(), doctor).Show();
                 }
 
             }
