@@ -61,6 +61,8 @@ namespace TAB_clinic_GUI
 
             this.selectedRegistar = selectedRegistar;
             this.LoadPatients();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         public void LoadPatients()

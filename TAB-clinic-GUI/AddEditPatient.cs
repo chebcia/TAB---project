@@ -55,5 +55,10 @@ namespace TAB_clinic_GUI
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void inputName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

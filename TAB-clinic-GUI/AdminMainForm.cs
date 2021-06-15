@@ -20,6 +20,7 @@ namespace TAB_clinic_GUI
             
             users = adminService.UserList();
             dataGridView1.DataSource = users;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void FilterUserList()
