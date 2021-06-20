@@ -23,6 +23,11 @@ namespace TAB_clinic_GUI
             textBox2.Text = _visit.Diagnosis;
         }
 
+        private bool registeredCheck(VisitModel visit)
+        {
+            DoctorService Service = new DoctorService();
+            return Service.GetVisit(visit.IdVisit).Status == VisitStatus.registered;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             new ExamCreationForm(Visit, Service, ExamKind.Lab).ShowDialog();
@@ -55,11 +60,20 @@ namespace TAB_clinic_GUI
         /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
-            Visit.Description = textBox1.Text;
-            Visit.Diagnosis = textBox2.Text;
-            Service.saveVisit(Visit);
-            needsRefreshing();
-            Close();
+
+            if (!registeredCheck(Visit))
+            {
+                MessageBox.Show("the visit is already finalized/cancelled", "Error!");
+                Close();
+            }
+            else
+            {
+                Visit.Description = textBox1.Text;
+                Visit.Diagnosis = textBox2.Text;
+                Service.saveVisit(Visit);
+                needsRefreshing();
+                Close();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -71,13 +85,21 @@ namespace TAB_clinic_GUI
 
             if (result.Equals(DialogResult.OK))
             {
-                Visit.Status = VisitStatus.finalized;
-                Visit.DateTimeFinalizedCancelled = DateTime.Now;
-                Visit.Description = textBox1.Text;
-                Visit.Diagnosis = textBox2.Text;
-                Service.saveVisit(Visit);
-                needsRefreshing();
-                Close();
+                if (!registeredCheck(Visit))
+                {
+                    MessageBox.Show("the visit is already finalized/cancelled", "Error!");
+                    Close();
+                }
+                else
+                {
+                    Visit.Status = VisitStatus.finalized;
+                    Visit.DateTimeFinalizedCancelled = DateTime.Now;
+                    Visit.Description = textBox1.Text;
+                    Visit.Diagnosis = textBox2.Text;
+                    Service.saveVisit(Visit);
+                    needsRefreshing();
+                    Close();
+                }
             }
         }
 
@@ -90,13 +112,21 @@ namespace TAB_clinic_GUI
 
             if (result.Equals(DialogResult.OK))
             {
-                Visit.Status = VisitStatus.cancelled;
-                Visit.DateTimeFinalizedCancelled = DateTime.Now;
-                Visit.Description = textBox1.Text;
-                Visit.Diagnosis = textBox2.Text;
-                Service.saveVisit(Visit);
-                needsRefreshing();
-                Close();
+                if (!registeredCheck(Visit))
+                {
+                    MessageBox.Show("the visit is already finalized/cancelled", "Error!");
+                    Close();
+                }
+                else
+                {
+                    Visit.Status = VisitStatus.cancelled;
+                    Visit.DateTimeFinalizedCancelled = DateTime.Now;
+                    Visit.Description = textBox1.Text;
+                    Visit.Diagnosis = textBox2.Text;
+                    Service.saveVisit(Visit);
+                    needsRefreshing();
+                    Close();
+                }
             }
         }
     }
