@@ -88,5 +88,20 @@ namespace TAB_clinic_GUI
         {
 
         }
+
+        private void inputDate_ValueChanged(object sender, EventArgs e)
+        {
+            var hasPassed = (DateTime.Now - inputDate.Value).TotalMinutes >= 0;
+
+            if (hasPassed)
+            {
+                MessageBox.Show("You can't change the past!");
+                buttonSave.Enabled = false;
+            } else
+            {
+                buttonSave.Enabled = true;
+            }
+            
+        }
     }
 }
