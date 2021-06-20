@@ -89,9 +89,11 @@ namespace TAB_clinic_GUI
 
             if (formVersion == "doc")
             {
-                docText.Enabled = true;
-                buttonSave.Enabled = true;
-
+                if (selectedExam.Status == LabExamStatus.Requested)
+                {
+                    docText.Enabled = true;
+                    buttonSave.Enabled = true;
+                }
             }
             else if (formVersion == "lab_w")
             {
