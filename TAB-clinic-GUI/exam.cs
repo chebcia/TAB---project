@@ -49,6 +49,7 @@ namespace TAB_clinic_GUI
             selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByWorker;
             saveChange();
+            MessageBox.Show("Changes saved,\nexam donse.", "Success");
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace TAB_clinic_GUI
             selectedExam.DtFinalizedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.CancelledByWorker;
             saveChange();
+            MessageBox.Show("Changes saved,\nexam canceled.", "Success");
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace TAB_clinic_GUI
             selectedExam.DtApprovedCancelled = DateTime.Now;
             selectedExam.Status = LabExamStatus.FinalizedByManager;
             saveChange();
+            MessageBox.Show("Changes saved,\nexam finalized.", "Success");
         }
 
         private void rejectButton_Click(object sender, EventArgs e)
@@ -77,6 +80,7 @@ namespace TAB_clinic_GUI
             selectedExam.Status = LabExamStatus.CancelledByManager;
 
             saveChange();
+            MessageBox.Show("Changes saved,\nexam reject.", "Success");
         }
 
         private void enabledParts(string formVersion)

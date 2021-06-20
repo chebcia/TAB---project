@@ -31,7 +31,6 @@ namespace TAB_clinic_GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonView = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonHandle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,17 +64,6 @@ namespace TAB_clinic_GUI
             this.dataGridView1.Size = new System.Drawing.Size(659, 311);
             this.dataGridView1.TabIndex = 1;
             // 
-            // buttonView
-            // 
-            this.buttonView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonView.Location = new System.Drawing.Point(479, 355);
-            this.buttonView.Name = "buttonView";
-            this.buttonView.Size = new System.Drawing.Size(93, 33);
-            this.buttonView.TabIndex = 2;
-            this.buttonView.Text = "View";
-            this.buttonView.UseVisualStyleBackColor = true;
-            this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
-            // 
             // buttonExit
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -90,7 +78,7 @@ namespace TAB_clinic_GUI
             // buttonHandle
             // 
             this.buttonHandle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHandle.Location = new System.Drawing.Point(380, 355);
+            this.buttonHandle.Location = new System.Drawing.Point(479, 355);
             this.buttonHandle.Name = "buttonHandle";
             this.buttonHandle.Size = new System.Drawing.Size(93, 33);
             this.buttonHandle.TabIndex = 4;
@@ -137,7 +125,6 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonHandle);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonView);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "LabMainForm";
@@ -147,15 +134,11 @@ namespace TAB_clinic_GUI
             this.PerformLayout();
 
         }
-        private void enabledParts(string formVersion)
-        {
 
-        }
         #endregion
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonHandle;
         private System.Windows.Forms.Button button1;

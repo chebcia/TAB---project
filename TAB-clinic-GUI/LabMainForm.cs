@@ -62,20 +62,6 @@ namespace TAB_clinic_GUI
             filtered();
         }
 
-        private void buttonView_Click(object sender, EventArgs e)
-        {
-            var selectedExam = SelectedExam();
-
-            if (selectedExam is null)
-            {
-                MessageBox.Show("You have to select exam first.", "Error");
-                return;
-            }
-
-
-            new exam(null, selectedExam, labService).ShowDialog();
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
