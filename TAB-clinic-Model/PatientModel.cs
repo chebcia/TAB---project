@@ -33,13 +33,6 @@ namespace TAB_clinic_Model
                     throw new InvalidUserDataException("Name cannot be empty.");
                 }
 
-                var regexp = new Regex("\\w");  // TODO: fix regex
-
-                if (!regexp.IsMatch(value))
-                {
-                    throw new InvalidUserDataException("Name contains invalid characters.");
-                }
-
                 dbPatient.Name = value;
             }
         }
@@ -52,13 +45,6 @@ namespace TAB_clinic_Model
                 if (value.Length <= 0)
                 {
                     throw new InvalidUserDataException("Last name cannot be empty.");
-                }
-
-                var regexp = new Regex("\\w");  // TODO: fix regex
-
-                if (!regexp.IsMatch(value))
-                {
-                    throw new InvalidUserDataException("Last name contains invalid characters.");
                 }
 
                 dbPatient.Lastname = value;
