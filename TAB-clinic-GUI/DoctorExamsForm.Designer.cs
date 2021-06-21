@@ -92,7 +92,7 @@ namespace TAB_clinic_GUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "exam type:";
+            this.label2.Text = "Exam type:";
             // 
             // button3
             // 

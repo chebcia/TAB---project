@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace TAB_clinic_GUI
 {
-    public partial class DoctorForm : Form
+    public partial class DoctorMainForm : Form
     {
         private UserModel doctor;
 
-        public DoctorForm(UserModel _doctor)
+        public DoctorMainForm(UserModel _doctor)
         {
             doctor = _doctor;
             InitializeComponent();

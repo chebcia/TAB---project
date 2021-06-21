@@ -1,7 +1,7 @@
 ﻿
 namespace TAB_clinic_GUI
 {
-    partial class DoctorForm
+    partial class DoctorMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -113,13 +113,13 @@ namespace TAB_clinic_GUI
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 3);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Visit date:";
             // 
-            // DoctorForm
+            // DoctorMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
