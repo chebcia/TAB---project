@@ -75,7 +75,7 @@ namespace TAB_clinic_Model
                         throw new InvalidUserDataException("PESEL have to contain 11 characters");
                 }
 
-                var regexp = new Regex("\\d");  // TODO: fix regex
+                var regexp = new Regex(@"^\d{11}$");
 
                 if (!regexp.IsMatch(value))
                 {
