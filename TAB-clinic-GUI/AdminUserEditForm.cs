@@ -64,7 +64,7 @@ namespace TAB_clinic_GUI
                     MessageBox.Show("User created.", "Success");
                 }
             }
-            catch (InvalidUserDataException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
