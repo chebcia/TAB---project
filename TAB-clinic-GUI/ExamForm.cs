@@ -6,14 +6,14 @@ using TAB_clinic_Services;
 namespace TAB_clinic_GUI
 {
     
-    public partial class exam : Form
+    public partial class ExamForm : Form
     {
         private LabExamModel selectedExam;
         private readonly LabService Service;
         private readonly UserModel currentUser;
        // private NeedsRefreshing needsRefreshing;
-        //variable fromVersion describle in exam.desinger in line 238
-        public exam(UserModel user, LabExamModel _selectedExam, LabService _servic)
+        //variable fromVersion describle in ExamForm.desinger in line 238
+        public ExamForm(UserModel user, LabExamModel _selectedExam, LabService _servic)
         {
             InitializeComponent();
             currentUser = user;
