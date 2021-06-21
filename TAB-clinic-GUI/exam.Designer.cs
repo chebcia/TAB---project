@@ -46,7 +46,6 @@ namespace TAB_clinic_GUI
             this.cancelButton = new System.Windows.Forms.Button();
             this.rejectButton = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -204,16 +203,6 @@ namespace TAB_clinic_GUI
             this.acceptButton.UseVisualStyleBackColor = true;
             this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(291, 273);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 17;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // buttonSave
             // 
             this.buttonSave.Enabled = false;
@@ -229,9 +218,8 @@ namespace TAB_clinic_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 308);
+            this.ClientSize = new System.Drawing.Size(662, 264);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.cancelButton);
@@ -282,7 +270,6 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button rejectButton;
         private System.Windows.Forms.Button acceptButton;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button buttonSave;
     }
 }
