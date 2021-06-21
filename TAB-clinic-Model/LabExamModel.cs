@@ -16,7 +16,6 @@ namespace TAB_clinic_Model
         internal LabExamModel(WrappedContext db) //(LabExam dbLabExam)
         {
             this.dbLabExam = new();
-            this.Status = LabExamStatus.Requested; // TODO: This should be moved to the database as the default field value.
             this.DtRequest = DateTime.Now;
             db.Context.Add(this.dbLabExam);
         }

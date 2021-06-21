@@ -132,6 +132,7 @@ namespace TAB_clinic_Data.Database
                     .HasMaxLength(2)
                     .IsUnicode(false)
                     .HasColumnName("status")
+                    .HasDefaultValueSql("('re')")
                     .IsFixedLength(true);
 
                 entity.HasOne(d => d.CodeNavigation)
