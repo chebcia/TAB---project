@@ -39,8 +39,10 @@ namespace TAB_clinic_Model
             get => dbUser.IdUser;
         }
 
-
-        // TODO: we should test that setter, I'm not sure it really works
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="InvalidUserDataException"></exception>
         public string Login
         {
             get => dbUser.Login;
@@ -51,7 +53,7 @@ namespace TAB_clinic_Model
                     throw new InvalidUserDataException("Login cannot be empty.");
                 }
 
-                var rgx = new Regex("\\w");     // only allows aA-zZ, 0-9 and _
+                var rgx = new Regex(@"^\w+$");     // only allows aA-zZ, 0-9 and _
                 if (rgx.IsMatch(value))
                 {
                     dbUser.Login = value;
