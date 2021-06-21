@@ -31,7 +31,6 @@ namespace TAB_clinic_GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonHandle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -64,21 +63,10 @@ namespace TAB_clinic_GUI
             this.dataGridView1.Size = new System.Drawing.Size(659, 311);
             this.dataGridView1.TabIndex = 1;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExit.Location = new System.Drawing.Point(578, 355);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(93, 33);
-            this.buttonExit.TabIndex = 3;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // buttonHandle
             // 
             this.buttonHandle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHandle.Location = new System.Drawing.Point(479, 355);
+            this.buttonHandle.Location = new System.Drawing.Point(578, 355);
             this.buttonHandle.Name = "buttonHandle";
             this.buttonHandle.Size = new System.Drawing.Size(93, 33);
             this.buttonHandle.TabIndex = 4;
@@ -124,7 +112,6 @@ namespace TAB_clinic_GUI
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonHandle);
-            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "LabMainForm";
@@ -144,6 +131,5 @@ namespace TAB_clinic_GUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button buttonExit;
     }
 }

@@ -31,10 +31,6 @@ namespace TAB_clinic_GUI
 
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {

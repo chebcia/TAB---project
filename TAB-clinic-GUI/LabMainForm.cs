@@ -62,10 +62,7 @@ namespace TAB_clinic_GUI
             filtered();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
