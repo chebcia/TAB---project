@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using TAB_clinic_Model;
 using TAB_clinic_Services;
 
+// TODO: child forms lack the EXIT button
+
 namespace TAB_clinic_GUI
 {
     public partial class RegisterForm : Form

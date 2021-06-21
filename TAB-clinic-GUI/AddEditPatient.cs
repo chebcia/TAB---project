@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using TAB_clinic_Model;
 using TAB_clinic_Services;
 
+#nullable enable
+
 namespace TAB_clinic_GUI
 {
     public partial class AddEditPatientForm : Form

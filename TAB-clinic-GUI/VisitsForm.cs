@@ -10,6 +10,8 @@ using TAB_clinic_Services;
 // TODO: auto-refresh patient grid after adding a new / editing one
 // TODO: multiple visits with the same datetime can be created
 
+#nullable enable
+
 namespace TAB_clinic_GUI
 {
     public partial class VisitsForm : Form

@@ -40,14 +40,8 @@ namespace TAB_clinic_Services
         }
 
         /// <summary>
-        /// 
+        /// Creates a user with given attributes.
         /// </summary>
-        /// <param name="login"></param>
-        /// <param name="password"></param>
-        /// <param name="role"></param>
-        /// <param name="active"></param>
-        /// <param name="name"></param>
-        /// <param name="lastname"></param>
         /// <exception cref="InvalidUserDataException"></exception>
         /// <exception cref="UserAlreadyExistsException"></exception>
         public void CreateUser(string login, string password, ClinicRole role, bool active, string name, string lastname)
