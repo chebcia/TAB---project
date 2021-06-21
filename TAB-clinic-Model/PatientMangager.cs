@@ -47,7 +47,7 @@ namespace TAB_clinic_Model
             var newPatient = new PatientModel(db)
             {
                 Name = name,
-                Lastname = lastname,
+                LastName = lastname,
                 Pesel = pesel
             };
 
@@ -68,7 +68,7 @@ namespace TAB_clinic_Model
             var context = db.Context;
 
             selectedPatient.Name = name;
-            selectedPatient.Lastname = lastname;
+            selectedPatient.LastName = lastname;
             selectedPatient.Pesel = pesel;
             context.SaveChanges();
         }

@@ -27,7 +27,7 @@ namespace TAB_clinic_GUI
                 this.Text = "Edit user";
 
                 inputName.Text = selectedPatient.Name;
-                inputLastName.Text = selectedPatient.Lastname;
+                inputLastName.Text = selectedPatient.LastName;
                 inputPesel.Text = selectedPatient.Pesel;
             }
         }

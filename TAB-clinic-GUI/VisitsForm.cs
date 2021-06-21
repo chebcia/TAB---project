@@ -54,7 +54,7 @@ namespace TAB_clinic_GUI
 
                 var doctorName = selectedDoctor.Name + " " + selectedDoctor.LastName;
                 var registrarName = selectedRegistrar.Name + " " + selectedRegistrar.LastName;
-                var patientName = selectedPatient.Name + " " + selectedPatient.Lastname;
+                var patientName = selectedPatient.Name + " " + selectedPatient.LastName;
                 var patientPesel = selectedPatient.Pesel;
 
                 dataToRender.Add(new VisitsRenderModel()
@@ -131,7 +131,7 @@ namespace TAB_clinic_GUI
                 foreach (var entry in results)
                 {
                     var patientDetails = this.patientList.Find(p => p.IdPatient == entry.IdPatient);
-                    if (patientDetails.Lastname.ToLower().StartsWith(lastName.ToLower())) // Case insetive filtering
+                    if (patientDetails.LastName.ToLower().StartsWith(lastName.ToLower())) // Case insetive filtering
                     {
                         filtered.Add(entry);
                     }

@@ -33,7 +33,7 @@ namespace TAB_clinic_Model
                     throw new InvalidUserDataException("Name cannot be empty.");
                 }
 
-                var regexp = new Regex("\\w");
+                var regexp = new Regex("\\w");  // TODO: fix regex
 
                 if (!regexp.IsMatch(value))
                 {
@@ -44,7 +44,7 @@ namespace TAB_clinic_Model
             }
         }
 
-        public string Lastname
+        public string LastName
         {
             get => dbPatient.Lastname;
             set
@@ -54,7 +54,7 @@ namespace TAB_clinic_Model
                     throw new InvalidUserDataException("Last name cannot be empty.");
                 }
 
-                var regexp = new Regex("\\w");
+                var regexp = new Regex("\\w");  // TODO: fix regex
 
                 if (!regexp.IsMatch(value))
                 {
@@ -75,7 +75,7 @@ namespace TAB_clinic_Model
                         throw new InvalidUserDataException("PESEL have to contain 11 characters");
                 }
 
-                var regexp = new Regex("\\d");
+                var regexp = new Regex("\\d");  // TODO: doesn't work
 
                 if (!regexp.IsMatch(value))
                 {
