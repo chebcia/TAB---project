@@ -83,7 +83,7 @@ namespace TAB_clinic_GUI
                         case ExamKind.Lab:
                             {
                                 var labExam = Service.FindLabExam(IdExam);
-                                new exam(doctor, labExam, new LabService()).ShowDialog();
+                                new ExamForm(doctor, labExam, new LabService()).ShowDialog();
                                 break;
                             }
                     }

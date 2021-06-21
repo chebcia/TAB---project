@@ -50,7 +50,7 @@ namespace TAB_clinic_GUI
                     new AdminMainForm().ShowDialog();
                     break;
                 case TAB_clinic_Model.ClinicRole.Doctor:
-                    new DoctorForm(user).ShowDialog();
+                    new DoctorMainForm(user).ShowDialog();
                     break;
                 case TAB_clinic_Model.ClinicRole.Registrar:
                     new RegisterForm(user.IdUser).ShowDialog();

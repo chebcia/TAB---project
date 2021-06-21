@@ -40,7 +40,7 @@ namespace TAB_clinic_Model
         }
 
         /// <summary>
-        /// 
+        /// Validates and sets the login.
         /// </summary>
         /// <exception cref="InvalidUserDataException"></exception>
         public string Login

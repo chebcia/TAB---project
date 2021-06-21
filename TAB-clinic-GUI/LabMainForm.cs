@@ -58,7 +58,7 @@ namespace TAB_clinic_GUI
             }
 
             
-            new exam(labUser,selectedExam, labService).ShowDialog();
+            new ExamForm(labUser,selectedExam, labService).ShowDialog();
             filtered();
         }
 

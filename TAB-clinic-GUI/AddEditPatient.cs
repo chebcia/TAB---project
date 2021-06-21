@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using TAB_clinic_Model;
 using TAB_clinic_Services;
 
+#nullable enable
+
 namespace TAB_clinic_GUI
 {
     public partial class AddEditPatientForm : Form
@@ -27,7 +29,7 @@ namespace TAB_clinic_GUI
                 this.Text = "Edit user";
 
                 inputName.Text = selectedPatient.Name;
-                inputLastName.Text = selectedPatient.Lastname;
+                inputLastName.Text = selectedPatient.LastName;
                 inputPesel.Text = selectedPatient.Pesel;
             }
         }

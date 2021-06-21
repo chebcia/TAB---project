@@ -61,8 +61,7 @@ namespace TAB_clinic_Model
             set => dbLabExam.IdManager = value;
         }
 
-        // TODO: Make this return an ExamType value?
-        // Yes, do that
+        // TODO: Make this return an ExamType value? -Yes, do that
         public string Code
         {
             get => dbLabExam.Code;

@@ -40,15 +40,8 @@ namespace TAB_clinic_Model
 
 
         /// <summary>
-        /// 
+        /// Creates a user with given attributes and correct db relationships.
         /// </summary>
-        /// <param name="db"></param>
-        /// <param name="login"></param>
-        /// <param name="plaintextPassword"></param>
-        /// <param name="role"></param>
-        /// <param name="active"></param>
-        /// <param name="name"></param>
-        /// <param name="lastname"></param>
         /// <exception cref="UserAlreadyExistsException"></exception>
         /// <exception cref="InvalidUserDataException"></exception>
         public static void CreateUser(WrappedContext db, string login, string plaintextPassword, ClinicRole role, bool active, string name, string lastname)
