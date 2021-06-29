@@ -79,7 +79,7 @@ namespace TAB_clinic_GUI
             var visits = Service.GetDoctorsVisits(doctor, surnameFilter, dateTimeFilter);
 
             dataGridView1.DataSource = (from v in visits
-                                        where v.Status.Equals(VisitStatus.registered)
+                                       // where v.Status.Equals(VisitStatus.registered)
                                         select new
                                         {
                                             Id = v.IdVisit,

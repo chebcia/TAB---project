@@ -37,7 +37,8 @@ namespace TAB_clinic_Model
             {
                 IdVisit = visit.IdVisit,
                 DoctorsNotes = doctorsNotes,
-                Code = type.Code
+                Code = type.Code,
+                Status = LabExamStatus.Requested
             };
 
             context.SaveChanges();
