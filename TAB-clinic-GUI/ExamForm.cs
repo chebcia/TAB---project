@@ -83,22 +83,21 @@ namespace TAB_clinic_GUI
         {
 
 
-            if (formVersion == "doc")
+            if (formVersion == "doc" && selectedExam.Status == LabExamStatus.Requested)
             {
-                if (selectedExam.Status == LabExamStatus.Requested)
-                {
+
                     docText.Enabled = true;
                     buttonSave.Enabled = true;
-                }
+
             }
-            else if (formVersion == "lab_w")
+            else if (formVersion == "lab_w" && selectedExam.Status == LabExamStatus.Requested)
             {
                 cancelButton.Enabled = true;
                 makeButton.Enabled = true;
                 resultText.Enabled = true;
                 
             }
-            else if (formVersion == "lab_m")
+            else if (formVersion == "lab_m" && selectedExam.Status == LabExamStatus.FinalizedByWorker)
             {
                 acceptButton.Enabled = true;
                 rejectButton.Enabled = true;
