@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<connectionString>
+	Server=localhost;Database=ClinicDB;Trusted_Connection=True;
+</connectionString>

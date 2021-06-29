@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Xml;
 
 #nullable disable
 
@@ -30,8 +31,19 @@ namespace TAB_clinic_Data.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=ClinicDB;Trusted_Connection=True;");
+                string connectionString = "Server=localhost;Database=ClinicDB;Trusted_Connection=True;";
+                try
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load("Database/dbConfig.xml");
+                    XmlNode node = doc.DocumentElement.SelectSingleNode("/connectionString");
+                    connectionString = node.InnerText;
+                } catch (System.Exception e)
+                {
+
+                } 
+
+                optionsBuilder.UseSqlServer(connectionString);
             }
         }
 
